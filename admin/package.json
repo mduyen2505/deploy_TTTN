@@ -57,7 +57,8 @@
     "url": "^0.11.0",
     "util": "^0.12.5",
     "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "@babel/plugin-proposal-private-property-in-object": "^7.10.4"
   },
   "resolutions": {
     "http": "stream-http",
