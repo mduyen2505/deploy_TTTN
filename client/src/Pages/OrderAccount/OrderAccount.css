@@ -1,0 +1,152 @@
+/* Container chính của trang đơn hàng */
+.user-orders-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 750px;
+    margin: 10px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: -40px;
+}
+
+.orders-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.orderaccount-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+    padding-top: 60px;
+}
+
+.orderaccount-card:hover {
+    transform: scale(1.02);
+}
+
+/* Header đơn hàng */
+.orderaccount-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f8f8;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.orderaccount-id {
+
+    color: #0c0c0c;
+    text-align: bold;
+    font-size: 15px;
+}
+
+.orderaccount-delivery {
+    color: green;
+}
+
+.orderaccount-status {
+
+    color: orange;
+    margin-left: 15px;
+
+}
+
+.orderaccount-status.success {
+    color: #ff6600;
+}
+
+/* Danh sách sản phẩm trong đơn hàng */
+.orderaccount-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.orderaccount-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 5px;
+    background: #fff;
+    margin-right: 15px;
+}
+
+.orderaccount-item-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+}
+
+.orderaccount-item-name {
+    flex: 3;
+    font-size: 14px;
+    color: #333;
+}
+
+.orderaccount-item-quantity {
+    flex: 1;
+    text-align: end;
+    font-size: 14px;
+    color: #666;
+}
+
+.orderaccount-item-price {
+    flex: 1;
+    text-align: right;
+    font-size: 14px;
+    color: #000000;
+}
+
+/* Tổng tiền và nút xem chi tiết */
+.orderaccount-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f8f8f8;
+     border-radius: 5px;
+    margin-top: 10px;
+    color: rgb(0, 0, 0);
+    text-align: right;
+}
+.orderaccount-total strong {
+    color: #ff758c;
+}
+
+
+.orderaccount-detail-button {
+    position: absolute;
+    right: 15px;
+    padding: 8px 12px;
+    background: #ff758c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: -50px;
+}
+
+.orderaccount-detail-button:hover {
+    background: #d65f73;
+} 

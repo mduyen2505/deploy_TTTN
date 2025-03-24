@@ -1,0 +1,139 @@
+
+/* Voucher Container */
+.voucher-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px auto;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    background-color: #fff6f1;
+    padding: 20px;
+
+}
+.voucher-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #ff5722;
+    margin: 30px 0 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* Voucher Card */
+.voucher-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Logo thương hiệu trong voucher */
+.voucher-logo {
+    width: 100px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+/* Text giảm giá */
+.voucher-discount {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* Mô tả voucher */
+.voucher-description {
+    font-size: 13px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Ngày hết hạn */
+.voucher-expiry {
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Nút lấy voucher */
+.voucher-button {
+    background: #ff758c;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.voucher-button:hover {
+    background: #f3546f;
+}
+
+/* Container sản phẩm */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+/* Tiêu đề sản phẩm */
+.product-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #008000;
+    margin: 40px 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.pagination {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.pagination button {
+    padding: 8px 12px;
+    border: none;
+    background: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.pagination button.active {
+    background: black;
+    color: white;
+}
+
+.pagination button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+
+
+
+
+ 

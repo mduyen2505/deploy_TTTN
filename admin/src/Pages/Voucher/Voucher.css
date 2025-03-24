@@ -1,0 +1,197 @@
+/* Toàn bộ trang quản lý voucher */
+.voucher-management {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+}
+
+/* Tiêu đề */
+h2, h3 {
+  text-align: center;
+  color: #ff758c;
+  margin-bottom: 20px;
+}
+
+/* Form thêm Voucher */
+.voucher-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.voucher-form input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ff758c;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.voucher-form button {
+  background: #ff758c;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.voucher-form button:hover {
+  background: #e04f6b;
+}
+
+/* Danh sách Voucher */
+.voucher-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.voucher-item {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.voucher-item img {
+  width: 100px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.voucher-item h4 {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.voucher-item p {
+  font-size: 14px;
+  color: #666;
+}
+
+.voucher-item button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.voucher-item button:first-of-type {
+  background: #ffa502;
+  color: white;
+}
+
+.voucher-item button:first-of-type:hover {
+  background: #e08c02;
+}
+
+.voucher-item button:last-of-type {
+  background: #e74c3c;
+  color: white;
+}
+
+.voucher-item button:last-of-type:hover {
+  background: #c0392b;
+}
+
+/* Modal chỉnh sửa */
+.edit-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  z-index: 1000;
+}
+
+.edit-modal input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ff758c;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.edit-modal button {
+  width: 48%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.edit-modal button:first-of-type {
+  background: #ff758c;
+  color: white;
+}
+
+.edit-modal button:first-of-type:hover {
+  background: #e04f6b;
+}
+
+.edit-modal button:last-of-type {
+  background: #6c757d;
+  color: white;
+}
+
+.edit-modal button:last-of-type:hover {
+  background: #5a6268;
+}
+
+/* Nền mờ khi mở modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .voucher-management {
+    width: 90%;
+  }
+
+  .voucher-form {
+    padding: 15px;
+  }
+
+  .voucher-item {
+    padding: 10px;
+  }
+
+  .edit-modal {
+    width: 90%;
+  }
+}

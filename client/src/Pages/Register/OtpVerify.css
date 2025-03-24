@@ -1,0 +1,97 @@
+/* Đặt trang OTP nằm giữa màn hình */
+.otp-verify-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.otp-verify-container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #ff4d4f;
+  margin-bottom: 15px;
+}
+
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.otp-inputs input {
+  width: 60%;
+  padding: 12px;
+  font-size: 18px;
+  text-align: center;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.otp-inputs input:focus {
+  border-color: #ff758c;
+}
+
+.otp-verify-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff758c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.otp-verify-btn:hover {
+  background-color: #e66778;
+}
+
+.otp-resend {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #888;
+}
+
+.otp-resend-btn {
+  background: none;
+  border: none;
+  color: #ff758c;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: color 0.3s;
+}
+
+.otp-resend-btn:hover {
+  color: #e66778;
+}
+
+.otp-resend-btn:disabled {
+  color: #aaa;
+  cursor: not-allowed;
+}
+.otp-verify-btn:disabled,
+.otp-resend-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

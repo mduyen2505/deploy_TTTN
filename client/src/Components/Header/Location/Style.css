@@ -1,0 +1,29 @@
+.location {
+    display: flex !important;
+    align-items: center !important;
+    background: #f3f4f7 !important;
+    border-radius: 10px !important;
+    padding: 8px 16px !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    cursor: pointer !important;
+    transition: background 0.3s ease !important;
+    margin-left: 60px;
+}
+.location:hover {
+    background: #e0e0e0; /* Hiệu ứng hover */
+}
+
+.location-icon {
+    font-size: 24px; /* Kích thước biểu tượng */
+    color: #ff4081; /* Màu biểu tượng */
+    margin-right: 8px; /* Khoảng cách giữa icon và text */
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #333; /* Màu chữ */
+}
+
+
+

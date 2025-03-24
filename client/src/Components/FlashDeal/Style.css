@@ -1,0 +1,115 @@
+.flash-deal {
+    padding: 20px;
+    background-color: #fff6f1;
+    border-radius: 15px;
+    margin-top: 20px;
+    width: 1400px;
+    margin-left: 50px;
+    margin-right: 50px;
+    height: fit-content;
+
+
+
+  }
+  
+  .flash-deal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .flash-deal-header h2 {
+    font-size: 24px;
+    color: #ff758c;
+    font-weight: bold;
+  }
+  
+  .countdown-timer {
+    font-size: 18px;
+    color: #302628;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+  
+  .product-list {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  
+  .product-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    flex-shrink: 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .product-name {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .product-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  .original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 12px;
+  }
+  
+  .sale-price {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .product-discount {
+    font-size: 14px;
+    color: #ff6f00;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  .progress-bar {
+    background: #f5f5f5;
+    border-radius: 5px;
+    height: 8px;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  
+  .progress-bar .progress {
+    background: #eb6b80;
+    height: 100%;
+    border-radius: 5px;
+  }
+  
+  .flash-deal-header a {
+    font-size: 14px;
+    color:#ff758c;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  

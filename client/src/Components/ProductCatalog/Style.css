@@ -1,0 +1,102 @@
+.productCat {
+    padding: 20px 0px;
+    padding: 20px;
+    background-color: #fff6f1;
+    border-radius: 15px;
+    margin-top: 20px;
+    max-width: 1400px; 
+    margin-left: 50px;
+    margin-right: 50px;
+    height: fit-content;
+    overflow: hidden; /* Ẩn phần bị tràn */
+
+
+}
+
+.productCat h3 {
+    text-align: left; /* Tiêu đề về bên trái */
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.productCat .swiper-container {
+    position: relative;
+    padding-right: 50px;
+        
+}
+
+.productCat .swiper {
+    overflow: inherit !important;
+    padding-bottom: 20px;
+}
+
+/* Khung chứa mỗi thương hiệu */
+.swiper .item {
+    padding: 15px;
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Hình ảnh trong swiper */
+.swiper .item img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Tên thương hiệu */
+.swiper .item h6 {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Custom nút điều hướng */
+.swiper-nav-buttons {
+    position: absolute;
+    top: -40px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Tạo nút tròn */
+.swiper-button-prev,
+.swiper-button-next {
+    width: 35px !important;
+    height: 35px !important;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    opacity: 1;
+}
+
+/* Tăng kích thước icon */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 16px !important;
+    color: #fff !important;
+}
+
+.swiper-slide {
+    margin-right: -125px !important; /* Giảm khoảng cách ngang */
+}

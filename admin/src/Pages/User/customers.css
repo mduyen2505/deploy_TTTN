@@ -1,0 +1,111 @@
+/* Container chính */
+.customers-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Tiêu đề trang */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ff758c;
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+
+/* Bảng danh sách người dùng */
+.customers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.customers-table th,
+.customers-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+/* Đầu bảng với nền màu chủ đạo, chữ trắng */
+.customers-table th {
+  background-color: #ff758c;
+  color: #fff;
+  font-weight: normal;
+}
+
+/* Hiệu ứng zebra cho bảng */
+.customers-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.customers-table tr:hover {
+  background-color: #fef2f2;
+}
+
+/* Điều chỉnh độ rộng của cột Address nếu cần */
+.customers-table td.address-column {
+  width: auto;
+}
+
+/* Nút hành động */
+.action-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9em;
+}
+
+/* Nút xóa với màu sắc phù hợp, sử dụng màu sắc nền trung tính cho hành động chung */
+.action-button.delete {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.action-button.delete:hover {
+  background-color: #cf3322;
+}
+
+/* Nếu có các nút khác, đặt màu chủ đạo cho chúng */
+.action-button:not(.delete) {
+  background-color: #ff758c;
+  color: #fff;
+}
+
+.action-button:not(.delete):hover {
+  background-color: #e0667a;
+}
+
+/* Phân trang */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-button {
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.page-button.active {
+  background-color: #ff758c;
+  color: #fff;
+  border-color: #ff758c;
+}
+
+.page-button:hover {
+  background-color: #f7f7f7;
+}

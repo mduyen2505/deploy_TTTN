@@ -1,0 +1,87 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
+
+.homeBannerSection{
+    position: relative;
+    overflow: hidden;
+
+}
+
+.homeBannerSection *{
+    outline: none !important;
+
+}
+.homeBannerSection .slick-prev, 
+.homeBannerSection .slick-next {
+    position: absolute;
+    top: 50%;
+    z-index: 1000;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Nền trắng mờ */
+    border-radius: 50%; /* Tạo hình tròn */
+    color: #3f3f3f; /* Màu biểu tượng */
+    cursor: pointer;
+    transform: translateY(-50%);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Tạo hiệu ứng bóng */
+    transition: all 0.3s ease; /* Hiệu ứng mượt */
+}
+
+.homeBannerSection .slick-prev:hover, 
+.homeBannerSection .slick-next:hover {
+    background-color: rgba(255, 255, 255, 1); /* Nền trắng rõ khi hover */
+    transform: translateY(-50%) scale(1.1); /* Phóng to nhẹ khi hover */
+}
+
+.homeBannerSection .slick-prev {
+    left: 10px; /* Vị trí nút bên trái */
+}
+
+.homeBannerSection .slick-next {
+    right: 10px; /* Vị trí nút bên phải */
+}
+
+.homeBannerSection .slick-prev:before, 
+.homeBannerSection .slick-next:before {
+    content: ''; /* Xóa nội dung mặc định của slick */
+}
+
+/* Kích thước biểu tượng */
+.homeBannerSection .slick-prev svg, 
+.homeBannerSection .slick-next svg {
+    font-size: 25px; /* Kích thước mũi tên */
+     
+}
+
+
+
+.homeBannerSection .slick-dots {
+    position: absolute;
+    bottom: 15px; /* Dấu chấm nằm phía dưới slide */
+    display: flex !important; /* Đảm bảo các chấm hiển thị dạng flex */
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.homeBannerSection .slick-dots li {
+    margin: 0 5px; /* Khoảng cách giữa các chấm */
+}
+
+.homeBannerSection .slick-dots li button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* Bo tròn */
+    background-color: rgba(255, 255, 255, 0.5); /* Màu chấm mặc định */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.homeBannerSection .slick-dots li.slick-active button {
+    background-color: #fff; /* Màu chấm khi active */
+}

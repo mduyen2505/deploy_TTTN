@@ -1,0 +1,1286 @@
+{
+    
+    "intents": [
+      {
+        "tag": "chaohoi",
+        "patterns": [
+            "Hello",
+            "Hi",
+            "Hey",
+            "Xin chào",
+            "Chào bạn",
+            "Chào",
+            "Hê lô",
+            "Chào cậu",
+            "Hi bạn",
+            "Chào mừng"
+        ],
+        "responses": [
+            "Chào bạn!",
+            "Xin chào!",
+            "Rất vui được gặp bạn!",
+            "Chào mừng bạn đến với chatbot!",
+            "Chúng tôi luôn sẵn sàng hỗ trợ bạn!",
+            "Chào bạn, hôm nay bạn cần hỗ trợ gì?"
+        ]
+    },
+    {
+        "tag": "tambiet",
+        "patterns": [
+            "Bye",
+            "Tạm biệt",
+            "Hẹn gặp lại",
+            "Goodbye",
+            "Chào tạm biệt",
+            "Cảm ơn, hẹn gặp lại",
+            "Hẹn gặp bạn lần sau",
+            "Tạm biệt bạn"
+        ],
+        "responses": [
+            "Tạm biệt! Hẹn gặp lại bạn sau!",
+            "Chúc bạn một ngày tốt lành!",
+            "Hẹn gặp lại bạn!",
+            "Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!",
+            "Mong được phục vụ bạn lần sau!",
+            "Tạm biệt, hy vọng sớm được gặp lại bạn!"
+        ]
+    },
+    {
+        "tag": "vi_tri_cua_hang",
+        "patterns":[
+          "Địa chỉ cửa hàng",
+          "Vị trí shop",
+          "Cửa hàng laptop gần tôi là ở đâu?",
+          "Địa điểm cửa hàng"
+          
+        ],
+        "responses":[
+          "Bạn có thể tìm thấy cửa tại địa chỉ ABC",
+          "Địa chỉ của chúng tôi nằm ở",
+          "Để có thể mua sản phẩm trực tiếp bạn có thể đến địa chỉ ABC (trung tâm XYZ)"
+        ]
+    },
+    {
+      "tag": "khuyen_mai",
+      "patterns": [
+          "Hiện tại có chương trình khuyến mãi nào không?",
+          "Shop có giảm giá không?",
+          "Có ưu đãi gì khi mua hàng không?",
+          "Khuyến mãi tháng này là gì?",
+          "Mua nhiều có được giảm giá không?",
+          "Có mã giảm giá không?",
+          "Khách hàng mới có ưu đãi gì không?",
+          "Mua trên 500k có được free ship không?",
+          "Có chương trình tặng quà khi mua hàng không?",
+          "Làm sao để nhận khuyến mãi?"
+      ],
+      "responses": [
+          "Hiện tại chúng tôi đang có chương trình giảm giá 10% cho đơn hàng trên 500k!",
+          "Shop có ưu đãi đặc biệt khi mua từ 2 sản phẩm trở lên!",
+          "Chúng tôi có mã giảm giá cho khách hàng mới, hãy kiểm tra tại trang khuyến mãi!",
+          "Mua hàng trên 1 triệu sẽ được tặng quà hấp dẫn!",
+          "Chúng tôi thường xuyên có các chương trình khuyến mãi, theo dõi fanpage để không bỏ lỡ!",
+          "Hiện tại đang có flash sale, nhanh tay đặt hàng để nhận ưu đãi!",
+          "Chúng tôi có chương trình miễn phí vận chuyển cho đơn hàng từ 300k!",
+          "Bạn có thể nhập mã 'SALE10' để được giảm 10% cho đơn hàng đầu tiên!",
+          "Khách hàng thân thiết sẽ được tặng voucher mua sắm vào cuối tháng!",
+          "Hãy đăng ký thành viên để nhận thông báo về các khuyến mãi sớm nhất!"
+      ]
+  },
+    {
+        "tag": "thanks",
+        "patterns": [
+            "Cảm ơn",
+            "Cảm ơn bạn",
+            "Thank you",
+            "Thanks",
+            "Cảm ơn nhiều",
+            "Rất cảm ơn",
+            "Biết ơn bạn",
+            "Cảm ơn rất nhiều"
+        ],
+        "responses": [
+            "Không có gì!",
+            "Rất vui được giúp bạn!",
+            "Bạn không cần phải cảm ơn đâu!",
+            "Rất hân hạnh hỗ trợ bạn!",
+            "Chúng tôi luôn ở đây để hỗ trợ bạn!",
+            "Cảm ơn bạn đã tin tưởng chúng tôi!"
+        ]
+    },
+    {
+      "tag": "da_kho",
+      "patterns": [
+          "Da tôi rất khô, nên dùng sản phẩm gì?",
+          "Làm sao để dưỡng ẩm cho da khô?",
+          "Sản phẩm nào tốt cho da khô?",
+          "Da khô có nên dùng kem dưỡng ẩm không?",
+          "Da khô nên chọn sữa rửa mặt như thế nào?",
+          "Cách chăm sóc da khô vào mùa đông?",
+          "Da tôi bị bong tróc, tôi nên làm gì?",
+          "Có loại serum nào dành cho da khô không?",
+          "Tôi muốn tìm kem dưỡng ẩm cho da khô",
+          "Da khô có cần dùng kem chống nắng không?"
+      ],
+      "responses": [
+          "Đối với da khô, bạn nên sử dụng kem dưỡng ẩm chứa hyaluronic acid và ceramide.",
+          "Sữa rửa mặt dịu nhẹ không chứa sulfate là lựa chọn tốt cho da khô.",
+          "Bạn có thể sử dụng serum có thành phần như hyaluronic acid, glycerin, vitamin E.",
+          "Da khô rất cần dưỡng ẩm thường xuyên, nên dùng kem dưỡng có kết cấu đặc hơn vào ban đêm.",
+          "Vào mùa đông, bạn nên sử dụng thêm dầu dưỡng để khóa ẩm và giữ da mềm mại.",
+          "Nếu da bị bong tróc, hãy tẩy tế bào chết nhẹ nhàng 1-2 lần/tuần và dưỡng ẩm đầy đủ.",
+          "Bạn nên chọn kem chống nắng có thành phần dưỡng ẩm để bảo vệ da mà không gây khô.",
+          "Serum có chứa squalane và niacinamide giúp cấp ẩm và làm dịu da khô hiệu quả.",
+          "Sử dụng mặt nạ dưỡng ẩm từ thiên nhiên như mật ong, lô hội có thể giúp cải thiện tình trạng da khô.",
+          "Da khô cần uống đủ nước và bổ sung thực phẩm giàu omega-3 để duy trì độ ẩm tự nhiên."
+      ]
+    },
+    {
+        "tag": "da_nhay_cam",
+        "patterns": [
+            "Da nhạy cảm nên dùng sản phẩm gì?",
+            "Tôi có làn da nhạy cảm, tôi nên chăm sóc thế nào?",
+            "Sản phẩm nào phù hợp với da nhạy cảm?",
+            "Da nhạy cảm có nên dùng mỹ phẩm không?",
+            "Có nên dùng retinol cho da nhạy cảm?",
+            "Cách chọn kem chống nắng cho da nhạy cảm?",
+            "Da tôi dễ kích ứng, tôi nên làm gì?",
+            "Tôi bị mẩn đỏ khi dùng mỹ phẩm, có cách nào khắc phục không?",
+            "Da nhạy cảm có nên tẩy tế bào chết không?",
+            "Sữa rửa mặt nào tốt cho da nhạy cảm?"
+        ],
+        "responses": [
+            "Bạn nên chọn sản phẩm không chứa cồn, hương liệu và paraben.",
+            "Hãy sử dụng kem dưỡng có thành phần như Ceramide, Centella Asiatica để làm dịu da.",
+            "Sữa rửa mặt dịu nhẹ, không tạo bọt quá nhiều sẽ tốt cho da nhạy cảm.",
+            "Da nhạy cảm nên tránh retinol nồng độ cao, có thể thử Bakuchiol thay thế.",
+            "Nên dùng kem chống nắng vật lý với thành phần Zinc Oxide hoặc Titanium Dioxide.",
+            "Hãy test sản phẩm trên một vùng da nhỏ trước khi dùng để tránh kích ứng.",
+            "Bạn có thể tẩy tế bào chết nhẹ nhàng với enzyme hoặc AHA nồng độ thấp 1-2 lần/tuần.",
+            "Tránh dùng mỹ phẩm có hương liệu mạnh hoặc thành phần dễ gây kích ứng như cồn khô.",
+            "Sử dụng toner không cồn và dưỡng ẩm đủ để giúp da khỏe mạnh hơn.",
+            "Bạn nên bổ sung kem dưỡng làm dịu da và tránh tiếp xúc với hóa chất mạnh."
+        ]
+    },
+    {
+        "tag": "da_san_sui",
+        "patterns": [
+            "Da tôi bị sần sùi, phải làm sao?",
+            "Làm thế nào để cải thiện làn da sần sùi?",
+            "Sản phẩm nào giúp da mịn màng hơn?",
+            "Tôi có làn da không được mịn, nên dùng gì?",
+            "Cách trị da sần sùi và thô ráp?",
+            "Da sần sùi có nên tẩy tế bào chết không?",
+            "Da tôi có nhiều vết sần nhỏ, tôi nên làm gì?",
+            "Tại sao da tôi bị sần và thô?",
+            "Có cách nào giúp da căng mịn hơn không?",
+            "Nguyên nhân khiến da bị sần sùi?"
+        ],
+        "responses": [
+            "Bạn nên tẩy tế bào chết đều đặn 2-3 lần/tuần để loại bỏ lớp da chết.",
+            "Hãy sử dụng sản phẩm chứa AHA, BHA để giúp da mịn màng hơn.",
+            "Da sần sùi có thể do thiếu ẩm, hãy dùng kem dưỡng ẩm có Hyaluronic Acid.",
+            "Thử dùng serum chứa Niacinamide để làm đều kết cấu da.",
+            "Da bị sần có thể do bít tắc lỗ chân lông, hãy làm sạch da kỹ hơn.",
+            "Tẩy tế bào chết vật lý hoặc hóa học đều có thể giúp cải thiện tình trạng sần sùi.",
+            "Sử dụng mặt nạ dưỡng ẩm và làm mềm da để cải thiện độ mịn màng.",
+            "Da sần có thể do thiếu nước, hãy bổ sung đủ nước mỗi ngày.",
+            "Nên chọn kem dưỡng có thành phần như Ceramide và Glycerin để phục hồi da.",
+            "Hạn chế tiếp xúc với môi trường ô nhiễm, ánh nắng mặt trời có thể làm da sần hơn."
+        ]
+    },
+    {
+        "tag": "viem_nang_long",
+        "patterns": [
+            "Viêm nang lông là gì?",
+            "Làm sao để trị viêm nang lông?",
+            "Nguyên nhân gây viêm nang lông?",
+            "Sản phẩm nào tốt cho viêm nang lông?",
+            "Tôi bị viêm nang lông, phải làm sao?",
+            "Viêm nang lông có tự khỏi không?",
+            "Có nên tẩy tế bào chết khi bị viêm nang lông?",
+            "Cách ngăn ngừa viêm nang lông?",
+            "Kem bôi nào giúp giảm viêm nang lông?",
+            "Viêm nang lông có nguy hiểm không?"
+        ],
+        "responses": [
+            "Viêm nang lông là tình trạng viêm nhiễm ở nang lông do vi khuẩn hoặc nấm.",
+            "Bạn có thể sử dụng sữa tắm chứa Salicylic Acid hoặc Benzoyl Peroxide để giảm viêm.",
+            "Viêm nang lông có thể do bít tắc lỗ chân lông, hãy giữ da sạch sẽ và tẩy tế bào chết định kỳ.",
+            "Dùng kem bôi chứa BHA, AHA hoặc Retinol có thể giúp cải thiện tình trạng viêm nang lông.",
+            "Tránh cạo lông hoặc waxing quá thường xuyên để giảm kích ứng da.",
+            "Sử dụng kem dưỡng ẩm dịu nhẹ giúp làm mềm da và giảm viêm.",
+            "Hãy mặc quần áo rộng rãi, thoáng mát để hạn chế ma sát và kích ứng lên vùng da bị viêm.",
+            "Tình trạng viêm nhẹ có thể tự khỏi, nhưng nếu nặng hơn, bạn nên đến bác sĩ da liễu để được tư vấn.",
+            "Sản phẩm chứa Tea Tree Oil hoặc Niacinamide có thể hỗ trợ điều trị viêm nang lông.",
+            "Bạn có thể thử phương pháp laser hoặc peeling hóa học để cải thiện tình trạng viêm nang lông lâu năm."
+        ]
+    },
+    {
+        "tag": "tham_sam",
+        "patterns": [
+            "Da tôi bị thâm sạm, phải làm sao?",
+            "Cách trị thâm sạm da?",
+            "Sản phẩm nào giúp làm sáng da?",
+            "Nguyên nhân gây thâm sạm?",
+            "Tại sao da tôi bị xỉn màu?",
+            "Có cách nào để da trắng sáng hơn không?",
+            "Tôi nên dùng gì để giảm thâm nám?",
+            "Da bị sạm nắng có phục hồi được không?",
+            "Thâm mụn có tự hết không?",
+            "Kem trị thâm tốt nhất là gì?"
+        ],
+        "responses": [
+            "Bạn nên sử dụng sản phẩm chứa Vitamin C, Niacinamide hoặc Arbutin để làm sáng da.",
+            "Nguyên nhân gây thâm sạm có thể do tia UV, thiếu ẩm, hoặc tăng sắc tố da.",
+            "Hãy thoa kem chống nắng hàng ngày để ngăn chặn thâm sạm do ánh nắng.",
+            "Serum Vitamin C hoặc Kojic Acid có thể giúp làm mờ vết thâm hiệu quả.",
+            "Da bị xỉn màu có thể do tích tụ tế bào chết, hãy tẩy tế bào chết 2-3 lần/tuần.",
+            "Bạn có thể thử kem dưỡng chứa Alpha Arbutin để cải thiện sắc tố da.",
+            "Nếu thâm mụn lâu ngày không mờ, bạn có thể kết hợp Retinol để thúc đẩy tái tạo da.",
+            "Bổ sung Collagen và uống đủ nước cũng giúp da sáng khỏe hơn.",
+            "Các loại mặt nạ thiên nhiên như sữa chua, nghệ, mật ong có thể hỗ trợ làm mờ thâm.",
+            "Nếu thâm sạm kéo dài, bạn nên tham khảo ý kiến bác sĩ da liễu để có phương pháp điều trị phù hợp."
+        ]
+    },
+    {
+        "tag": "sua_tam",
+        "patterns": [
+            "Sữa tắm nào tốt nhất?",
+            "Sữa tắm cho da nhạy cảm?",
+            "Tôi nên dùng sữa tắm gì cho da khô?",
+            "Sữa tắm dưỡng trắng da tốt nhất?",
+            "Có sữa tắm trị mụn lưng không?",
+            "Sữa tắm nào giúp da mịn màng hơn?",
+            "Da bị viêm nang lông nên dùng sữa tắm nào?",
+            "Sữa tắm có cần chứa sulfate không?",
+            "Sữa tắm nào tốt cho mùa đông?",
+            "Nên chọn sữa tắm có thành phần gì?"
+        ],
+        "responses": [
+            "Nếu da nhạy cảm, bạn nên chọn sữa tắm không chứa hương liệu và cồn.",
+            "Da khô nên dùng sữa tắm chứa Glycerin, Hyaluronic Acid hoặc dầu dưỡng.",
+            "Sữa tắm có chứa Vitamin C, Niacinamide có thể giúp da sáng hơn.",
+            "Bạn có thể dùng sữa tắm chứa Salicylic Acid hoặc Tea Tree Oil để trị mụn lưng.",
+            "Chọn sữa tắm có thành phần dưỡng ẩm như Shea Butter hoặc dầu Jojoba để giúp da mịn hơn.",
+            "Viêm nang lông nên dùng sữa tắm có AHA/BHA để tẩy tế bào chết nhẹ nhàng.",
+            "Nếu bạn muốn tránh kích ứng, nên chọn sữa tắm không chứa sulfate (SLS/SLES).",
+            "Mùa đông nên dùng sữa tắm có dầu dưỡng như dầu dừa hoặc dầu oliu để tránh khô da.",
+            "Hãy chọn sữa tắm có thành phần tự nhiên, không chứa paraben và chất tạo bọt mạnh để bảo vệ da.",
+            "Bạn nên tránh sữa tắm có quá nhiều hóa chất nếu da dễ kích ứng."
+        ]
+    },
+    {
+        "tag": "kem_duong_the",
+        "patterns": [
+            "Kem dưỡng thể nào tốt nhất?",
+            "Nên dùng kem dưỡng thể khi nào?",
+            "Kem dưỡng thể có giúp trắng da không?",
+            "Da khô nên dùng kem dưỡng thể gì?",
+            "Có kem dưỡng thể nào giúp trị thâm không?",
+            "Kem dưỡng thể có cần chống nắng không?",
+            "Tôi nên dùng kem dưỡng thể ban ngày hay ban đêm?",
+            "Kem dưỡng thể nào không gây nhờn rít?",
+            "Có kem dưỡng thể nào dành cho da nhạy cảm không?",
+            "Thành phần nào trong kem dưỡng thể tốt nhất?"
+        ],
+        "responses": [
+            "Kem dưỡng thể nên dùng sau khi tắm để giữ ẩm và giúp da mềm mịn.",
+            "Có nhiều loại kem dưỡng thể giúp làm trắng da, bạn có thể chọn sản phẩm chứa Niacinamide hoặc Vitamin C.",
+            "Da khô nên dùng kem dưỡng thể chứa Hyaluronic Acid, Glycerin hoặc dầu dưỡng để cấp ẩm sâu.",
+            "Nếu bạn muốn trị thâm, hãy chọn kem dưỡng thể có Alpha Arbutin hoặc Kojic Acid.",
+            "Ban ngày nên dùng kem dưỡng thể có chỉ số SPF để bảo vệ da khỏi tia UV.",
+            "Ban đêm là thời điểm tốt nhất để da hấp thụ dưỡng chất từ kem dưỡng thể.",
+            "Nếu bạn không thích cảm giác nhờn rít, hãy chọn kem dưỡng thể dạng gel hoặc lotion nhẹ.",
+            "Da nhạy cảm nên chọn kem dưỡng thể không chứa hương liệu, cồn hoặc paraben.",
+            "Những thành phần như Shea Butter, dầu Jojoba, và Vitamin E giúp nuôi dưỡng da hiệu quả.",
+            "Nếu bạn thường xuyên ra nắng, hãy dùng kem dưỡng thể có chứa chất chống oxy hóa như trà xanh hoặc dầu hạt nho để bảo vệ da."
+        ]
+    },
+    {
+        "tag": "tay_te_bao_chet_body",
+        "patterns": [
+            "Tẩy tế bào chết body có cần thiết không?",
+            "Bao lâu nên tẩy tế bào chết body một lần?",
+            "Tôi nên dùng tẩy tế bào chết vật lý hay hóa học?",
+            "Loại tẩy tế bào chết body nào tốt nhất?",
+            "Có tẩy tế bào chết nào dành cho da nhạy cảm không?",
+            "Tẩy tế bào chết giúp da trắng hơn không?",
+            "Cách sử dụng tẩy tế bào chết đúng cách?",
+            "Da khô có nên tẩy tế bào chết thường xuyên không?",
+            "Thành phần nào tốt trong tẩy tế bào chết body?",
+            "Có nên tẩy tế bào chết trước khi cạo lông không?"
+        ],
+        "responses": [
+            "Tẩy tế bào chết body giúp loại bỏ lớp da chết, giúp da sáng và mịn hơn.",
+            "Bạn nên tẩy tế bào chết body 1-2 lần/tuần để tránh làm tổn thương da.",
+            "Da nhạy cảm nên chọn tẩy tế bào chết hóa học nhẹ nhàng như AHA/BHA thay vì dạng hạt.",
+            "Tẩy tế bào chết chứa AHA giúp làm sáng da, còn BHA giúp trị mụn lưng và viêm nang lông.",
+            "Nên dùng sản phẩm chứa dầu dưỡng như dầu dừa, dầu Jojoba để giữ ẩm sau khi tẩy tế bào chết.",
+            "Nếu da bạn khô, hãy tẩy tế bào chết 1 lần/tuần và bổ sung kem dưỡng ẩm ngay sau đó.",
+            "Bạn có thể thử các sản phẩm chứa đường nâu, muối biển, hoặc hạt cà phê để tẩy tế bào chết tự nhiên.",
+            "Tẩy tế bào chết trước khi cạo lông giúp giảm tình trạng lông mọc ngược và giúp da mịn hơn.",
+            "Hãy massage nhẹ nhàng khi tẩy tế bào chết để tránh làm tổn thương da.",
+            "Không nên tẩy tế bào chết khi da đang bị kích ứng hoặc có vết thương hở."
+        ]
+    },
+    {
+        "tag": "chong_nang_body",
+        "patterns": [
+            "Kem chống nắng body loại nào tốt?",
+            "Tôi có cần dùng kem chống nắng cho cơ thể không?",
+            "SPF bao nhiêu là đủ để bảo vệ da body?",
+            "Có kem chống nắng body nào không gây nhờn rít không?",
+            "Kem chống nắng body có cần thoa lại không?",
+            "Nên dùng kem chống nắng vật lý hay hóa học cho body?",
+            "Cách thoa kem chống nắng body đúng cách?",
+            "Dùng kem chống nắng body có giúp giảm thâm không?",
+            "Có kem chống nắng nào giúp dưỡng ẩm không?",
+            "Có cần tẩy trang khi dùng kem chống nắng body không?"
+        ],
+        "responses": [
+            "Bạn nên chọn kem chống nắng body có SPF từ 30 trở lên để bảo vệ da khỏi tia UV.",
+            "Kem chống nắng body giúp ngăn ngừa lão hóa và bảo vệ da khỏi tác hại của ánh nắng mặt trời.",
+            "Nếu bạn không thích cảm giác nhờn rít, hãy chọn kem chống nắng dạng gel hoặc xịt khô nhanh.",
+            "Bạn nên thoa lại kem chống nắng sau mỗi 2-3 giờ, đặc biệt khi ra nhiều mồ hôi hoặc đi bơi.",
+            "Kem chống nắng vật lý dịu nhẹ cho da nhạy cảm, còn kem hóa học thẩm thấu nhanh hơn.",
+            "Thoa kem chống nắng trước khi ra ngoài 20-30 phút và đừng quên vùng cổ, tay, chân.",
+            "Nếu da bạn bị thâm, hãy chọn kem chống nắng có chứa Niacinamide hoặc Vitamin C.",
+            "Có nhiều loại kem chống nắng body tích hợp dưỡng ẩm, phù hợp cho da khô.",
+            "Bạn nên tẩy trang hoặc tắm sạch vào cuối ngày để loại bỏ kem chống nắng hoàn toàn.",
+            "Nếu hoạt động ngoài trời nhiều, bạn nên chọn kem chống nắng có khả năng chống nước."
+        ]
+    },
+    {
+        "tag": "cach_tam_dung",
+        "patterns": [
+            "Tắm như thế nào là đúng cách?",
+            "Có nên tắm nước nóng không?",
+            "Tắm nước lạnh có tốt không?",
+            "Tắm nhiều lần trong ngày có hại không?",
+            "Nên tắm vào buổi sáng hay buổi tối?",
+            "Dùng sữa tắm hàng ngày có tốt không?",
+            "Cách tắm giúp da không bị khô?",
+            "Tắm nhanh hay tắm lâu tốt hơn?",
+            "Có nên dùng xà phòng bánh thay sữa tắm không?",
+            "Nhiệt độ nước tắm bao nhiêu là tốt?"
+        ],
+        "responses": [
+            "Bạn nên tắm bằng nước ấm, không quá nóng để tránh làm khô da.",
+            "Tắm nước lạnh giúp se khít lỗ chân lông và tăng cường tuần hoàn máu.",
+            "Tắm quá nhiều lần trong ngày có thể làm mất lớp dầu tự nhiên bảo vệ da.",
+            "Buổi tối là thời điểm tốt nhất để tắm giúp thư giãn và làm sạch bụi bẩn sau một ngày dài.",
+            "Nên chọn sữa tắm dịu nhẹ, không chứa xà phòng quá mạnh để tránh khô da.",
+            "Không nên tắm quá lâu, chỉ từ 10-15 phút để bảo vệ độ ẩm tự nhiên của da.",
+            "Nếu da bạn khô, hãy dùng sữa tắm có thành phần dưỡng ẩm như dầu dừa, bơ hạt mỡ.",
+            "Xà phòng bánh thường có độ pH cao hơn sữa tắm, có thể gây khô da nếu dùng thường xuyên.",
+            "Nhiệt độ nước lý tưởng để tắm là khoảng 37-40 độ C."
+        ]
+    },
+    {
+        "tag": "tay_te_bao_chet_body",
+        "patterns": [
+            "Tẩy tế bào chết body có cần thiết không?",
+            "Bao lâu nên tẩy tế bào chết body một lần?",
+            "Tôi nên dùng tẩy tế bào chết vật lý hay hóa học?",
+            "Loại tẩy tế bào chết body nào tốt nhất?",
+            "Có tẩy tế bào chết nào dành cho da nhạy cảm không?",
+            "Tẩy tế bào chết giúp da trắng hơn không?",
+            "Cách sử dụng tẩy tế bào chết đúng cách?",
+            "Da khô có nên tẩy tế bào chết thường xuyên không?",
+            "Thành phần nào tốt trong tẩy tế bào chết body?",
+            "Có nên tẩy tế bào chết trước khi cạo lông không?"
+        ],
+        "responses": [
+            "Tẩy tế bào chết body giúp loại bỏ lớp da chết, giúp da sáng và mịn hơn.",
+            "Bạn nên tẩy tế bào chết body 1-2 lần/tuần để tránh làm tổn thương da.",
+            "Da nhạy cảm nên chọn tẩy tế bào chết hóa học nhẹ nhàng như AHA/BHA thay vì dạng hạt.",
+            "Tẩy tế bào chết chứa AHA giúp làm sáng da, còn BHA giúp trị mụn lưng và viêm nang lông.",
+            "Nên dùng sản phẩm chứa dầu dưỡng như dầu dừa, dầu Jojoba để giữ ẩm sau khi tẩy tế bào chết.",
+            "Nếu da bạn khô, hãy tẩy tế bào chết 1 lần/tuần và bổ sung kem dưỡng ẩm ngay sau đó.",
+            "Bạn có thể thử các sản phẩm chứa đường nâu, muối biển, hoặc hạt cà phê để tẩy tế bào chết tự nhiên.",
+            "Tẩy tế bào chết trước khi cạo lông giúp giảm tình trạng lông mọc ngược và giúp da mịn hơn.",
+            "Hãy massage nhẹ nhàng khi tẩy tế bào chết để tránh làm tổn thương da.",
+            "Không nên tẩy tế bào chết khi da đang bị kích ứng hoặc có vết thương hở."
+        ]
+    },
+    {
+        "tag": "duong_da_toan_than",
+        "patterns": [
+            "Làm sao để dưỡng da body hiệu quả?",
+            "Có nên dùng kem dưỡng ẩm body mỗi ngày không?",
+            "Dưỡng da body bằng gì tốt nhất?",
+            "Nên dưỡng ẩm body vào lúc nào?",
+            "Kem dưỡng da body nào tốt cho da khô?",
+            "Có cách dưỡng trắng da body an toàn không?",
+            "Sử dụng dầu dưỡng da có hiệu quả không?",
+            "Nên bôi kem dưỡng body khi da khô hay ẩm?",
+            "Kem dưỡng body có cần chống nắng không?",
+            "Có nên đắp mặt nạ cho body không?"
+        ],
+        "responses": [
+            "Bạn nên dưỡng da body mỗi ngày để giữ cho da luôn mềm mại và khỏe mạnh.",
+            "Dưỡng ẩm body tốt nhất là ngay sau khi tắm khi da còn ẩm để kem thẩm thấu tốt hơn.",
+            "Bạn có thể dùng kem dưỡng chứa bơ hạt mỡ, dầu dừa hoặc dầu Jojoba để dưỡng da sâu.",
+            "Nếu da khô, hãy chọn kem dưỡng thể có thành phần cấp nước như Hyaluronic Acid hoặc Glycerin.",
+            "Dưỡng trắng da body nên sử dụng sản phẩm có Vitamin C, Niacinamide hoặc Arbutin.",
+            "Dầu dưỡng như dầu hạnh nhân, dầu Jojoba giúp khóa ẩm và làm mềm da rất hiệu quả.",
+            "Thoa kem dưỡng khi da còn hơi ẩm giúp hấp thụ dưỡng chất tốt hơn.",
+            "Nếu bạn ra ngoài ban ngày, hãy chọn kem dưỡng có SPF để bảo vệ da khỏi tia UV.",
+            "Mặt nạ body từ thiên nhiên như sữa chua, bột yến mạch hoặc mật ong giúp da mịn màng hơn.",
+            "Bạn có thể kết hợp massage nhẹ nhàng khi dưỡng da để tăng cường tuần hoàn máu."
+        ]
+    },
+    {
+        "tag": "toc_rung",
+        "patterns": [
+            "Làm sao để giảm rụng tóc?",
+            "Tóc rụng nhiều thì nên làm gì?",
+            "Dùng dầu gội gì để giảm rụng tóc?",
+            "Có cách nào ngăn tóc rụng không?",
+            "Tóc rụng có phải do thiếu chất không?",
+            "Thực phẩm nào giúp giảm rụng tóc?"
+        ],
+        "responses": [
+            "Rụng tóc có thể do thiếu dưỡng chất, bạn nên bổ sung biotin, kẽm và vitamin B.",
+            "Hạn chế sử dụng hóa chất và nhiệt độ cao để tránh làm tóc yếu hơn.",
+            "Dùng dầu gội chứa thành phần như biotin, dầu dừa hoặc tinh dầu bưởi để kích thích mọc tóc.",
+            "Massage da đầu nhẹ nhàng giúp kích thích tuần hoàn máu, giảm rụng tóc.",
+            "Hạn chế căng thẳng và ăn uống đủ chất giúp tóc chắc khỏe hơn."
+        ]
+    },
+    {
+        "tag": "toc_xo_roi",
+        "patterns": [
+            "Làm sao để tóc bớt xơ rối?",
+            "Có dầu gội nào giúp tóc mượt hơn không?",
+            "Cách dưỡng tóc mềm mượt?",
+            "Tóc tôi hay rối, phải làm sao?",
+            "Tại sao tóc lại bị xơ rối?"
+        ],
+        "responses": [
+            "Bạn nên dùng dầu xả hoặc kem ủ tóc để giúp tóc mềm mượt hơn.",
+            "Hạn chế chải tóc khi ướt để tránh tóc bị tổn thương và gãy rụng.",
+            "Sử dụng dầu dưỡng như dầu argan, dầu dừa giúp tóc mềm hơn.",
+            "Không nên gội đầu bằng nước quá nóng vì dễ làm tóc mất độ ẩm tự nhiên.",
+            "Dùng lược răng thưa để chải tóc giúp giảm tình trạng rối tóc."
+        ]
+    },
+    {
+        "tag": "toc_gau",
+        "patterns": [
+            "Tóc gàu thì nên dùng dầu gội nào?",
+            "Làm sao để trị gàu hiệu quả?",
+            "Gàu có phải do da đầu bị khô không?",
+            "Tóc có gàu thì làm sao để hết?",
+            "Có cách trị gàu tại nhà không?"
+        ],
+        "responses": [
+            "Bạn nên chọn dầu gội chứa hoạt chất trị gàu như Ketoconazole, Selenium Sulfide hoặc Zinc Pyrithione.",
+            "Hạn chế gội đầu quá thường xuyên để tránh làm khô da đầu, gây kích ứng và sinh gàu.",
+            "Có thể dùng giấm táo hoặc dầu tràm trà để trị gàu tự nhiên.",
+            "Tránh dùng các sản phẩm có nhiều hóa chất vì có thể làm da đầu kích ứng, gây gàu nhiều hơn.",
+            "Massage da đầu khi gội giúp loại bỏ tế bào chết và hạn chế gàu."
+        ]
+    },
+    {
+        "tag": "toc_bet_dau",
+        "patterns": [
+            "Làm sao để tóc không bị bết dầu?",
+            "Có cách nào giúp tóc lâu bết hơn không?",
+            "Tại sao tóc lại nhanh bết?",
+            "Nên dùng dầu gội gì cho tóc dầu?",
+            "Tóc tôi hay bị nhờn, phải làm sao?"
+        ],
+        "responses": [
+            "Bạn nên gội đầu bằng nước mát để hạn chế kích thích tuyến bã nhờn.",
+            "Chọn dầu gội có chứa than hoạt tính, trà xanh hoặc bạc hà giúp kiểm soát dầu tốt hơn.",
+            "Không nên chạm tay vào tóc quá nhiều vì có thể làm tóc nhanh bết hơn.",
+            "Dùng dầu gội khô khi cần thiết để làm sạch tóc mà không cần gội quá thường xuyên.",
+            "Tránh gội đầu quá nhiều lần trong ngày vì có thể kích thích da đầu tiết dầu nhiều hơn."
+        ]
+    },
+    {
+        "tag": "toc_nhuom",
+        "patterns": [
+            "Làm sao để chăm sóc tóc nhuộm?",
+            "Dầu gội nào tốt cho tóc nhuộm?",
+            "Tóc nhuộm có cần dùng dầu xả không?",
+            "Cách giữ màu tóc nhuộm lâu phai?",
+            "Tóc nhuộm có cần dưỡng không?"
+        ],
+        "responses": [
+            "Bạn nên dùng dầu gội không chứa sulfate để bảo vệ màu tóc nhuộm.",
+            "Hạn chế gội đầu quá thường xuyên để tránh làm phai màu tóc.",
+            "Dùng kem ủ hoặc dầu dưỡng giúp tóc nhuộm không bị khô và xơ.",
+            "Tránh tiếp xúc nhiều với ánh nắng mặt trời vì tia UV có thể làm màu tóc nhanh phai.",
+            "Dùng nước mát thay vì nước nóng khi gội để giữ màu tóc lâu hơn."
+        ]
+    },
+    {
+        "tag": "toc_yeu_de_gay",
+        "patterns": [
+            "Tóc dễ gãy thì nên làm sao?",
+            "Cách giúp tóc chắc khỏe hơn?",
+            "Có loại dầu gội nào giúp tóc ít gãy rụng không?",
+            "Tóc yếu có nên nhuộm không?",
+            "Tại sao tóc tôi hay gãy?"
+        ],
+        "responses": [
+            "Bạn nên bổ sung protein và biotin để giúp tóc chắc khỏe hơn.",
+            "Tránh buộc tóc quá chặt vì có thể làm tóc yếu hơn.",
+            "Dùng dầu dưỡng tóc chứa keratin để phục hồi tóc hư tổn.",
+            "Hạn chế sấy tóc ở nhiệt độ cao để tránh làm tóc khô và dễ gãy hơn.",
+            "Dùng lược răng thưa để giảm tác động lên tóc khi chải."
+        ]
+    },
+    {
+        "tag": "biotin",
+        "patterns": [
+            "Biotin có tác dụng gì với tóc?",
+            "Dùng biotin giúp tóc mọc nhanh hơn không?",
+            "Tôi nên bổ sung biotin như thế nào?",
+            "Dầu gội có chứa biotin có tốt không?",
+            "Có thực phẩm nào giàu biotin không?"
+        ],
+        "responses": [
+            "Biotin giúp kích thích mọc tóc, giúp tóc dày và khỏe hơn.",
+            "Bạn có thể bổ sung biotin qua thực phẩm như trứng, hạnh nhân, cá hồi, hoặc uống thực phẩm chức năng.",
+            "Dầu gội chứa biotin giúp giảm rụng tóc và cải thiện độ chắc khỏe.",
+            "Thiếu biotin có thể gây tóc yếu, dễ gãy rụng.",
+            "Nên kiên trì sử dụng biotin trong ít nhất 3 tháng để thấy hiệu quả."
+        ]
+    },
+    {
+        "tag": "keratin",
+        "patterns": [
+            "Keratin có tác dụng gì cho tóc?",
+            "Dầu gội chứa keratin có tốt không?",
+            "Tóc hư tổn có nên dùng keratin không?",
+            "Có nên làm tóc keratin không?",
+            "Keratin giúp phục hồi tóc không?"
+        ],
+        "responses": [
+            "Keratin là một loại protein giúp phục hồi tóc hư tổn, làm tóc mượt hơn.",
+            "Dầu gội chứa keratin giúp tóc chắc khỏe và giảm xơ rối.",
+            "Nếu tóc bạn bị hư tổn do hóa chất, keratin có thể giúp phục hồi.",
+            "Làm keratin có thể giúp tóc suôn mượt hơn nhưng cần chăm sóc đặc biệt để duy trì hiệu quả.",
+            "Hạn chế sử dụng nhiệt và hóa chất mạnh nếu bạn muốn giữ lớp keratin lâu hơn trên tóc."
+        ]
+    },
+    {
+        "tag": "argan_oil",
+        "patterns": [
+            "Dầu Argan có tác dụng gì với tóc?",
+            "Dầu gội chứa Argan Oil có tốt không?",
+            "Có nên dùng dầu Argan dưỡng tóc không?",
+            "Argan Oil giúp tóc bớt khô xơ không?",
+            "Tôi nên sử dụng dầu Argan như thế nào?"
+        ],
+        "responses": [
+            "Dầu Argan giúp dưỡng ẩm tóc, làm tóc mềm mượt và giảm xơ rối.",
+            "Dầu gội chứa Argan Oil rất tốt cho tóc khô và hư tổn.",
+            "Bạn có thể thoa dầu Argan lên tóc trước khi tạo kiểu để bảo vệ tóc khỏi nhiệt.",
+            "Massage dầu Argan lên da đầu giúp kích thích mọc tóc và nuôi dưỡng chân tóc.",
+            "Dầu Argan phù hợp với tóc khô, tóc uốn hoặc nhuộm."
+        ]
+    },
+    {
+        "tag": "collagen",
+        "patterns": [
+            "Collagen có giúp tóc khỏe hơn không?",
+            "Tôi có nên bổ sung collagen cho tóc không?",
+            "Dầu gội chứa collagen có tác dụng gì?",
+            "Tóc mỏng có nên dùng collagen không?",
+            "Collagen giúp mọc tóc không?"
+        ],
+        "responses": [
+            "Collagen giúp tăng cường độ đàn hồi của tóc, làm tóc khỏe và dày hơn.",
+            "Bổ sung collagen giúp tóc chắc khỏe từ bên trong, giảm gãy rụng.",
+            "Dầu gội chứa collagen giúp phục hồi tóc hư tổn, giảm khô xơ.",
+            "Nếu bạn có tóc mỏng, collagen có thể giúp cải thiện độ dày và chắc khỏe.",
+            "Collagen kết hợp với vitamin C giúp cơ thể hấp thụ tốt hơn."
+        ]
+    },
+    {
+        "tag": "dau_goi",
+        "patterns": [
+            "Dầu gội nào tốt cho tóc khô?",
+            "Nên dùng dầu gội gì cho tóc dầu?",
+            "Dầu gội dành cho tóc nhuộm là loại nào?",
+            "Có dầu gội nào giúp trị gàu không?",
+            "Tôi có thể dùng dầu gội sulfate-free không?",
+            "Dầu gội nào giúp kích thích mọc tóc?"
+        ],
+        "responses": [
+            "Bạn nên chọn dầu gội chứa thành phần dưỡng ẩm như Argan Oil, Keratin hoặc Biotin.",
+            "Nếu tóc bạn bị dầu, hãy thử dầu gội có chiết xuất từ trà xanh hoặc bạc hà để kiểm soát bã nhờn.",
+            "Dầu gội dành cho tóc nhuộm nên không chứa sulfate để giữ màu lâu hơn.",
+            "Dầu gội trị gàu nên chứa thành phần như Ketoconazole hoặc Zinc Pyrithione.",
+            "Dầu gội không chứa sulfate sẽ ít làm khô tóc hơn, phù hợp cho tóc yếu và dễ gãy rụng.",
+            "Nếu muốn kích thích mọc tóc, hãy thử dầu gội có Biotin hoặc caffeine."
+        ]
+    },
+    {
+        "tag": "dau_xa",
+        "patterns": [
+            "Dầu xả nào tốt cho tóc?",
+            "Có nên dùng dầu xả mỗi ngày không?",
+            "Dầu xả có tác dụng gì?",
+            "Tóc yếu có cần dùng dầu xả không?",
+            "Nên dùng dầu xả trước hay sau khi gội?"
+        ],
+        "responses": [
+            "Dầu xả giúp tóc mềm mượt, dễ chải và giảm khô xơ.",
+            "Bạn có thể dùng dầu xả hàng ngày nhưng chỉ nên thoa phần ngọn tóc.",
+            "Dầu xả chứa Keratin hoặc Collagen giúp phục hồi tóc hư tổn.",
+            "Nếu tóc yếu và dễ gãy, hãy chọn dầu xả chứa Biotin để giúp tóc chắc khỏe hơn.",
+            "Dầu xả nên được dùng sau khi gội đầu để giữ ẩm cho tóc."
+        ]
+    },
+    {
+        "tag": "tinh_dau_duong_toc",
+        "patterns": [
+            "Dùng tinh dầu dưỡng tóc có tốt không?",
+            "Tinh dầu dưỡng tóc có tác dụng gì?",
+            "Tôi nên dùng loại tinh dầu dưỡng tóc nào?",
+            "Có nên thoa tinh dầu lên da đầu không?",
+            "Làm sao để dùng tinh dầu dưỡng tóc đúng cách?"
+        ],
+        "responses": [
+            "Tinh dầu dưỡng tóc giúp cấp ẩm, giảm xơ rối và bảo vệ tóc khỏi nhiệt.",
+            "Bạn có thể sử dụng tinh dầu dưỡng tóc để làm tóc bóng mượt hơn.",
+            "Tùy vào loại tóc, bạn có thể chọn tinh dầu Argan, Jojoba hoặc Dừa để dưỡng tóc.",
+            "Không nên thoa quá nhiều tinh dầu lên da đầu vì có thể gây bết tóc.",
+            "Bạn nên thoa một lượng nhỏ tinh dầu lên phần đuôi tóc sau khi gội để giữ độ ẩm."
+        ]
+    },
+    {
+        "tag": "mat_na_toc",
+        "patterns": [
+            "Mặt nạ tóc có tác dụng gì?",
+            "Có nên dùng mặt nạ tóc hàng ngày không?",
+            "Mặt nạ tóc nào giúp phục hồi tóc hư tổn?",
+            "Tôi có thể tự làm mặt nạ tóc tại nhà không?",
+            "Cách sử dụng mặt nạ tóc đúng cách?"
+        ],
+        "responses": [
+            "Mặt nạ tóc giúp cung cấp độ ẩm sâu và phục hồi tóc hư tổn.",
+            "Bạn chỉ nên dùng mặt nạ tóc 1-2 lần/tuần để tránh làm tóc bị bết dính.",
+            "Mặt nạ chứa Keratin, Biotin hoặc Collagen giúp phục hồi tóc yếu và dễ gãy.",
+            "Bạn có thể tự làm mặt nạ tóc bằng dầu dừa, mật ong hoặc bơ.",
+            "Sau khi gội đầu, thoa mặt nạ tóc lên phần thân và đuôi tóc, để khoảng 10-15 phút rồi xả sạch."
+        ]
+    },
+    {
+        "tag": "tan_suat_goi_dau",
+        "patterns": [
+            "Tôi nên gội đầu bao nhiêu lần một tuần?",
+            "Có nên gội đầu hàng ngày không?",
+            "Tóc dầu nên gội bao nhiêu lần?",
+            "Tóc khô có cần gội thường xuyên không?",
+            "Gội đầu quá nhiều có hại không?"
+        ],
+        "responses": [
+            "Bạn nên gội đầu từ 2-3 lần/tuần để giữ tóc sạch mà không làm mất độ ẩm tự nhiên.",
+            "Gội đầu hàng ngày có thể làm tóc khô và dễ gãy, trừ khi bạn có tóc dầu.",
+            "Tóc dầu có thể cần gội 3-4 lần/tuần để kiểm soát bã nhờn.",
+            "Tóc khô nên gội 1-2 lần/tuần và dùng thêm dầu dưỡng để giữ ẩm.",
+            "Gội đầu quá nhiều có thể làm mất dầu tự nhiên trên tóc, khiến tóc khô và dễ gãy rụng."
+        ]
+    },
+    {
+        "tag": "cach_dung_dau_duong",
+        "patterns": [
+            "Làm sao để dùng dầu dưỡng tóc đúng cách?",
+            "Có nên bôi dầu dưỡng lên da đầu không?",
+            "Dùng dầu dưỡng tóc trước hay sau khi gội?",
+            "Tôi nên dùng bao nhiêu dầu dưỡng tóc?",
+            "Dùng dầu dưỡng tóc mỗi ngày có tốt không?"
+        ],
+        "responses": [
+            "Bạn nên thoa dầu dưỡng lên phần ngọn tóc, tránh thoa lên da đầu để không bị bết tóc.",
+            "Không nên bôi dầu dưỡng trực tiếp lên da đầu nếu tóc bạn dễ bị dầu.",
+            "Dầu dưỡng tóc nên được dùng sau khi gội đầu, khi tóc còn hơi ẩm để giữ độ ẩm tốt nhất.",
+            "Chỉ cần 2-3 giọt dầu dưỡng là đủ để tóc bóng mượt mà không gây nặng tóc.",
+            "Dùng dầu dưỡng tóc mỗi ngày có thể giúp tóc mềm mượt nhưng không nên lạm dụng để tránh làm tóc bết."
+        ]
+    },
+    {
+        "tag": "bao_ve_toc_tao_kieu",
+        "patterns": [
+            "Làm sao để bảo vệ tóc khi tạo kiểu bằng nhiệt?",
+            "Tôi có cần dùng xịt chống nhiệt trước khi uốn tóc không?",
+            "Sử dụng máy sấy tóc có làm hư tóc không?",
+            "Có cách nào để hạn chế tóc hư tổn khi duỗi tóc không?",
+            "Tôi nên làm gì sau khi dùng máy tạo kiểu?"
+        ],
+        "responses": [
+            "Bạn nên sử dụng xịt chống nhiệt trước khi dùng máy tạo kiểu để bảo vệ tóc khỏi nhiệt độ cao.",
+            "Luôn dùng xịt chống nhiệt hoặc serum dưỡng trước khi uốn hoặc duỗi tóc để giảm hư tổn.",
+            "Sấy tóc có thể làm khô tóc, hãy dùng nhiệt độ thấp và giữ khoảng cách để bảo vệ tóc.",
+            "Để hạn chế tóc hư tổn khi duỗi, hãy sử dụng dầu dưỡng trước và sau khi tạo kiểu.",
+            "Sau khi dùng máy tạo kiểu, bạn nên thoa dầu dưỡng hoặc serum để giúp tóc phục hồi."
+        ]
+    },
+    {
+        "tag": "mun",
+        "patterns": [
+            "Làm sao để trị mụn hiệu quả?",
+            "Da bị mụn nên dùng sản phẩm gì?",
+            "Sản phẩm nào giúp giảm mụn nhanh?",
+            "Cách chăm sóc da mụn đúng cách?",
+            "Mụn ẩn có cách nào trị dứt điểm không?"
+        ],
+        "responses": [
+            "Bạn nên dùng sữa rửa mặt dịu nhẹ, tẩy tế bào chết hóa học và sử dụng BHA hoặc salicylic acid để kiểm soát mụn.",
+            "Hãy sử dụng kem trị mụn chứa benzoyl peroxide hoặc tea tree oil.",
+            "Serum chứa niacinamide và kẽm có thể giúp giảm viêm mụn và kiểm soát dầu.",
+            "Luôn làm sạch da kỹ lưỡng, không chạm tay lên mặt và dưỡng ẩm nhẹ nhàng để tránh kích ứng.",
+            "Mụn ẩn cần được đẩy lên bằng AHA/BHA và kết hợp xông hơi để làm sạch lỗ chân lông."
+        ]
+    },
+    {
+        "tag": "tham",
+        "patterns": [
+            "Cách trị thâm mụn nhanh nhất?",
+            "Sản phẩm nào giúp làm mờ vết thâm?",
+            "Da bị thâm sạm nên dùng gì?",
+            "Serum trị thâm mụn tốt nhất?",
+            "Làm sao để da sáng đều màu hơn?"
+        ],
+        "responses": [
+            "Bạn có thể dùng serum vitamin C, niacinamide hoặc arbutin để làm sáng da và mờ thâm.",
+            "Dùng kem dưỡng có chứa alpha arbutin hoặc tranexamic acid giúp giảm thâm hiệu quả.",
+            "Luôn dùng kem chống nắng SPF 50+ để ngăn thâm mụn quay lại.",
+            "Tẩy tế bào chết hóa học với AHA giúp làm mờ thâm nhanh hơn.",
+            "Kết hợp serum vitamin C và kem dưỡng sáng da để có hiệu quả tốt nhất."
+        ]
+    },
+    {
+        "tag": "nam",
+        "patterns": [
+            "Cách trị nám da hiệu quả?",
+            "Sản phẩm nào giúp giảm nám nhanh?",
+            "Nám da có thể hết hoàn toàn không?",
+            "Tôi có nên dùng retinol để trị nám?",
+            "Làm sao để ngăn ngừa nám quay lại?"
+        ],
+        "responses": [
+            "Bạn có thể dùng serum vitamin C, kojic acid hoặc arbutin để giảm nám.",
+            "Dùng kem chống nắng phổ rộng mỗi ngày để ngăn nám trở nên nghiêm trọng hơn.",
+            "Retinol giúp cải thiện nám nhưng cần sử dụng đúng cách để tránh kích ứng.",
+            "Nám da có thể giảm nhưng cần duy trì chăm sóc da đều đặn.",
+            "Hạn chế tiếp xúc với ánh nắng và bổ sung thực phẩm giàu vitamin C để bảo vệ da."
+        ]
+    },
+    {
+        "tag": "lao_hoa",
+        "patterns": [
+            "Da lão hóa nên dùng sản phẩm gì?",
+            "Làm sao để chống lão hóa da?",
+            "Sản phẩm chống nhăn da tốt nhất?",
+            "Có nên dùng retinol để trẻ hóa da không?",
+            "Tôi nên dùng kem dưỡng gì để ngăn nếp nhăn?"
+        ],
+        "responses": [
+            "Bạn có thể sử dụng serum chứa retinol, peptide và vitamin C để chống lão hóa.",
+            "Luôn dưỡng ẩm và dùng kem chống nắng để bảo vệ da khỏi lão hóa sớm.",
+            "Kem dưỡng có chứa collagen và hyaluronic acid giúp giữ da căng mịn.",
+            "Retinol giúp kích thích sản sinh collagen, làm mờ nếp nhăn hiệu quả.",
+            "Chế độ ăn uống lành mạnh và uống đủ nước cũng giúp giảm dấu hiệu lão hóa."
+        ]
+    },
+    {
+        "tag": "kich_ung",
+        "patterns": [
+            "Da tôi bị kích ứng, phải làm sao?",
+            "Sản phẩm nào phù hợp với da nhạy cảm?",
+            "Da bị đỏ và rát, có nên tiếp tục dùng mỹ phẩm không?",
+            "Cách phục hồi da bị kích ứng?",
+            "Tôi có nên dùng BHA nếu da nhạy cảm?"
+        ],
+        "responses": [
+            "Bạn nên ngừng sử dụng sản phẩm gây kích ứng và dùng kem dưỡng phục hồi da chứa ceramide.",
+            "Sử dụng sản phẩm có thành phần lành tính như centella asiatica (rau má) hoặc panthenol.",
+            "Tránh dùng sản phẩm chứa cồn, hương liệu hoặc chất tẩy rửa mạnh.",
+            "Bổ sung kem dưỡng ẩm có thành phần làm dịu như allantoin hoặc niacinamide.",
+            "Nếu da quá nhạy cảm, hạn chế sử dụng BHA mà thay vào đó dùng PHA để nhẹ nhàng hơn."
+        ]
+    },
+    {
+        "tag": "lo_chan_long_to",
+        "patterns": [
+            "Làm sao để thu nhỏ lỗ chân lông?",
+            "Sản phẩm nào giúp se khít lỗ chân lông?",
+            "Lỗ chân lông to nên dùng gì?",
+            "Cách chăm sóc da để giảm lỗ chân lông to?",
+            "Tôi có thể trị lỗ chân lông to bằng gì?"
+        ],
+        "responses": [
+            "Bạn nên sử dụng BHA hoặc niacinamide để làm sạch và thu nhỏ lỗ chân lông.",
+            "Dùng toner có chứa AHA giúp loại bỏ bã nhờn và làm mịn da.",
+            "Luôn làm sạch da kỹ lưỡng để tránh tắc nghẽn lỗ chân lông.",
+            "Mặt nạ đất sét giúp hút dầu thừa và cải thiện kích thước lỗ chân lông.",
+            "Tránh makeup quá dày vì có thể làm lỗ chân lông bị bí và to hơn."
+        ]
+    },
+    {
+        "tag": "da_khong_deu_mau",
+        "patterns": [
+            "Làm sao để da sáng đều màu?",
+            "Sản phẩm nào giúp làm đều màu da?",
+            "Tôi có thể dùng vitamin C để làm sáng da không?",
+            "Da không đều màu nên dùng gì?",
+            "Cách chăm sóc da để giảm tình trạng da xỉn màu?"
+        ],
+        "responses": [
+            "Bạn nên dùng serum vitamin C kết hợp với niacinamide để làm đều màu da.",
+            "Dùng kem dưỡng có chứa arbutin hoặc tranexamic acid để giúp da sáng hơn.",
+            "Tẩy tế bào chết 2-3 lần/tuần giúp da hấp thụ dưỡng chất tốt hơn.",
+            "Sử dụng kem chống nắng hàng ngày để ngăn ngừa tình trạng da xỉn màu.",
+            "Bổ sung thực phẩm giàu vitamin A và E để giúp da khỏe mạnh từ bên trong."
+        ]
+    },
+    {
+        "tag": "da_dau",
+        "patterns": [
+            "Da dầu nên dùng sản phẩm gì?",
+            "Làm sao để kiểm soát dầu trên da?",
+            "Sữa rửa mặt nào phù hợp với da dầu?",
+            "Da dầu có nên dùng kem dưỡng ẩm không?",
+            "Cách chăm sóc da dầu hiệu quả?"
+        ],
+        "responses": [
+            "Bạn nên dùng sữa rửa mặt chứa BHA hoặc đất sét để kiểm soát dầu nhờn.",
+            "Toner có niacinamide hoặc witch hazel giúp se khít lỗ chân lông và giảm dầu.",
+            "Kem dưỡng dạng gel, chứa hyaluronic acid giúp cấp ẩm nhẹ nhàng mà không gây bí da.",
+            "Tránh rửa mặt quá nhiều lần trong ngày vì có thể khiến da tiết dầu nhiều hơn.",
+            "Dùng giấy thấm dầu khi cần và luôn tẩy trang kỹ lưỡng để tránh bít tắc lỗ chân lông."
+        ]
+    },
+    {
+        "tag": "da_hon_hop",
+        "patterns": [
+            "Da hỗn hợp nên dùng mỹ phẩm gì?",
+            "Sản phẩm nào phù hợp với da hỗn hợp?",
+            "Da hỗn hợp thiên dầu có nên dùng kem dưỡng ẩm không?",
+            "Cách cân bằng da hỗn hợp đúng cách?",
+            "Tôi có thể dùng retinol cho da hỗn hợp không?"
+        ],
+        "responses": [
+            "Bạn nên dùng sữa rửa mặt dịu nhẹ để không làm khô vùng da hai bên má.",
+            "Toner chứa niacinamide giúp kiểm soát dầu vùng chữ T và dưỡng ẩm vùng da khô.",
+            "Kem dưỡng dạng gel vào ban ngày và dạng cream vào ban đêm giúp cân bằng da.",
+            "Retinol có thể dùng cho da hỗn hợp nhưng nên bắt đầu với tần suất thấp để tránh kích ứng.",
+            "Dùng mặt nạ đất sét cho vùng da dầu và mặt nạ dưỡng ẩm cho vùng da khô giúp da đều hơn."
+        ]
+    },
+    {
+        "tag": "da_nhay_cam",
+        "patterns": [
+            "Da nhạy cảm nên dùng mỹ phẩm nào?",
+            "Sản phẩm nào an toàn cho da nhạy cảm?",
+            "Làm sao để chăm sóc da nhạy cảm?",
+            "Da nhạy cảm có nên dùng retinol không?",
+            "Tôi bị kích ứng mỹ phẩm, nên làm gì?"
+        ],
+        "responses": [
+            "Bạn nên chọn sản phẩm không chứa cồn, hương liệu và có thành phần làm dịu như rau má, ceramide.",
+            "Sữa rửa mặt dạng gel dịu nhẹ, không chứa sulfate sẽ phù hợp với da nhạy cảm.",
+            "Dùng kem dưỡng có panthenol và allantoin giúp phục hồi da nhanh chóng.",
+            "Nếu muốn dùng retinol, hãy bắt đầu với nồng độ thấp và cách ngày để da thích nghi.",
+            "Khi bị kích ứng, hãy ngừng tất cả sản phẩm và chỉ sử dụng kem dưỡng phục hồi để làm dịu da."
+        ]
+    },
+    {
+        "tag": "sua_rua_mat",
+        "patterns": [
+            "Sữa rửa mặt nào tốt cho da dầu?",
+            "Tôi nên chọn sữa rửa mặt cho da nhạy cảm thế nào?",
+            "Sữa rửa mặt nào giúp trị mụn hiệu quả?",
+            "Có sữa rửa mặt dành cho da khô không?",
+            "Sản phẩm rửa mặt nào phù hợp với tôi?"
+        ],
+        "responses": [
+            "Da dầu nên chọn sữa rửa mặt có BHA hoặc đất sét để kiểm soát dầu nhờn.",
+            "Da nhạy cảm nên dùng sữa rửa mặt không chứa cồn, sulfate và hương liệu.",
+            "Nếu da bạn có mụn, hãy chọn sữa rửa mặt chứa salicylic acid hoặc tea tree oil.",
+            "Da khô cần sữa rửa mặt dạng kem hoặc có ceramide giúp cấp ẩm cho da.",
+            "Bạn nên chọn sữa rửa mặt phù hợp với loại da của mình để tránh kích ứng."
+        ]
+    },
+    {
+        "tag": "toner",
+        "patterns": [
+            "Toner nào tốt cho da dầu?",
+            "Da khô có cần dùng toner không?",
+            "Toner giúp se khít lỗ chân lông có không?",
+            "Nên chọn toner như thế nào cho da hỗn hợp?",
+            "Toner có tác dụng gì?"
+        ],
+        "responses": [
+            "Da dầu nên chọn toner có niacinamide hoặc witch hazel để kiểm soát dầu và se khít lỗ chân lông.",
+            "Da khô có thể dùng toner chứa hyaluronic acid để cấp ẩm nhẹ nhàng.",
+            "Nếu bạn muốn se khít lỗ chân lông, hãy chọn toner có AHA hoặc BHA.",
+            "Da hỗn hợp có thể sử dụng toner cân bằng pH và chứa thành phần dịu nhẹ.",
+            "Toner giúp làm sạch sâu, cân bằng pH da và chuẩn bị cho bước dưỡng tiếp theo."
+        ]
+    },
+    {
+        "tag": "serum",
+        "patterns": [
+            "Serum nào tốt cho da mụn?",
+            "Tôi có thể dùng serum vitamin C không?",
+            "Serum nào giúp dưỡng trắng da?",
+            "Da khô nên dùng loại serum nào?",
+            "Serum có thực sự cần thiết không?"
+        ],
+        "responses": [
+            "Da mụn nên chọn serum chứa BHA, niacinamide hoặc tea tree để giảm viêm.",
+            "Serum vitamin C giúp làm sáng da và giảm thâm, nhưng bạn nên dùng kèm kem chống nắng.",
+            "Nếu muốn dưỡng trắng, hãy chọn serum có vitamin C, arbutin hoặc niacinamide.",
+            "Da khô cần serum chứa hyaluronic acid hoặc squalane để cấp ẩm sâu.",
+            "Serum giúp cung cấp dưỡng chất chuyên sâu và cải thiện các vấn đề về da hiệu quả."
+        ]
+    },
+    {
+        "tag": "kem_duong",
+        "patterns": [
+            "Kem dưỡng nào tốt cho da dầu?",
+            "Da nhạy cảm nên dùng kem dưỡng nào?",
+            "Kem dưỡng nào giúp chống lão hóa?",
+            "Tôi cần kem dưỡng cấp ẩm không?",
+            "Nên dùng kem dưỡng vào thời điểm nào?"
+        ],
+        "responses": [
+            "Da dầu nên chọn kem dưỡng dạng gel, thấm nhanh và không gây bít tắc lỗ chân lông.",
+            "Da nhạy cảm nên dùng kem dưỡng có ceramide, panthenol hoặc rau má để làm dịu da.",
+            "Nếu muốn chống lão hóa, hãy dùng kem dưỡng chứa retinol hoặc peptide.",
+            "Kem dưỡng cấp ẩm giúp duy trì độ ẩm cần thiết cho da, đặc biệt là vào mùa lạnh.",
+            "Bạn nên dùng kem dưỡng vào buổi sáng và buổi tối để bảo vệ và phục hồi da."
+        ]
+    },
+    {
+        "tag": "kem_chong_nang",
+        "patterns": [
+            "Kem chống nắng nào tốt cho da dầu?",
+            "Có kem chống nắng phù hợp cho da nhạy cảm không?",
+            "Tôi nên chọn kem chống nắng vật lý hay hóa học?",
+            "SPF bao nhiêu là đủ?",
+            "Có cần thoa lại kem chống nắng không?"
+        ],
+        "responses": [
+            "Da dầu nên chọn kem chống nắng dạng gel hoặc oil-free để tránh bít tắc lỗ chân lông.",
+            "Da nhạy cảm nên dùng kem chống nắng vật lý không chứa cồn và hương liệu.",
+            "Kem chống nắng vật lý phù hợp với da nhạy cảm, còn kem chống nắng hóa học thấm nhanh hơn.",
+            "SPF từ 30-50 là phù hợp để bảo vệ da hàng ngày.",
+            "Bạn nên thoa lại kem chống nắng sau mỗi 2-3 giờ để bảo vệ da tốt nhất."
+        ]
+    },
+    {
+        "tag": "moi_kho",
+        "patterns": [
+            "Môi tôi rất khô, phải làm sao?",
+            "Cách khắc phục môi khô?",
+            "Tại sao môi tôi bị khô?",
+            "Làm gì khi môi bị bong tróc?",
+            "Có loại son dưỡng nào trị môi khô không?"
+        ],
+        "responses": [
+            "Bạn nên sử dụng son dưỡng có chứa dầu dưỡng như shea butter, sáp ong hoặc dầu dừa để giữ ẩm cho môi.",
+            "Hãy uống đủ nước và tẩy tế bào chết môi thường xuyên để loại bỏ lớp da khô bong tróc.",
+            "Tránh liếm môi vì sẽ làm môi càng khô hơn.",
+            "Sử dụng mặt nạ ngủ cho môi để dưỡng ẩm sâu vào ban đêm.",
+            "Chọn son dưỡng có SPF để bảo vệ môi khỏi tác động của ánh nắng mặt trời."
+        ]
+    },
+    {
+        "tag": "moi_tham",
+        "patterns": [
+            "Môi tôi bị thâm, có cách nào cải thiện không?",
+            "Làm sao để môi hồng tự nhiên?",
+            "Nguyên nhân khiến môi bị thâm?",
+            "Có sản phẩm nào giúp trị thâm môi?",
+            "Tôi có thể dùng mật ong để trị môi thâm không?"
+        ],
+        "responses": [
+            "Môi thâm có thể do ánh nắng mặt trời, thiếu nước hoặc sử dụng son có chứa chì.",
+            "Bạn có thể sử dụng son dưỡng có vitamin C, niacinamide hoặc arbutin để làm sáng môi.",
+            "Thường xuyên tẩy tế bào chết môi bằng hỗn hợp đường và mật ong sẽ giúp môi hồng hào hơn.",
+            "Dùng mặt nạ môi tự nhiên như dầu dừa hoặc nha đam để giảm thâm.",
+            "Hãy luôn sử dụng son dưỡng có SPF để bảo vệ môi khỏi tác động của tia UV."
+        ]
+    },
+    {
+        "tag": "moi_nut_ne",
+        "patterns": [
+            "Môi tôi bị nứt nẻ, có cách nào trị không?",
+            "Tại sao môi tôi bị rách khi trời lạnh?",
+            "Cách chữa môi bị nứt nẻ?",
+            "Nên dùng loại son nào cho môi nứt nẻ?",
+            "Làm thế nào để giữ ẩm cho môi vào mùa đông?"
+        ],
+        "responses": [
+            "Môi nứt nẻ thường do thiếu nước, thời tiết hanh khô hoặc dùng son có thành phần gây khô.",
+            "Hãy sử dụng son dưỡng có thành phần như lanolin, petrolatum hoặc ceramide để phục hồi môi.",
+            "Tránh bóc da môi vì có thể gây chảy máu và khiến môi tổn thương nhiều hơn.",
+            "Sử dụng mặt nạ ngủ môi có chứa hyaluronic acid hoặc dầu dưỡng để cấp ẩm sâu.",
+            "Hãy thoa son dưỡng thường xuyên, đặc biệt là trước khi đi ngủ để môi luôn mềm mịn."
+        ]
+    },
+    {
+        "tag": "duong_moi_truoc_khi_to_son",
+        "patterns": [
+            "Có cần dưỡng môi trước khi tô son không?",
+            "Cách giúp son lên màu đẹp hơn?",
+            "Tôi nên làm gì trước khi đánh son?",
+            "Làm sao để son không bị khô môi?",
+            "Son lì làm môi tôi khô, có cách nào khắc phục không?"
+        ],
+        "responses": [
+            "Trước khi tô son, bạn nên dưỡng môi bằng một lớp son dưỡng mỏng để giữ ẩm.",
+            "Tẩy tế bào chết môi giúp loại bỏ lớp da khô và giúp son lên màu đều hơn.",
+            "Nếu son lì khiến môi bị khô, hãy dùng son dưỡng trước khi đánh son và chọn son có thành phần dưỡng ẩm.",
+            "Dùng kem lót môi hoặc che khuyết điểm để giúp son lên màu chuẩn hơn.",
+            "Hãy uống đủ nước mỗi ngày để môi luôn căng mọng và không bị khô."
+        ]
+    },
+    {
+        "tag": "cai_thien_da",
+        "patterns": [
+            "Làm sao để cải thiện da?",
+            "Có cách nào giúp da đẹp hơn không?",
+            "Làm sao để da mịn màng và sáng hơn?"
+        ],
+        "responses": [
+            "Bạn nên sử dụng sản phẩm phù hợp với loại da của mình và duy trì quy trình skincare đều đặn.",
+            "Bổ sung vitamin C, collagen và dưỡng ẩm đầy đủ giúp da cải thiện đáng kể.",
+            "Tẩy tế bào chết và chống nắng hàng ngày giúp da sáng khỏe hơn."
+        ]
+    },
+    {
+        "tag": "chong_lao_hoa",
+        "patterns": [
+            "Làm sao để chống lão hóa?",
+            "Sản phẩm nào giúp ngăn ngừa lão hóa?",
+            "Dấu hiệu lão hóa da là gì?"
+        ],
+        "responses": [
+            "Bạn nên sử dụng retinol, vitamin C và collagen để hỗ trợ chống lão hóa.",
+            "Dùng kem chống nắng hàng ngày giúp ngăn chặn tác động của tia UV làm da lão hóa sớm.",
+            "Cung cấp đủ nước và duy trì chế độ ăn uống lành mạnh giúp làm chậm quá trình lão hóa."
+        ]
+    },
+    {
+        "tag": "bo_sung_collagen",
+        "patterns": [
+            "Tại sao cần bổ sung collagen?",
+            "Uống collagen có tác dụng gì?",
+            "Collagen giúp ích gì cho da?"
+        ],
+        "responses": [
+            "Collagen giúp da căng mịn, đàn hồi và làm chậm quá trình lão hóa.",
+            "Bổ sung collagen giúp tóc chắc khỏe và móng tay không bị giòn gãy.",
+            "Collagen còn giúp cải thiện sức khỏe xương khớp và tăng độ dẻo dai của cơ thể."
+        ]
+    },
+    {
+        "tag": "ho_tro_toc_chac_khoe",
+        "patterns": [
+            "Làm sao để tóc chắc khỏe hơn?",
+            "Dưỡng tóc như thế nào để không bị gãy rụng?",
+            "Có sản phẩm nào giúp tóc khỏe mạnh không?"
+        ],
+        "responses": [
+            "Bạn nên sử dụng dầu gội chứa biotin và keratin để giúp tóc chắc khỏe hơn.",
+            "Hạn chế tạo kiểu bằng nhiệt và bổ sung dưỡng chất cho tóc từ bên trong.",
+            "Sử dụng dầu dưỡng tóc như argan oil giúp tóc bóng mượt và giảm gãy rụng."
+        ]
+    },
+    {
+        "tag": "kem_nen",
+        "patterns": [
+            "Kem nền nào tốt?",
+            "Làm sao để chọn kem nền phù hợp?",
+            "Kem nền cho da dầu có loại nào?"
+        ],
+        "responses": [
+            "Bạn nên chọn kem nền phù hợp với loại da và có độ che phủ theo nhu cầu.",
+            "Đối với da dầu, bạn nên chọn kem nền kiềm dầu, lâu trôi.",
+            "Da khô nên dùng kem nền có thành phần dưỡng ẩm để tránh bị mốc nền."
+        ]
+    },
+    {
+        "tag": "phan_phu",
+        "patterns": [
+            "Phấn phủ có tác dụng gì?",
+            "Làm sao để phấn phủ không bị mốc?",
+            "Nên dùng phấn phủ dạng bột hay dạng nén?"
+        ],
+        "responses": [
+            "Phấn phủ giúp kiềm dầu và giữ lớp trang điểm lâu trôi hơn.",
+            "Để tránh mốc nền, bạn nên dưỡng ẩm kỹ trước khi trang điểm.",
+            "Phấn dạng bột phù hợp cho da dầu, còn phấn nén phù hợp với da khô và hỗn hợp."
+        ]
+    },
+    {
+        "tag": "son_moi",
+        "patterns": [
+            "Son môi nào lâu trôi?",
+            "Làm sao để chọn màu son phù hợp?",
+            "Có loại son nào dưỡng môi tốt không?"
+        ],
+        "responses": [
+            "Son kem lì thường có độ bám tốt hơn nhưng có thể làm khô môi.",
+            "Bạn nên chọn màu son phù hợp với tông da để tôn lên vẻ đẹp tự nhiên.",
+            "Nếu môi khô, bạn nên dùng son dưỡng trước khi tô son màu."
+        ]
+    },
+    {
+        "tag": "phan_ma",
+        "patterns": [
+            "Phấn má có tác dụng gì?",
+            "Làm sao để đánh phấn má tự nhiên?",
+            "Nên chọn phấn má dạng kem hay dạng bột?"
+        ],
+        "responses": [
+            "Phấn má giúp gương mặt trông tươi tắn và có sức sống hơn.",
+            "Bạn nên đánh phấn má nhẹ tay để có vẻ ngoài tự nhiên.",
+            "Phấn má dạng kem phù hợp cho da khô, còn dạng bột tốt hơn cho da dầu."
+        ]
+    },
+    {
+        "tag": "ke_mat",
+        "patterns": [
+            "Làm sao để kẻ mắt đẹp?",
+            "Có loại kẻ mắt nào lâu trôi không?",
+            "Nên chọn kẻ mắt dạng bút hay gel?"
+        ],
+        "responses": [
+            "Kẻ mắt dạng gel thường lâu trôi hơn nhưng khó sử dụng hơn dạng bút.",
+            "Bạn có thể dùng kẻ mắt dạng bút nước nếu muốn dễ thao tác.",
+            "Dùng chì kẻ mắt giúp tạo đường kẻ mềm mại và tự nhiên hơn."
+        ]
+    },
+    {
+        "tag": "mascara",
+        "patterns": [
+            "Mascara nào giúp mi dài hơn?",
+            "Làm sao để mascara không bị lem?",
+            "Có loại mascara nào chống nước không?"
+        ],
+        "responses": [
+            "Mascara chứa sợi tơ giúp mi trông dài hơn.",
+            "Để mascara không bị lem, bạn có thể dùng loại chống nước.",
+            "Nếu muốn tẩy trang dễ dàng, bạn nên chọn mascara thường thay vì loại waterproof."
+        ]
+    },
+    {
+        "tag": "kem_chong_nang",
+        "patterns": [
+            "Loại kem chống nắng nào tốt cho mùa hè?",
+            "Nên dùng kem chống nắng vật lý hay hóa học?",
+            "Có cần thoa lại kem chống nắng không?",
+            "Kem chống nắng nào phù hợp cho da dầu?",
+            "Tôi nên chọn SPF bao nhiêu?"
+        ],
+        "responses": [
+            "Bạn nên chọn kem chống nắng có SPF 30+ và PA+++ để bảo vệ da hiệu quả.",
+            "Da dầu nên dùng kem chống nắng dạng gel hoặc sữa để tránh bết dính.",
+            "Bạn nên thoa lại kem chống nắng sau mỗi 2-3 giờ nếu hoạt động ngoài trời.",
+            "Kem chống nắng vật lý dịu nhẹ hơn, còn hóa học có kết cấu mỏng nhẹ dễ thấm hơn.",
+            "Nếu bạn thường xuyên ra nắng, hãy chọn kem chống nắng có SPF 50+."
+        ]
+    },
+    {
+        "tag": "gel_duong_am_nhe",
+        "patterns": [
+            "Mùa hè có cần dùng kem dưỡng ẩm không?",
+            "Gel dưỡng ẩm có tác dụng gì?",
+            "Loại dưỡng ẩm nào phù hợp với mùa hè?",
+            "Có loại dưỡng ẩm nào giúp kiềm dầu không?",
+            "Tôi có thể dùng gel dưỡng ẩm thay cho kem không?"
+        ],
+        "responses": [
+            "Dù là mùa hè, da vẫn cần dưỡng ẩm để duy trì độ cân bằng.",
+            "Gel dưỡng ẩm có kết cấu nhẹ, thấm nhanh, phù hợp cho da dầu và hỗn hợp.",
+            "Bạn có thể chọn gel dưỡng ẩm có chứa Hyaluronic Acid để cấp nước nhẹ nhàng.",
+            "Một số gel dưỡng ẩm có thành phần giúp kiềm dầu và se khít lỗ chân lông.",
+            "Nếu da bạn không quá khô, gel dưỡng ẩm có thể thay thế kem dưỡng thông thường."
+        ]
+    },
+    {
+        "tag": "san_pham_kiem_dau",
+        "patterns": [
+            "Có loại sản phẩm nào giúp kiểm soát dầu vào mùa hè?",
+            "Làm sao để da không bị bóng nhờn?",
+            "Phấn phủ kiềm dầu có hiệu quả không?",
+            "Nên chọn sữa rửa mặt nào để giảm dầu?",
+            "Có nên dùng giấy thấm dầu không?"
+        ],
+        "responses": [
+            "Bạn có thể dùng phấn phủ hoặc kem lót kiềm dầu để giảm độ bóng.",
+            "Sữa rửa mặt chứa BHA hoặc than hoạt tính có thể giúp kiểm soát dầu tốt hơn.",
+            "Phấn phủ dạng bột có khả năng hút dầu hiệu quả trong mùa hè.",
+            "Giấy thấm dầu có thể giúp kiểm soát dầu nhanh chóng nhưng không nên lạm dụng.",
+            "Ngoài mỹ phẩm, bạn có thể bổ sung nước và ăn nhiều rau xanh để giảm tiết dầu."
+        ]
+    },
+    {
+        "tag": "kem_duong_am_day",
+        "patterns": [
+            "Mùa đông nên dùng kem dưỡng ẩm loại nào?",
+            "Kem dưỡng ẩm nào tốt cho da khô vào mùa đông?",
+            "Tôi cần loại dưỡng ẩm nào cho thời tiết lạnh?",
+            "Kem dưỡng nào giúp da không bị bong tróc?",
+            "Có cần dưỡng ẩm nhiều hơn vào mùa đông không?"
+        ],
+        "responses": [
+            "Bạn nên chọn kem dưỡng ẩm có kết cấu dày và chứa thành phần như Hyaluronic Acid, Glycerin hoặc Ceramide.",
+            "Da khô nên dùng kem dưỡng chứa dầu tự nhiên như dầu hạnh nhân hoặc dầu jojoba.",
+            "Trong thời tiết lạnh, da mất nước nhanh, vì vậy bạn cần sử dụng kem dưỡng đậm đặc hơn.",
+            "Hãy chọn kem dưỡng có khả năng khóa ẩm tốt để tránh bong tróc da.",
+            "Mùa đông da dễ mất nước hơn, vì vậy bạn nên dưỡng ẩm cả sáng và tối."
+        ]
+    },
+    {
+        "tag": "dau_duong",
+        "patterns": [
+            "Dầu dưỡng có tác dụng gì?",
+            "Mùa đông có nên dùng dầu dưỡng không?",
+            "Dầu dưỡng nào tốt cho da khô?",
+            "Tôi có thể dùng dầu dưỡng thay cho kem dưỡng không?",
+            "Nên dùng dầu dưỡng hay kem dưỡng?"
+        ],
+        "responses": [
+            "Dầu dưỡng giúp khóa ẩm, bảo vệ da khỏi mất nước và giữ da mềm mại.",
+            "Mùa đông, da khô và mất nước nhanh, dầu dưỡng là lựa chọn tốt để duy trì độ ẩm.",
+            "Bạn có thể chọn dầu dưỡng chứa Argan Oil, Rosehip Oil hoặc Jojoba Oil để nuôi dưỡng da.",
+            "Dầu dưỡng không thể thay thế hoàn toàn kem dưỡng nhưng có thể kết hợp để tăng hiệu quả dưỡng ẩm.",
+            "Nếu da rất khô, bạn có thể dùng cả dầu dưỡng và kem dưỡng để cấp ẩm tối đa."
+        ]
+    },
+    {
+        "tag": "son_duong_moi",
+        "patterns": [
+            "Mùa đông môi tôi hay bị khô, tôi nên làm gì?",
+            "Son dưỡng môi nào tốt?",
+            "Làm sao để môi không bị nứt nẻ vào mùa lạnh?",
+            "Tôi nên chọn son dưỡng môi loại nào?",
+            "Son dưỡng có cần dùng hằng ngày không?"
+        ],
+        "responses": [
+            "Bạn nên sử dụng son dưỡng môi có chứa bơ hạt mỡ, dầu dừa hoặc vitamin E.",
+            "Để tránh môi nứt nẻ, hãy thoa son dưỡng trước khi ra ngoài và trước khi đi ngủ.",
+            "Mùa đông, môi dễ mất nước, vì vậy bạn cần dưỡng môi thường xuyên hơn.",
+            "Hãy chọn son dưỡng không chứa cồn để tránh làm môi khô thêm.",
+            "Dùng son dưỡng hàng ngày giúp môi luôn mềm mại và không bị bong tróc."
+        ]
+    }
+    
+    
+    ]
+  }
+  
+  

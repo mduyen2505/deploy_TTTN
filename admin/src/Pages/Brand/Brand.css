@@ -1,0 +1,191 @@
+.brand-page {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  text-align: center;
+}
+
+h1 {
+  color: #000000;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+/* Nút thêm thương hiệu */
+.add-brand-btn {
+  background: #ff758c;
+  color: white;
+  padding: 12px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 15px;
+}
+
+.add-brand-btn:hover {
+  background: #e04f6b;
+}
+
+/* Bảng hiển thị thương hiệu */
+.brand-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.brand-table th, .brand-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.brand-table th {
+  background: #ff758c;
+  color: white;
+  max-width: fit-content;
+}
+
+.brand-table img {
+  width: 100px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.brand-table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.brand-table tr:hover {
+  background: #efeeee;
+}
+
+/* Nút hành động */
+.edit-brand-btn,
+.save-brand-btn,
+.cancel-brand-btn,
+.delete-brand-btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 14px;
+}
+
+.edit-brand-btn {
+  background: #ffa502;
+  color: white;
+}
+
+.edit-brand-btn:hover {
+  background: #e08c02;
+}
+
+.delete-brand-btn {
+  background: #e74c3c;
+  color: white;
+}
+
+.delete-brand-btn:hover {
+  background: #c0392b;
+}
+
+.save-brand-btn {
+  background: #2ecc71;
+  color: white;
+}
+
+.save-brand-btn:hover {
+  background: #27ae60;
+}
+
+.cancel-brand-btn {
+  background: #95a5a6;
+  color: white;
+}
+
+.cancel-brand-btn:hover {
+  background: #7f8c8d;
+}
+
+/* Modal */
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  width: 600px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.modal h2 {
+  color: #ff758c;
+  margin-bottom: 20px;
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ff758c;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  flex: 1;
+  margin: 0 5px;
+}
+
+/* Phân trang */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-button {
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #ff758c;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.page-button.active {
+  background-color: #ff758c;
+  color: white;
+}
+
+.page-button:hover {
+  background-color: #e04f6b;
+  color: white;
+}

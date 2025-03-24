@@ -1,0 +1,78 @@
+.headerSearch {
+    position: relative;
+    flex-grow: 1;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    margin: 0 30px;
+  }
+  
+  .headerSearch input {
+    width: 100%;
+    padding: 12px 50px 12px 20px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .headerSearch input:focus {
+    border-color: #ff758c;
+    outline: none;
+  }
+  
+  .headerSearch button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #ff758c;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+
+
+  .searchResults {
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 10;
+    margin-top: 400px;
+}
+
+.searchItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.searchItem:hover {
+    background: #f8f8f8;
+}
+
+.searchItem img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.productName {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.productPrice {
+    font-size: 12px;
+    color: #ff758c;
+}

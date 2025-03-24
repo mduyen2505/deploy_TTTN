@@ -1,0 +1,163 @@
+/* Container chính */
+.order-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 750px;
+    margin: 10px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: -40px;
+}
+
+.orders-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Chia layout thành 2 cột */
+.order-detail-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-detail-info,
+.order-detail-summary {
+    flex: 1;
+    font-size: 14px;
+}
+
+/* Đường line dọc chia 2 cột */
+.order-detail-divider {
+    width: 1px;
+    background: #ccc;
+    height: auto;
+}
+
+/* Danh sách sản phẩm */
+.order-products-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-align: left;
+}
+
+
+
+.orderaccount-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 5px;
+    background: #fff;
+    margin-right: 15px;
+}
+
+.orderaccount-item-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+}
+
+.orderaccount-item-name {
+    flex: 3;
+    font-size: 14px;
+    color: #333;
+}
+
+.orderaccount-item-quantity {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.orderaccount-item-price {
+    flex: 1;
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* Tổng tiền */
+.orderaccount-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f8f8f8;
+     border-radius: 5px;
+    margin-top: 10px;
+    color: rgb(0, 0, 0);
+    text-align: right;
+}
+.order-total strong {
+    color: #0f0f0f;
+}
+.order-total strong {
+    color: #ff758c;
+}
+.order-status{
+    color: orange;
+    margin-left: 15px;
+
+    
+
+}
+.order-status-wrapper {
+    display: flex;
+    justify-content: flex-end; /* Đẩy trạng thái sang phải */
+    margin-top: 10px;
+
+}
+.order-status-wrapper strong {
+    color: black; /* Màu đen cho chữ "Trạng thái" */
+}
+
+
+/* Nút Xem chi tiết */
+.orderaccount-detail-button {
+    padding: 8px 12px;
+    background: #ff758c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.orderaccount-detail-button:hover {
+    background: #d65f73;
+}
+
+/* Nút Hủy đơn hàng */
+.orderaccount-cancel-button {
+    padding: 8px 12px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.orderaccount-cancel-button:hover {
+    background: #d43f3f;
+}
+

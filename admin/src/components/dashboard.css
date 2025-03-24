@@ -1,0 +1,88 @@
+.dashboard {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .dashboard-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .dashboard-metrics {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .metric-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+  }
+  
+  .metric-card h2 {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .metric-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .dashboard-charts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .chart-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chart-card h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .chart-placeholder {
+    height: 200px;
+    background: #e9ecef;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 16px;
+  }
+  
+  .support-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .support-table th,
+  .support-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .support-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,84 @@
+.blog-article-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.article-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff758c;
+    margin-bottom: 10px;
+}
+
+.article-meta {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.article-banner {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.article-description {
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.article-content-block {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.article-content-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.article-content-description {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.article-content-description strong {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.like-button, .dislike-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    display: end;
+    align-items: flex-end;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+    margin-left: 100px;
+}
+
+.like-button:hover, .dislike-button:hover {
+    background: #f0f0f0;
+    transform: scale(1.1);
+}
+.article-content-tag {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #007bff; /* Màu xanh */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Khoảng cách giữa các tag */
+}

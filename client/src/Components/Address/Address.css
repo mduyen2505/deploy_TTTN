@@ -1,0 +1,49 @@
+.address-selector {
+    max-width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Khoảng cách giữa các ô */
+  }
+  
+  /* Định dạng chung cho form-group */
+  .address-form-group {
+    width: calc(50% - 5px); /* Mỗi ô chiếm 50% chiều rộng */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Nếu màn hình nhỏ (mobile) thì hiển thị thành 1 cột */
+  @media (max-width: 600px) {
+    .address-form-group {
+      width: 100%;
+    }
+  }
+  
+  .address-form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .address-form-group select,
+  .address-form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .address-form-group select:focus,
+  .address-form-group input:focus {
+    border-color: #666;
+    outline: none;
+  }
+  
+  .address-form-group select:disabled {
+    background: #f9f9f9;
+    color: #888;
+  }
+  

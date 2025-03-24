@@ -1,0 +1,374 @@
+/* Container chính */
+.order-container {
+  display: flex;
+  justify-content: center; /* Căn giữa nội dung */
+  align-items: flex-start;
+  gap: 30px; /* Khoảng cách giữa nội dung chính và thanh toán */
+  padding: 20px;
+  background-color: #f5f5f5;
+  flex-wrap: wrap; /* Để các phần tự động xuống hàng khi không đủ chỗ */
+}
+
+/* Nội dung chính bên trái */
+.order-main-content {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+/* Khung thanh toán bên phải */
+.order-payment-box {
+  width: 30%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+  margin-top: 50px;
+}
+
+/* Header của trang đặt hàng */
+.order-header {
+  background-color: #ff9eb5; /* Màu xanh giống hình */
+  width: 100%; /* Chiều rộng full trang */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Căn logo và tiêu đề */
+  box-sizing: border-box;
+  height: 130px;
+  margin-top: -15px;
+}
+
+.order-header-content {
+  display: flex;
+  align-items: center;
+  max-width: 1400px; /* Để nội dung header không quá dài trên màn hình lớn */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.order-header-logo {
+  height: 250px; 
+  width: 250px;/* Điều chỉnh chiều cao logo */
+}
+
+.order-header-title {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.order-box {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+.order-input-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.order-input-group {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  flex: 1; /* Chia đều không gian */
+  margin-bottom: 5px;
+
+}
+.order-input-group h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Định dạng input */
+.order-input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+
+.order-input-group input:focus {
+  outline: none;
+  border-color: #ff6f91;
+  background-color: white;
+}
+.order-box input:focus{
+  outline: none;
+  border-color: #ff6f91;
+  background-color: white;
+}
+
+
+.order-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+
+
+.order-bold {
+  font-weight: bold;
+}
+
+.order-text-gray {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.order-change-btn {
+  color: #007bff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.order-change-btn:hover {
+  text-decoration: underline;
+}
+
+.order-input-field {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.order-btn {
+  width: 100%;
+  background-color: #ff9eb5;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.order-btn:hover {
+  background-color: #ff6f91;
+}
+
+.order-invoice-info {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.order-text-link {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.order-text-link:hover {
+  text-decoration: underline;
+}
+
+.order-summary p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.order-total {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.order-price {
+  color: #e63946;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.order-small-text {
+  font-size: 12px;
+  margin-top: 10px;
+}
+/* Responsive */
+@media (max-width: 1024px) {
+  .order-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .order-main-content {
+    width: 90%;
+  }
+
+  .order-payment-box {
+    width: 90%;
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .order-input-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+/* Container của input & nút áp dụng */
+.voucher-input-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.order-input-field {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.order-input-field:focus {
+  border-color: #ff758c;
+}
+
+/* Nút Áp dụng */
+.apply-voucher-btn {
+  background-color: #ff758c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.apply-voucher-btn:hover {
+  background-color: #e65b72;
+}
+
+/* Danh sách voucher */
+.voucher-list {
+  margin-top: 10px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.voucher-list-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.voucher-list-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.voucher-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.voucher-item:hover {
+  background: #f1f1f1;
+}
+
+.voucher-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.voucher-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.voucher-description {
+  font-size: 14px;
+  color: #777;
+}
+
+.voucher-discount {
+  font-size: 14px;
+  color: #e44d26;
+  font-weight: bold;
+}
+
+.use-voucher-btn {
+  background: #10cd42;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.use-voucher-btn:hover {
+  background: #127d2e;
+}
+
+.no-voucher {
+  text-align: center;
+  color: #777;
+}
+
+.order-product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.order-product-table th, .order-product-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.order-product-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.order-product-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
