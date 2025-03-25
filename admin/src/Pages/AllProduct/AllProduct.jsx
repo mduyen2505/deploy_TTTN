@@ -84,7 +84,11 @@ const AllProduct = () => {
   const fetchBrands = async () => {
     try {
       const response = await axios.get(API_BRAND.GET_ALL);
-      setBrands(Array.isArray(response.data) ? response.data : response.data.brands || []);
+      setBrands(
+        Array.isArray(response.data)
+          ? response.data
+          : response.data.brands || []
+      );
     } catch (error) {
       console.error("Lỗi khi lấy danh sách thương hiệu:", error);
       setError("Không thể tải danh sách thương hiệu.");
@@ -95,7 +99,9 @@ const AllProduct = () => {
 
   const fetchReviews = async (productId) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/reviews/${productId}`);
+      const response = await fetch(
+        `http://localhost:3000/api/reviews/${productId}`
+      );
       const data = await response.json();
       if (data.reviews && Array.isArray(data.reviews)) {
         setReviews(data.reviews);
@@ -114,11 +120,14 @@ const AllProduct = () => {
     try {
       const requestBody = { responseText };
 
-      const response = await fetch(`http://localhost:3000/api/reviews/${selectedReviewId}/respond`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(requestBody)
-      });
+      const response = await fetch(
+        `http://localhost:3000/api/reviews/${selectedReviewId}/respond`,
+        {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(requestBody),
+        }
+      );
 
       if (response.ok) {
         fetchReviews(selectedProductId);
@@ -214,9 +223,13 @@ const AllProduct = () => {
     try {
       if (isEditMode) {
         console.log("Updating product:", requestBody);
-        await axios.put(`http://localhost:3000/api/products/${selectedProductId}`, requestBody, {
-          headers: { "Content-Type": "application/json" },
-        });
+        await axios.put(
+          `http://localhost:3000/api/products/${selectedProductId}`,
+          requestBody,
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
         setProducts(
           products.map((prod) =>
             prod._id === selectedProductId ? { ...prod, ...requestBody } : prod
@@ -224,9 +237,13 @@ const AllProduct = () => {
         );
       } else {
         console.log("Adding new product:", requestBody);
-        const response = await axios.post("http://localhost:3000/api/products", requestBody, {
-          headers: { "Content-Type": "application/json" },
-        });
+        const response = await axios.post(
+          "http://localhost:3000/api/products",
+          requestBody,
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
         setProducts([...products, response.data]);
       }
 
@@ -309,7 +326,9 @@ const AllProduct = () => {
               <label>Thương hiệu</label>
               <select
                 value={productData.brandId}
-                onChange={(e) => setProductData({ ...productData, brandId: e.target.value })}
+                onChange={(e) =>
+                  setProductData({ ...productData, brandId: e.target.value })
+                }
               >
                 <option value="">Chọn thương hiệu</option>
                 {brands.length > 0 ? (
@@ -428,23 +447,46 @@ const AllProduct = () => {
         <div className="modal">
           <div className="modal-content">
             <h2 className="modal-title">Chi tiết sản phẩm</h2>
-            
-            <p><strong>Tên:</strong> {selectedProduct.name}</p>
-            <p><strong>Mô tả:</strong> {selectedProduct.description}</p>
-            <p><strong>Thành phần:</strong> {selectedProduct.ingredients.join(", ")}</p>
-            <p><strong>Hướng dẫn sử dụng:</strong> {selectedProduct.usageInstructions}</p>
-            
+
+            <p>
+              <strong>Tên:</strong> {selectedProduct.name}
+            </p>
+            <p>
+              <strong>Mô tả:</strong> {selectedProduct.description}
+            </p>
+            <p>
+              <strong>Thành phần:</strong>{" "}
+              {selectedProduct.ingredients.join(", ")}
+            </p>
+            <p>
+              <strong>Hướng dẫn sử dụng:</strong>{" "}
+              {selectedProduct.usageInstructions}
+            </p>
+
             <div className="review-management">
               <h2>Đánh giá sản phẩm</h2>
               <div className="review-list">
                 {reviews.length > 0 ? (
                   reviews.map((review) => (
                     <div key={review._id} className="review-item">
-                      <p><strong>Người dùng:</strong> {review.userId ? review.userId.username : "Ẩn danh"}</p>
-                      <p><strong>Nội dung:</strong> {review.comment}</p>
-                      <p><strong>Đánh giá:</strong> {review.rating} ⭐</p>
-                      {review.response && <p><strong>Phản hồi:</strong> {review.response.text}</p>}
-                      <button onClick={() => setSelectedReviewId(review._id)}>Phản hồi</button>
+                      <p>
+                        <strong>Người dùng:</strong>{" "}
+                        {review.userId ? review.userId.username : "Ẩn danh"}
+                      </p>
+                      <p>
+                        <strong>Nội dung:</strong> {review.comment}
+                      </p>
+                      <p>
+                        <strong>Đánh giá:</strong> {review.rating} ⭐
+                      </p>
+                      {review.response && (
+                        <p>
+                          <strong>Phản hồi:</strong> {review.response.text}
+                        </p>
+                      )}
+                      <button onClick={() => setSelectedReviewId(review._id)}>
+                        Phản hồi
+                      </button>
                     </div>
                   ))
                 ) : (
@@ -466,7 +508,9 @@ const AllProduct = () => {
               )}
             </div>
 
-            <button className="close-modal" onClick={closeDetailModal}>Đóng</button>
+            <button className="close-modal" onClick={closeDetailModal}>
+              Đóng
+            </button>
           </div>
         </div>
       )}
@@ -497,7 +541,7 @@ const AllProduct = () => {
                 <img
                   src={
                     product.image && product.image.startsWith("http")
-                    ? product.image
+                      ? product.image
                       : `http://localhost:3000/images/${product.image}`
                   }
                   alt={product.name}

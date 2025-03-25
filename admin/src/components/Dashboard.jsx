@@ -7,7 +7,11 @@ Chart.register(...registerables);
 
 function Dashboard() {
   const [revenue, setRevenue] = useState(0);
-  const [userGrowth, setUserGrowth] = useState({ currentCount: 0, previousWeekCount: 0, growthPercentage: 0 });
+  const [userGrowth, setUserGrowth] = useState({
+    currentCount: 0,
+    previousWeekCount: 0,
+    growthPercentage: 0,
+  });
 
   useEffect(() => {
     fetchRevenue();
@@ -26,7 +30,9 @@ function Dashboard() {
 
   const fetchUserGrowth = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/users/usergrowth");
+      const response = await fetch(
+        "http://localhost:3000/api/users/usergrowth"
+      );
       const data = await response.json();
       setUserGrowth({
         currentCount: data.data.currentCount || 0,

@@ -13,11 +13,14 @@ const BrandAdmin = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [newBrand, setNewBrand] = useState({ title: "", description: "", image: "" });
+  const [newBrand, setNewBrand] = useState({
+    title: "",
+    description: "",
+    image: "",
+  });
   const [editBrandId, setEditBrandId] = useState(null);
   const itemsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
-
 
   useEffect(() => {
     fetchBrands();
@@ -38,7 +41,11 @@ const BrandAdmin = () => {
   const openModal = (brand = null) => {
     if (brand) {
       setEditBrandId(brand._id);
-      setNewBrand({ title: brand.title, description: brand.description, image: brand.image });
+      setNewBrand({
+        title: brand.title,
+        description: brand.description,
+        image: brand.image,
+      });
     } else {
       setEditBrandId(null);
       setNewBrand({ title: "", description: "", image: "" });
@@ -60,15 +67,19 @@ const BrandAdmin = () => {
     const requestBody = {
       title: newBrand.title,
       description: newBrand.description,
-      image: newBrand.image
+      image: newBrand.image,
     };
 
     try {
       if (editBrandId) {
         console.log("Updating brand:", requestBody);
-        await axios.put(`http://localhost:3000/api/brands/${editBrandId}`, requestBody, {
-          headers: { "Content-Type": "application/json" },
-        });
+        await axios.put(
+          `http://localhost:3000/api/brands/${editBrandId}`,
+          requestBody,
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
         fetchBrands();
       } else {
         console.log("Adding new brand:", requestBody);
@@ -119,21 +130,27 @@ const BrandAdmin = () => {
           <input
             type="text"
             value={newBrand.title}
-            onChange={(e) => setNewBrand({ ...newBrand, title: e.target.value })}
+            onChange={(e) =>
+              setNewBrand({ ...newBrand, title: e.target.value })
+            }
             required
           />
 
           <label>Mô tả:</label>
           <textarea
             value={newBrand.description}
-            onChange={(e) => setNewBrand({ ...newBrand, description: e.target.value })}
+            onChange={(e) =>
+              setNewBrand({ ...newBrand, description: e.target.value })
+            }
           />
 
           <label>Hình ảnh (tên file):</label>
           <input
             type="text"
             value={newBrand.image}
-            onChange={(e) => setNewBrand({ ...newBrand, image: e.target.value })}
+            onChange={(e) =>
+              setNewBrand({ ...newBrand, image: e.target.value })
+            }
           />
         </div>
         <div className="modal-actions">
@@ -162,12 +179,28 @@ const BrandAdmin = () => {
               <td>{brand._id}</td>
               <td>{brand.title}</td>
               <td>{brand.description}</td>
-              <td>{brand.image ? <img src={`http://localhost:3000/images/${brand.image}`} alt={brand.title} width="100" /> : "Chưa có ảnh"}</td>
               <td>
-                <button className="edit-brand-btn" onClick={() => openModal(brand)}>
+                {brand.image ? (
+                  <img
+                    src={`http://localhost:3000/images/${brand.image}`}
+                    alt={brand.title}
+                    width="100"
+                  />
+                ) : (
+                  "Chưa có ảnh"
+                )}
+              </td>
+              <td>
+                <button
+                  className="edit-brand-btn"
+                  onClick={() => openModal(brand)}
+                >
                   <FontAwesomeIcon icon={faPenToSquare} />
                 </button>
-                <button className="delete-brand-btn" onClick={() => handleDeleteBrand(brand._id)}>
+                <button
+                  className="delete-brand-btn"
+                  onClick={() => handleDeleteBrand(brand._id)}
+                >
                   <FontAwesomeIcon icon={faTrash} />
                 </button>
               </td>
@@ -178,7 +211,13 @@ const BrandAdmin = () => {
 
       <div className="pagination">
         {Array.from({ length: totalPages }, (_, index) => (
-          <button key={index} className={`page-button ${currentPage === index + 1 ? "active" : ""}`} onClick={() => setCurrentPage(index + 1)}>
+          <button
+            key={index}
+            className={`page-button ${
+              currentPage === index + 1 ? "active" : ""
+            }`}
+            onClick={() => setCurrentPage(index + 1)}
+          >
             {index + 1}
           </button>
         ))}

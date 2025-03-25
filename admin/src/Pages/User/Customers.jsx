@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import './customers.css';
+import React, { useEffect, useState } from "react";
+import "./customers.css";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -11,18 +11,18 @@ function Customers() {
   const itemsPerPage = 5;
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/users/all')
-      .then(response => {
+    fetch("http://localhost:3000/api/users/all")
+      .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         setUsers(data);
         setLoading(false);
       })
-      .catch(error => {
+      .catch((error) => {
         setError(error.message);
         setLoading(false);
       });
@@ -30,19 +30,19 @@ function Customers() {
 
   const handleDelete = (userId) => {
     fetch(`http://localhost:3000/api/users/${userId}`, {
-      method: 'DELETE',
+      method: "DELETE",
     })
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
-          throw new Error('Failed to delete user');
+          throw new Error("Failed to delete user");
         }
         return response.json();
       })
       .then(() => {
-        setUsers(users.filter(user => user._id !== userId));
+        setUsers(users.filter((user) => user._id !== userId));
       })
-      .catch(error => {
-        alert('Error deleting user: ' + error.message);
+      .catch((error) => {
+        alert("Error deleting user: " + error.message);
       });
   };
 
@@ -72,17 +72,17 @@ function Customers() {
           </tr>
         </thead>
         <tbody>
-          {currentItems.map(user => (
+          {currentItems.map((user) => (
             <tr key={user._id}>
               <td>{user._id}</td>
               <td>{user.username}</td>
               <td>{user.email}</td>
-              <td>{user.phoneNumber || 'N/A'}</td>
-              <td>{user.address || 'N/A'}</td>
-              <td>{user.isAdmin ? 'Yes' : 'No'}</td>
+              <td>{user.phoneNumber || "N/A"}</td>
+              <td>{user.address || "N/A"}</td>
+              <td>{user.isAdmin ? "Yes" : "No"}</td>
               <td>
-                <button 
-                  className="action-button delete" 
+                <button
+                  className="action-button delete"
                   onClick={() => handleDelete(user._id)}
                 >
                   <FontAwesomeIcon icon={faTrash} />
@@ -97,7 +97,9 @@ function Customers() {
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index}
-            className={`page-button ${currentPage === index + 1 ? "active" : ""}`}
+            className={`page-button ${
+              currentPage === index + 1 ? "active" : ""
+            }`}
             onClick={() => handlePageChange(index + 1)}
           >
             {index + 1}
