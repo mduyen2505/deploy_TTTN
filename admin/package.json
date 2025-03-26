@@ -24,7 +24,7 @@
     "remixicon": "^4.6.0"
   },
   "scripts": {
-    "start": "serve -s build -l 3002",
+    "start": "npx serve -s build -l 3002",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -53,17 +53,18 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.10.4",
     "browserify-zlib": "^0.2.0",
     "crypto-browserify": "^3.12.1",
     "https-browserify": "^1.0.0",
     "sass": "^1.83.0",
+    "serve": "^14.2.4",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
     "url": "^0.11.0",
     "util": "^0.12.5",
     "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4",
-    "@babel/plugin-proposal-private-property-in-object": "^7.10.4"
+    "webpack-cli": "^5.1.4"
   },
   "resolutions": {
     "http": "stream-http",
