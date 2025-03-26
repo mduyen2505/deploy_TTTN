@@ -12,7 +12,6 @@ const OrderAccount = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-
   useEffect(() => {
     const fetchOrders = async () => {
       try {
@@ -23,9 +22,12 @@ const OrderAccount = () => {
           return;
         }
 
-        const response = await axios.get("http://localhost:3000/api/orders", {
-          headers: { Authorization: `Bearer ${token}` }, // ✅ Gửi token lên server
-        });
+        const response = await axios.get(
+          "deploytttn-production.up.railway.app/api/orders",
+          {
+            headers: { Authorization: `Bearer ${token}` }, // ✅ Gửi token lên server
+          }
+        );
 
         if (response.data.status === "OK") {
           setOrders(response.data.data);
@@ -48,7 +50,7 @@ const OrderAccount = () => {
       <Header />
       <div className="account-container">
         <AccountSidebar />
-        
+
         <div className="content">
           <h2 className="content-title">All Orders</h2>
 
@@ -59,24 +61,27 @@ const OrderAccount = () => {
           ) : (
             orders.map((order) => (
               <div key={order._id} className="orderaccount-card">
-
-<button
-  className="orderaccount-detail-button"
-  onClick={() => navigate(`/orders/${order._id}`)} // Điều hướng đúng
->
-  Xem chi tiết
-</button>
-
-                
+                <button
+                  className="orderaccount-detail-button"
+                  onClick={() => navigate(`/orders/${order._id}`)} // Điều hướng đúng
+                >
+                  Xem chi tiết
+                </button>
 
                 <div className="orderaccount-header">
                   <span className="orderaccount-id">
                     Mã đơn hàng: <strong>{order._id}</strong>
                   </span>
                   <span className="orderaccount-delivery">
-                    Ngày đặt hàng: {new Date(order.createdAt).toLocaleDateString()} {new Date(order.createdAt).toLocaleTimeString()}
+                    Ngày đặt hàng:{" "}
+                    {new Date(order.createdAt).toLocaleDateString()}{" "}
+                    {new Date(order.createdAt).toLocaleTimeString()}
                   </span>
-                  <span className={`orderaccount-status ${order.status.toLowerCase().replace(/ /g, '-')}`}>
+                  <span
+                    className={`orderaccount-status ${order.status
+                      .toLowerCase()
+                      .replace(/ /g, "-")}`}
+                  >
                     {order.status}
                   </span>
                 </div>
@@ -87,14 +92,18 @@ const OrderAccount = () => {
                       src={
                         item.productId.image.startsWith("http")
                           ? item.productId.image
-                          : `http://localhost:3000/images/${item.productId.image}`
+                          : `deploytttn-production.up.railway.app/images/${item.productId.image}`
                       }
                       alt={item.productId.name}
                       className="orderaccount-item-image"
                     />
                     <div className="orderaccount-item-details">
-                      <h4 className="orderaccount-item-name">{item.productId.name}</h4>
-                      <p className="orderaccount-item-quantity">Số lượng: {item.quantity}</p>
+                      <h4 className="orderaccount-item-name">
+                        {item.productId.name}
+                      </h4>
+                      <p className="orderaccount-item-quantity">
+                        Số lượng: {item.quantity}
+                      </p>
                       <p className="orderaccount-item-price">
                         Giá: {item.productId.promotionPrice.toLocaleString()} đ
                       </p>
@@ -104,7 +113,8 @@ const OrderAccount = () => {
 
                 <div className="orderaccount-summary">
                   <span className="orderaccount-total">
-                    Tổng tiền ({order.products.length} sản phẩm): <strong>{order.orderTotal.toLocaleString()} đ</strong>
+                    Tổng tiền ({order.products.length} sản phẩm):{" "}
+                    <strong>{order.orderTotal.toLocaleString()} đ</strong>
                   </span>
                 </div>
               </div>

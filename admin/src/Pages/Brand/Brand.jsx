@@ -74,7 +74,7 @@ const BrandAdmin = () => {
       if (editBrandId) {
         console.log("Updating brand:", requestBody);
         await axios.put(
-          `http://localhost:3000/api/brands/${editBrandId}`,
+          `deploytttn-production.up.railway.app/api/brands/${editBrandId}`,
           requestBody,
           {
             headers: { "Content-Type": "application/json" },
@@ -83,9 +83,13 @@ const BrandAdmin = () => {
         fetchBrands();
       } else {
         console.log("Adding new brand:", requestBody);
-        await axios.post("http://localhost:3000/api/brands", requestBody, {
-          headers: { "Content-Type": "application/json" },
-        });
+        await axios.post(
+          "deploytttn-production.up.railway.app/api/brands",
+          requestBody,
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
         fetchBrands();
       }
       closeModal();
@@ -100,7 +104,9 @@ const BrandAdmin = () => {
 
     try {
       console.log("Deleting brand with ID:", id);
-      await axios.delete(`http://localhost:3000/api/brands/${id}`);
+      await axios.delete(
+        `deploytttn-production.up.railway.app/api/brands/${id}`
+      );
       fetchBrands();
     } catch (error) {
       console.error("Lỗi khi xóa thương hiệu:", error);
@@ -182,7 +188,7 @@ const BrandAdmin = () => {
               <td>
                 {brand.image ? (
                   <img
-                    src={`http://localhost:3000/images/${brand.image}`}
+                    src={`deploytttn-production.up.railway.app/images/${brand.image}`}
                     alt={brand.title}
                     width="100"
                   />

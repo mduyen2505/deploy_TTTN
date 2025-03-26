@@ -9,12 +9,14 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: process.env.CALLBACK_URL || "http://localhost:3000/api/users/auth/google/callback",
+      callbackURL:
+        process.env.CALLBACK_URL ||
+        "deploytttn-production.up.railway.app/api/users/auth/google/callback",
       passReqToCallback: true,
     },
     async (req, accessToken, refreshToken, profile, done) => {
       try {
-         console.log("Google Profile:", profile);
+        console.log("Google Profile:", profile);
         const email = profile.emails?.[0]?.value;
 
         let user = await User.findOne({ email });
@@ -86,7 +88,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser(async (id, done) => {
-   //console.log("Deserialize User:", id);
+  //console.log("Deserialize User:", id);
   try {
     const user = await User.findById(id);
     done(null, user);
@@ -96,5 +98,3 @@ passport.deserializeUser(async (id, done) => {
 });
 
 module.exports = passport;
-
-

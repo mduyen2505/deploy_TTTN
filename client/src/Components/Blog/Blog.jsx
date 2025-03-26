@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Style.css";
@@ -38,7 +35,7 @@ const Blog = () => {
             <div className="blog-item" key={blog._id}>
               {/* Ảnh chính của bài blog */}
               <img
-                src={`http://localhost:3000/images/${blog.images[0]}`}
+                src={`deploytttn-production.up.railway.app/images/${blog.images[0]}`}
                 alt={blog.title}
                 className="blog-img"
               />

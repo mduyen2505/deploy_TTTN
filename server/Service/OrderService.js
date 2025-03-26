@@ -19,12 +19,15 @@ const createOrder = async (
       throw { status: 404, message: "Không tìm thấy giỏ hàng" };
     }
 
-    const selectedProduct = cart.products.filter((item) =>
-      productId.includes(String(item.productId?._id)) // Kiểm tra nếu productId tồn tại
+    const selectedProduct = cart.products.filter(
+      (item) => productId.includes(String(item.productId?._id)) // Kiểm tra nếu productId tồn tại
     );
 
     if (!selectedProduct || selectedProduct.length === 0) {
-      throw { status: 400, message: "Không tìm thấy sản phẩm nào trong giỏ hàng" };
+      throw {
+        status: 400,
+        message: "Không tìm thấy sản phẩm nào trong giỏ hàng",
+      };
     }
 
     const products = await Promise.all(
@@ -32,7 +35,7 @@ const createOrder = async (
         if (!item.productId) {
           throw {
             status: 404,
-            message: `Không tìm thấy sản phẩm hợp lệ trong giỏ hàng`
+            message: `Không tìm thấy sản phẩm hợp lệ trong giỏ hàng`,
           };
         }
 
@@ -40,13 +43,13 @@ const createOrder = async (
         if (!product) {
           throw {
             status: 404,
-            message: `Không tìm thấy sản phẩm với ID ${item.productId}`
+            message: `Không tìm thấy sản phẩm với ID ${item.productId}`,
           };
         }
         return {
           productId: product._id,
           quantity: item.quantity,
-          price: product.promotionPrice
+          price: product.promotionPrice,
         };
       })
     );
@@ -58,13 +61,14 @@ const createOrder = async (
 
     const VAT = totalPrice * 0.1;
     // Đặt ngưỡng miễn phí vận chuyển
-  const freeShippingThreshold = 500000;
+    const freeShippingThreshold = 500000;
 
-  // Đặt phí vận chuyển cơ bản
-  const baseShippingFee = 30000;
+    // Đặt phí vận chuyển cơ bản
+    const baseShippingFee = 30000;
 
-  // Tính phí vận chuyển dựa trên tổng giá trị đơn hàng
-  const shippingFee = totalPrice >= freeShippingThreshold ? 0 : baseShippingFee;
+    // Tính phí vận chuyển dựa trên tổng giá trị đơn hàng
+    const shippingFee =
+      totalPrice >= freeShippingThreshold ? 0 : baseShippingFee;
 
     let discount = 0;
     if (voucherCode) {
@@ -93,7 +97,7 @@ const createOrder = async (
       VAT,
       shippingFee,
       orderTotal,
-      status: "Pending"
+      status: "Pending",
     });
 
     await newOrder.save();
@@ -108,8 +112,8 @@ const createOrder = async (
       data: {
         ...newOrder.toObject(),
         discount,
-        totalPrice
-      }
+        totalPrice,
+      },
     };
   } catch (error) {
     console.error("Lỗi trong createOrder service:", error);
@@ -148,14 +152,14 @@ const getOrderById = (orderId) => {
       if (!order) {
         return reject({
           status: "ERR",
-          message: "Order not found"
+          message: "Order not found",
         });
       }
       resolve(order);
     } catch (error) {
       reject({
         status: "ERR",
-        message: "Error while retrieving order: " + error.message
+        message: "Error while retrieving order: " + error.message,
       });
     }
   });
@@ -169,14 +173,21 @@ const cancelOrder = async (orderId) => {
 
     // Không thể hủy đơn hàng nếu đã giao, đã hủy hoặc đã được gửi đi
     if (["Delivered", "Cancelled", "Shipped"].includes(order.status)) {
-      throw { status: 400, message: "Cannot cancel an order that is already shipped, delivered, or cancelled" };
+      throw {
+        status: 400,
+        message:
+          "Cannot cancel an order that is already shipped, delivered, or cancelled",
+      };
     }
 
     // Nếu đơn hàng đã được xác nhận và thanh toán, có thể yêu cầu hỗ trợ thay vì hủy trực tiếp
     if (order.status === "Confirm" && order.isPaid) {
-      throw { status: 400, message: "Order is already paid and confirmed. Please contact support for cancellation" };
+      throw {
+        status: 400,
+        message:
+          "Order is already paid and confirmed. Please contact support for cancellation",
+      };
     }
-
 
     order.status = "Cancelled";
 
@@ -187,7 +198,7 @@ const cancelOrder = async (orderId) => {
     console.error("Error in cancelOrder service:", error);
     throw {
       status: error.status || 500,
-      message: error.message || "Internal server error"
+      message: error.message || "Internal server error",
     };
   }
 };
@@ -210,7 +221,11 @@ const confirmOrder = async (orderId) => {
       if (!product) {
         throw { status: 404, message: `Product ${item.productId} not found` };
       }
-      if (!product.typeId) throw { status: 400, message: `Product ${product.name} is missing typeId` };
+      if (!product.typeId)
+        throw {
+          status: 400,
+          message: `Product ${product.name} is missing typeId`,
+        };
 
       if (product.quantityInStock < item.quantity) {
         throw { status: 400, message: `Not enough stock for ${product.name}` };
@@ -234,13 +249,14 @@ const confirmOrder = async (orderId) => {
     return { status: "OK", message: "Order confirmed successfully", order };
   } catch (error) {
     console.error("Error in confirmOrder service:", error);
-    throw { status: error.status || 500, message: error.message || "Internal server error" };
+    throw {
+      status: error.status || 500,
+      message: error.message || "Internal server error",
+    };
   }
 };
 
-
-
-//Admin xác nhận từ confirmed sang bên vận chuyển 
+//Admin xác nhận từ confirmed sang bên vận chuyển
 const shipOrder = async (orderId) => {
   try {
     const order = await Order.findById(orderId);
@@ -248,10 +264,10 @@ const shipOrder = async (orderId) => {
       throw { status: 404, message: "Order not found" };
     }
 
-   // Chỉ cho phép chuyển sang "Shipped" nếu đơn hàng đã được xác nhận
-   if (order.status !== "Confirmed") {
-    throw { status: 400, message: "Order must be confirmed before shipping" };
-  }
+    // Chỉ cho phép chuyển sang "Shipped" nếu đơn hàng đã được xác nhận
+    if (order.status !== "Confirmed") {
+      throw { status: 400, message: "Order must be confirmed before shipping" };
+    }
 
     order.status = "Shipped";
 
@@ -262,7 +278,7 @@ const shipOrder = async (orderId) => {
     console.error("Error in shipOrder service:", error);
     throw {
       status: error.status || 500,
-      message: error.message || "Internal server error"
+      message: error.message || "Internal server error",
     };
   }
 };
@@ -277,12 +293,18 @@ const deliverOrder = async (orderId) => {
 
     // Chỉ cho phép xác nhận khi đơn hàng đang ở trạng thái "Shipped"
     if (order.status !== "Shipped") {
-      throw { status: 400, message: "Order must be in Shipped status before delivery confirmation" };
+      throw {
+        status: 400,
+        message: "Order must be in Shipped status before delivery confirmation",
+      };
     }
 
     // Kiểm tra paymentResult (thay vì isPaid)
     if (order.paymentResult !== "success") {
-      throw { status: 400, message: "Order must be paid successfully before delivery confirmation" };
+      throw {
+        status: 400,
+        message: "Order must be paid successfully before delivery confirmation",
+      };
     }
 
     // Cập nhật trạng thái giao hàng
@@ -294,7 +316,7 @@ const deliverOrder = async (orderId) => {
     console.error("Error in deliverOrder service:", error);
     throw {
       status: error.status || 500,
-      message: error.message || "Internal server error"
+      message: error.message || "Internal server error",
     };
   }
 };
@@ -308,7 +330,7 @@ const autoConfirmDelivery = async () => {
     // Tìm tất cả đơn hàng có status "Shipped" và đã qua 3 ngày
     const ordersToUpdate = await Order.find({
       status: "Shipped",
-      shippedAt: { $lte: threeDaysAgo }
+      shippedAt: { $lte: threeDaysAgo },
     });
 
     if (ordersToUpdate.length === 0) {
@@ -318,18 +340,21 @@ const autoConfirmDelivery = async () => {
 
     // Cập nhật tất cả đơn hàng quá hạn thành "Delivered"
     await Order.updateMany(
-      { _id: { $in: ordersToUpdate.map(order => order._id) } },
+      { _id: { $in: ordersToUpdate.map((order) => order._id) } },
       { $set: { status: "Delivered" } }
     );
 
-    console.log(` Đã tự động xác nhận ${ordersToUpdate.length} đơn hàng đã giao thành công.`);
-    return { message: `Đã xác nhận ${ordersToUpdate.length} đơn hàng đã giao.` };
+    console.log(
+      ` Đã tự động xác nhận ${ordersToUpdate.length} đơn hàng đã giao thành công.`
+    );
+    return {
+      message: `Đã xác nhận ${ordersToUpdate.length} đơn hàng đã giao.`,
+    };
   } catch (error) {
     console.error(" Lỗi khi tự động xác nhận đơn hàng:", error);
     throw error;
   }
 };
-
 
 const updatePaymentStatus = async (orderId, isSuccess) => {
   console.log(isSuccess);
@@ -348,14 +373,14 @@ const updatePaymentStatus = async (orderId, isSuccess) => {
     return {
       success: true,
       message: "Cập nhật trạng thái thanh toán thành công",
-      returnUrl: "http://localhost:3000/ket-qua-thanh-toan"
+      returnUrl: "deploytttn-production.up.railway.app/ket-qua-thanh-toan",
     };
   } catch (e) {
     console.error("Lỗi khi cập nhật trạng thái thanh toán:", e.message);
     return {
       success: false,
       message: "Cập nhật trạng thái thanh toán thất bại",
-      error: e.message
+      error: e.message,
     };
   }
 };
@@ -367,7 +392,7 @@ const handleVNPayCallback = async (req, res) => {
     if (!vnp_ResponseCode || !vnp_TxnRef) {
       return res.status(400).json({
         status: "ERR",
-        message: "Thiếu thông tin từ VNPay callback"
+        message: "Thiếu thông tin từ VNPay callback",
       });
     }
 
@@ -383,7 +408,7 @@ const handleVNPayCallback = async (req, res) => {
 
       return res.status(400).json({
         status: "ERR",
-        message: "Cập nhật trạng thái thanh toán thất bại"
+        message: "Cập nhật trạng thái thanh toán thất bại",
       });
     } else if (vnp_ResponseCode === "24" || vnp_TransactionStatus === "02") {
       const order = await Order.findOne({ vnp_TxnRef });
@@ -391,20 +416,20 @@ const handleVNPayCallback = async (req, res) => {
       if (!order) {
         return res.status(404).json({
           status: "ERR",
-          message: "Không tìm thấy đơn hàng"
+          message: "Không tìm thấy đơn hàng",
         });
       }
 
       return res.status(200).json({
         status: "ERR",
         message: "Thanh toán bị hủy",
-        order: order
+        order: order,
       });
     } else {
       return res.status(400).json({
         status: "ERR",
         message: "Lỗi thanh toán từ VNPay",
-        errorCode: vnp_ResponseCode
+        errorCode: vnp_ResponseCode,
       });
     }
   } catch (e) {
@@ -412,12 +437,19 @@ const handleVNPayCallback = async (req, res) => {
     return res.status(500).json({
       status: "ERR",
       message: "Lỗi hệ thống",
-      error: e.message
+      error: e.message,
     });
   }
 };
 //lấy đơn hàng theo trạng thái: theo ngày, theo tuần, theo tháng
-const { startOfDay, endOfDay, startOfWeek, endOfWeek, startOfMonth, endOfMonth } = require("date-fns");
+const {
+  startOfDay,
+  endOfDay,
+  startOfWeek,
+  endOfWeek,
+  startOfMonth,
+  endOfMonth,
+} = require("date-fns");
 
 const getOrdersWithinPeriod = async (status, timePeriod, date) => {
   try {
@@ -439,14 +471,14 @@ const getOrdersWithinPeriod = async (status, timePeriod, date) => {
 
     const orders = await Order.find({
       status,
-      createdAt: { $gte: startUtcDate, $lte: endUtcDate }
+      createdAt: { $gte: startUtcDate, $lte: endUtcDate },
     }).populate("products.productId");
 
     return {
       orders,
       totalOrders: orders.length,
       startDate: startUtcDate,
-      endDate: endUtcDate
+      endDate: endUtcDate,
     };
   } catch (error) {
     console.error("Error in getOrdersByTimePeriod:", error);
@@ -465,14 +497,14 @@ const getRevenue = async () => {
 
     return {
       status: "OK",
-      totalRevenue
+      totalRevenue,
     };
   } catch (error) {
     console.error("Error in getTotalRevenue:", error);
     throw {
       status: "ERR",
       message: "Không thể tính tổng doanh thu",
-      error: error.message
+      error: error.message,
     };
   }
 };
@@ -489,5 +521,5 @@ module.exports = {
   handleVNPayCallback,
   updatePaymentStatus,
   getOrdersWithinPeriod,
-  getRevenue
+  getRevenue,
 };

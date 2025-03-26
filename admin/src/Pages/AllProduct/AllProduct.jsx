@@ -100,7 +100,7 @@ const AllProduct = () => {
   const fetchReviews = async (productId) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/reviews/${productId}`
+        `deploytttn-production.up.railway.app/api/reviews/${productId}`
       );
       const data = await response.json();
       if (data.reviews && Array.isArray(data.reviews)) {
@@ -121,7 +121,7 @@ const AllProduct = () => {
       const requestBody = { responseText };
 
       const response = await fetch(
-        `http://localhost:3000/api/reviews/${selectedReviewId}/respond`,
+        `deploytttn-production.up.railway.app/api/reviews/${selectedReviewId}/respond`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -224,7 +224,7 @@ const AllProduct = () => {
       if (isEditMode) {
         console.log("Updating product:", requestBody);
         await axios.put(
-          `http://localhost:3000/api/products/${selectedProductId}`,
+          `deploytttn-production.up.railway.app/api/products/${selectedProductId}`,
           requestBody,
           {
             headers: { "Content-Type": "application/json" },
@@ -238,7 +238,7 @@ const AllProduct = () => {
       } else {
         console.log("Adding new product:", requestBody);
         const response = await axios.post(
-          "http://localhost:3000/api/products",
+          "deploytttn-production.up.railway.app/api/products",
           requestBody,
           {
             headers: { "Content-Type": "application/json" },
@@ -258,7 +258,9 @@ const AllProduct = () => {
 
     try {
       console.log("Deleting product with ID:", id);
-      await axios.delete(`http://localhost:3000/api/products/${id}`);
+      await axios.delete(
+        `deploytttn-production.up.railway.app/api/products/${id}`
+      );
       setProducts(products.filter((product) => product._id !== id));
     } catch (error) {
       console.error("Lỗi khi xóa sản phẩm:", error);
@@ -542,7 +544,7 @@ const AllProduct = () => {
                   src={
                     product.image && product.image.startsWith("http")
                       ? product.image
-                      : `http://localhost:3000/images/${product.image}`
+                      : `deploytttn-production.up.railway.app/images/${product.image}`
                   }
                   alt={product.name}
                   style={{

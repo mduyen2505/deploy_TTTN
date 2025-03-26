@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = "deploytttn-production.up.railway.app/api";
 
 export const API_CATEGORY = {
   GET_ALL: `${BASE_URL}/types`,

@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/grid"; 
-import { Navigation, Grid } from "swiper/modules"; 
-import { BRANDS } from "../../config/ApiConfig"; 
+import "swiper/css/grid";
+import { Navigation, Grid } from "swiper/modules";
+import { BRANDS } from "../../config/ApiConfig";
 const ProductCatalog = () => {
   const [brands, setBrands] = useState([]);
 
@@ -57,7 +57,7 @@ const ProductCatalog = () => {
                         src={
                           brand.image.startsWith("http")
                             ? brand.image
-                            : `http://localhost:3000/images/${brand.image}`
+                            : `deploytttn-production.up.railway.app/images/${brand.image}`
                         }
                         alt={brand.title}
                       />

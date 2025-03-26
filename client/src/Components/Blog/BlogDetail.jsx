@@ -19,7 +19,7 @@ const BlogDetail = () => {
     const fetchBlogDetail = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/blogs/${id}`
+          `deploytttn-production.up.railway.app/api/blogs/${id}`
         );
         const blogData = response.data.data;
         setBlog(blogData);
@@ -36,7 +36,9 @@ const BlogDetail = () => {
 
   const handleLike = async () => {
     try {
-      await axios.put(`http://localhost:3000/api/blogs/${id}/like`);
+      await axios.put(
+        `deploytttn-production.up.railway.app/api/blogs/${id}/like`
+      );
       setLikes(likes + 1);
     } catch (error) {
       console.error("Lỗi khi thích bài viết:", error);
@@ -45,7 +47,9 @@ const BlogDetail = () => {
 
   const handleDislike = async () => {
     try {
-      await axios.put(`http://localhost:3000/api/blogs/${id}/dislike`);
+      await axios.put(
+        `deploytttn-production.up.railway.app/api/blogs/${id}/dislike`
+      );
       setDislikes(dislikes + 1);
     } catch (error) {
       console.error("Lỗi khi không thích bài viết:", error);
@@ -102,7 +106,7 @@ const BlogDetail = () => {
                   {remainingText}
                 </p>
                 <img
-                  src={`http://localhost:3000/images/${item.image}`}
+                  src={`deploytttn-production.up.railway.app/images/${item.image}`}
                   alt={`Hình ảnh ${index + 1}`}
                   className="article-content-image"
                 />

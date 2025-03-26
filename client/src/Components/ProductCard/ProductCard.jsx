@@ -90,7 +90,7 @@ const ProductCard = ({ product }) => {
         src={
           product.image.startsWith("http")
             ? product.image
-            : `http://localhost:3000/images/${product.image}`
+            : `deploytttn-production.up.railway.app/images/${product.image}`
         }
         alt={product.name}
         className="product-image"

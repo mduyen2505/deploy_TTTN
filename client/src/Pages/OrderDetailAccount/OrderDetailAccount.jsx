@@ -121,8 +121,8 @@ const OrderDetail = () => {
             const productImage = item.productId?.image
               ? item.productId.image.startsWith("http")
                 ? item.productId.image
-                : `http://localhost:3000/images/${item.productId.image}`
-              : `http://localhost:3000/images/default-product.png`;
+                : `deploytttn-production.up.railway.app/images/${item.productId.image}`
+              : `deploytttn-production.up.railway.app/images/default-product.png`;
 
             return (
               <div key={idx} className="orderaccount-item">

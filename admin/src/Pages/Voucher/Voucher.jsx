@@ -20,7 +20,9 @@ const Voucher = () => {
   const fetchVouchers = async () => {
     try {
       console.log("Fetching vouchers...");
-      const response = await fetch("http://localhost:3000/api/coupons");
+      const response = await fetch(
+        "deploytttn-production.up.railway.app/api/coupons"
+      );
       const data = await response.json();
       console.log("Response from server:", data);
 
@@ -45,11 +47,14 @@ const Voucher = () => {
 
       console.log("Dữ liệu gửi lên:", requestBody);
 
-      const response = await fetch("http://localhost:3000/api/coupons", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(requestBody),
-      });
+      const response = await fetch(
+        "deploytttn-production.up.railway.app/api/coupons",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(requestBody),
+        }
+      );
 
       const result = await response.json();
       console.log("Phản hồi từ server:", result);
@@ -106,7 +111,7 @@ const Voucher = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/coupons/${editingVoucher._id}`,
+        `deploytttn-production.up.railway.app/api/coupons/${editingVoucher._id}`,
         {
           method: "PUT",
           headers: headers,
@@ -131,9 +136,12 @@ const Voucher = () => {
 
   const handleDeleteVoucher = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/coupons/${id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `deploytttn-production.up.railway.app/api/coupons/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (response.ok) {
         fetchVouchers();
       }
@@ -209,7 +217,7 @@ const Voucher = () => {
         {vouchers.map((voucher) => (
           <div key={voucher._id} className="voucher-item">
             <img
-              src={`http://localhost:3000/images/${voucher.image}`}
+              src={`deploytttn-production.up.railway.app/images/${voucher.image}`}
               alt={voucher.name}
               className="voucher-logo"
             />

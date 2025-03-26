@@ -21,7 +21,9 @@ const Blog = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/blogs");
+      const response = await fetch(
+        "deploytttn-production.up.railway.app/api/blogs"
+      );
       const data = await response.json();
       if (data.success) {
         setBlogs(data.data);
@@ -43,11 +45,14 @@ const Blog = () => {
         content: newBlog.content,
       };
 
-      const response = await fetch("http://localhost:3000/api/blogs", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(requestBody),
-      });
+      const response = await fetch(
+        "deploytttn-production.up.railway.app/api/blogs",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(requestBody),
+        }
+      );
 
       if (response.ok) {
         fetchBlogs();
@@ -81,7 +86,7 @@ const Blog = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/blogs/${editingBlog._id}`,
+        `deploytttn-production.up.railway.app/api/blogs/${editingBlog._id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -104,9 +109,12 @@ const Blog = () => {
 
   const handleDeleteBlog = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/blogs/${id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `deploytttn-production.up.railway.app/api/blogs/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (response.ok) {
         fetchBlogs();
       }
@@ -327,7 +335,7 @@ const Blog = () => {
               <h3>Hình ảnh</h3>
               {selectedBlog.images.map((image, index) => (
                 <img
-                  src={`http://localhost:3000/images/${selectedBlog.images[0]}`}
+                  src={`deploytttn-production.up.railway.app/images/${selectedBlog.images[0]}`}
                   alt={selectedBlog.title}
                   className="blog-img"
                 />
@@ -338,7 +346,7 @@ const Blog = () => {
               {selectedBlog.content.map((item, index) => (
                 <div key={index}>
                   <img
-                    src={`http://localhost:3000/images/${item.image}`}
+                    src={`deploytttn-production.up.railway.app/images/${item.image}`}
                     alt={`Hình ảnh ${index + 1}`}
                     className="article-content-image"
                   />

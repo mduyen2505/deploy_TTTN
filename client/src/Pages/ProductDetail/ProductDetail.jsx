@@ -51,7 +51,7 @@ const ProductDetail = () => {
     const fetchReviews = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/reviews/${id}`
+          `deploytttn-production.up.railway.app/api/reviews/${id}`
         );
         setReviews(response.data.reviews);
       } catch (error) {
@@ -141,7 +141,7 @@ const ProductDetail = () => {
       }
 
       const response = await axios.post(
-        "http://localhost:3000/api/reviews/",
+        "deploytttn-production.up.railway.app/api/reviews/",
         {
           productId: product._id,
           orderId,
@@ -179,7 +179,7 @@ const ProductDetail = () => {
               src={
                 product.image.startsWith("http")
                   ? product.image
-                  : `http://localhost:3000/images/${product.image}`
+                  : `deploytttn-production.up.railway.app/images/${product.image}`
               }
               alt={product.name}
             />

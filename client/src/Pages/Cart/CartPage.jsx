@@ -50,7 +50,7 @@ const CartPage = () => {
             quantity: product.quantity,
             image: product.productId.image.startsWith("http")
               ? product.productId.image
-              : `http://localhost:3000/images/${product.productId.image}`,
+              : `deploytttn-production.up.railway.app/images/${product.productId.image}`,
           }));
 
           setCartItems(formattedCartItems);
@@ -171,8 +171,8 @@ const CartPage = () => {
     const productList = cartItems.map((item) => ({
       id: item.id,
       name: item.name,
-      image: item.image || "",   
-      price: item.price || 0,    // Nếu không có price, đặt giá mặc định 0
+      image: item.image || "",
+      price: item.price || 0, // Nếu không có price, đặt giá mặc định 0
       quantity: item.quantity || 1, // Nếu không có quantity, đặt mặc định là 1
     })); // ✅ Sử dụng `productList`
 
@@ -282,7 +282,9 @@ const CartPage = () => {
                         </button>
                       </div>
                     </td>
-                    <td>{(item?.price * item?.quantity)?.toLocaleString()} đ</td>
+                    <td>
+                      {(item?.price * item?.quantity)?.toLocaleString()} đ
+                    </td>
                   </tr>
                 ))}
               </tbody>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Ordershipped.css"
+import "./Ordershipped.css";
 import AccountSidebar from "../../Components/AccountSidebar/AccountSidebar";
 import { useNavigate } from "react-router-dom";
 import Header from "../../Components/Header/Header";
@@ -22,13 +22,18 @@ const Ordershipped = () => {
           return;
         }
 
-        const response = await axios.get("http://localhost:3000/api/orders", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const response = await axios.get(
+          "deploytttn-production.up.railway.app/api/orders",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
 
         if (response.data.status === "OK") {
           // Lọc chỉ lấy đơn hàng có status "Shipped"
-          const ShippedOrders = response.data.data.filter(order => order.status === "Shipped");
+          const ShippedOrders = response.data.data.filter(
+            (order) => order.status === "Shipped"
+          );
           setOrders(ShippedOrders);
         } else {
           setError("Không thể tải danh sách đơn hàng.");
@@ -45,25 +50,29 @@ const Ordershipped = () => {
   }, []);
 
   const handleConfirmOrder = async (orderId) => {
-    const confirmDelivery = window.confirm("Bạn có chắc chắn muốn xác nhận đã giao đơn hàng này không?");
+    const confirmDelivery = window.confirm(
+      "Bạn có chắc chắn muốn xác nhận đã giao đơn hàng này không?"
+    );
     if (!confirmDelivery) return;
-  
+
     try {
       const token = localStorage.getItem("token");
-  
+
       console.log("🔍 Gửi yêu cầu xác nhận đơn hàng với orderId:", orderId); // Log kiểm tra
-  
+
       const response = await axios.post(
-        "http://localhost:3000/api/orders/deliver", 
-        { orderId: orderId }, 
+        "deploytttn-production.up.railway.app/api/orders/deliver",
+        { orderId: orderId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-  
+
       console.log("✅ Phản hồi từ API xác nhận đơn hàng:", response.data);
-  
+
       if (response.data.status === "OK") {
         // Cập nhật danh sách đơn hàng, loại bỏ đơn hàng đã giao
-        setOrders(prevOrders => prevOrders.filter(order => order._id !== orderId));
+        setOrders((prevOrders) =>
+          prevOrders.filter((order) => order._id !== orderId)
+        );
         alert("Xác nhận đơn hàng thành công!");
       } else {
         console.error("Error: Invalid response data", response.data); // Log lỗi chi tiết
@@ -80,7 +89,7 @@ const Ordershipped = () => {
       <Header />
       <div className="account-container">
         <AccountSidebar />
-        
+
         <div className="content">
           <h2 className="content-title">Đơn hàng Shipped</h2>
 
@@ -93,21 +102,27 @@ const Ordershipped = () => {
           ) : (
             orders.map((order) => (
               <div key={order._id} className="orderaccount-card">
-               <button
-  className="orderaccount-detail-button"
-  onClick={() => navigate(`/orders/${order._id}`)} // Điều hướng đúng
->
-  Xem chi tiết
-</button>
+                <button
+                  className="orderaccount-detail-button"
+                  onClick={() => navigate(`/orders/${order._id}`)} // Điều hướng đúng
+                >
+                  Xem chi tiết
+                </button>
 
-<div className="orderaccount-header">
+                <div className="orderaccount-header">
                   <span className="orderaccount-id">
                     Mã đơn hàng: <strong>{order._id}</strong>
                   </span>
                   <span className="orderaccount-delivery">
-                    Ngày đặt hàng: {new Date(order.createdAt).toLocaleDateString()} {new Date(order.createdAt).toLocaleTimeString()}
+                    Ngày đặt hàng:{" "}
+                    {new Date(order.createdAt).toLocaleDateString()}{" "}
+                    {new Date(order.createdAt).toLocaleTimeString()}
                   </span>
-                  <span className={`orderaccount-status ${order.status.toLowerCase().replace(/ /g, '-')}`}>
+                  <span
+                    className={`orderaccount-status ${order.status
+                      .toLowerCase()
+                      .replace(/ /g, "-")}`}
+                  >
                     {order.status}
                   </span>
                 </div>
@@ -119,14 +134,18 @@ const Ordershipped = () => {
                       src={
                         item.productId.image.startsWith("http")
                           ? item.productId.image
-                          : `http://localhost:3000/images/${item.productId.image}`
+                          : `deploytttn-production.up.railway.app/images/${item.productId.image}`
                       }
                       alt={item.productId.name}
                       className="orderaccount-item-image"
                     />
                     <div className="orderaccount-item-details">
-                      <h4 className="orderaccount-item-name">{item.productId.name}</h4>
-                      <p className="orderaccount-item-quantity">Số lượng: {item.quantity}</p>
+                      <h4 className="orderaccount-item-name">
+                        {item.productId.name}
+                      </h4>
+                      <p className="orderaccount-item-quantity">
+                        Số lượng: {item.quantity}
+                      </p>
                       <p className="orderaccount-item-price">
                         Giá: {item.productId.promotionPrice.toLocaleString()} đ
                       </p>
@@ -137,13 +156,15 @@ const Ordershipped = () => {
                 {/* Tổng tiền */}
                 <div className="orderaccount-summary">
                   <span className="orderaccount-total">
-                    Tổng tiền ({order.products.length} sản phẩm): <strong>{order.orderTotal.toLocaleString()} đ</strong>
+                    Tổng tiền ({order.products.length} sản phẩm):{" "}
+                    <strong>{order.orderTotal.toLocaleString()} đ</strong>
                   </span>
                   <button
                     className="orderaccount-confirm-button"
                     onClick={() => handleConfirmOrder(order._id)}
                   >
-                    Đã nhận được hàng     </button>
+                    Đã nhận được hàng{" "}
+                  </button>
                 </div>
               </div>
             ))
