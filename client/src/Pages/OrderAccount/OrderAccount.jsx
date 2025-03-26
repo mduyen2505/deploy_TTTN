@@ -23,7 +23,7 @@ const OrderAccount = () => {
         }
 
         const response = await axios.get(
-          "deploytttn-production.up.railway.app/api/orders",
+          "deploytttn-production.up.railway.app/orders",
           {
             headers: { Authorization: `Bearer ${token}` }, // ✅ Gửi token lên server
           }

@@ -51,7 +51,7 @@ const ProductDetail = () => {
     const fetchReviews = async () => {
       try {
         const response = await axios.get(
-          `deploytttn-production.up.railway.app/api/reviews/${id}`
+          `deploytttn-production.up.railway.app/reviews/${id}`
         );
         setReviews(response.data.reviews);
       } catch (error) {
@@ -141,7 +141,7 @@ const ProductDetail = () => {
       }
 
       const response = await axios.post(
-        "deploytttn-production.up.railway.app/api/reviews/",
+        "deploytttn-production.up.railway.app/reviews/",
         {
           productId: product._id,
           orderId,

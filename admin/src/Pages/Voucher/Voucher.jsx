@@ -21,7 +21,7 @@ const Voucher = () => {
     try {
       console.log("Fetching vouchers...");
       const response = await fetch(
-        "deploytttn-production.up.railway.app/api/coupons"
+        "deploytttn-production.up.railway.app/coupons"
       );
       const data = await response.json();
       console.log("Response from server:", data);
@@ -48,7 +48,7 @@ const Voucher = () => {
       console.log("Dữ liệu gửi lên:", requestBody);
 
       const response = await fetch(
-        "deploytttn-production.up.railway.app/api/coupons",
+        "deploytttn-production.up.railway.app/coupons",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -111,7 +111,7 @@ const Voucher = () => {
 
     try {
       const response = await fetch(
-        `deploytttn-production.up.railway.app/api/coupons/${editingVoucher._id}`,
+        `deploytttn-production.up.railway.app/coupons/${editingVoucher._id}`,
         {
           method: "PUT",
           headers: headers,
@@ -137,7 +137,7 @@ const Voucher = () => {
   const handleDeleteVoucher = async (id) => {
     try {
       const response = await fetch(
-        `deploytttn-production.up.railway.app/api/coupons/${id}`,
+        `deploytttn-production.up.railway.app/coupons/${id}`,
         {
           method: "DELETE",
         }

@@ -30,7 +30,7 @@ const OrderList = () => {
   const fetchOrders = async () => {
     try {
       const response = await fetch(
-        "deploytttn-production.up.railway.app/api/orders/getAll"
+        "deploytttn-production.up.railway.app/orders/getAll"
       );
       const data = await response.json();
       if (data.status === "OK") {
@@ -45,7 +45,7 @@ const OrderList = () => {
     if (!statusFilter || !selectedDate) return;
     try {
       const response = await fetch(
-        "deploytttn-production.up.railway.app/api/orders/orders-by-time",
+        "deploytttn-production.up.railway.app/orders/orders-by-time",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -142,7 +142,7 @@ const OrderList = () => {
               <button
                 onClick={() =>
                   updateOrderStatus(
-                    "deploytttn-production.up.railway.app/api/orders/confirm",
+                    "deploytttn-production.up.railway.app/orders/confirm",
                     order._id
                   )
                 }
@@ -154,7 +154,7 @@ const OrderList = () => {
               <button
                 onClick={() =>
                   updateOrderStatus(
-                    "deploytttn-production.up.railway.app/api/orders/shippOrder",
+                    "deploytttn-production.up.railway.app/orders/shippOrder",
                     order._id
                   )
                 }
@@ -166,7 +166,7 @@ const OrderList = () => {
               <button
                 onClick={() =>
                   updateOrderStatus(
-                    "deploytttn-production.up.railway.app/api/orders/auto-confirm-delivery",
+                    "deploytttn-production.up.railway.app/orders/auto-confirm-delivery",
                     order._id
                   )
                 }

@@ -74,7 +74,7 @@ const BrandAdmin = () => {
       if (editBrandId) {
         console.log("Updating brand:", requestBody);
         await axios.put(
-          `deploytttn-production.up.railway.app/api/brands/${editBrandId}`,
+          `deploytttn-production.up.railway.app/brands/${editBrandId}`,
           requestBody,
           {
             headers: { "Content-Type": "application/json" },
@@ -84,7 +84,7 @@ const BrandAdmin = () => {
       } else {
         console.log("Adding new brand:", requestBody);
         await axios.post(
-          "deploytttn-production.up.railway.app/api/brands",
+          "deploytttn-production.up.railway.app/brands",
           requestBody,
           {
             headers: { "Content-Type": "application/json" },
@@ -104,9 +104,7 @@ const BrandAdmin = () => {
 
     try {
       console.log("Deleting brand with ID:", id);
-      await axios.delete(
-        `deploytttn-production.up.railway.app/api/brands/${id}`
-      );
+      await axios.delete(`deploytttn-production.up.railway.app/brands/${id}`);
       fetchBrands();
     } catch (error) {
       console.error("Lỗi khi xóa thương hiệu:", error);

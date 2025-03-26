@@ -100,7 +100,7 @@ const AllProduct = () => {
   const fetchReviews = async (productId) => {
     try {
       const response = await fetch(
-        `deploytttn-production.up.railway.app/api/reviews/${productId}`
+        `deploytttn-production.up.railway.app/reviews/${productId}`
       );
       const data = await response.json();
       if (data.reviews && Array.isArray(data.reviews)) {
@@ -121,7 +121,7 @@ const AllProduct = () => {
       const requestBody = { responseText };
 
       const response = await fetch(
-        `deploytttn-production.up.railway.app/api/reviews/${selectedReviewId}/respond`,
+        `deploytttn-production.up.railway.app/reviews/${selectedReviewId}/respond`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -224,7 +224,7 @@ const AllProduct = () => {
       if (isEditMode) {
         console.log("Updating product:", requestBody);
         await axios.put(
-          `deploytttn-production.up.railway.app/api/products/${selectedProductId}`,
+          `deploytttn-production.up.railway.app/products/${selectedProductId}`,
           requestBody,
           {
             headers: { "Content-Type": "application/json" },
@@ -238,7 +238,7 @@ const AllProduct = () => {
       } else {
         console.log("Adding new product:", requestBody);
         const response = await axios.post(
-          "deploytttn-production.up.railway.app/api/products",
+          "deploytttn-production.up.railway.app/products",
           requestBody,
           {
             headers: { "Content-Type": "application/json" },
@@ -258,9 +258,7 @@ const AllProduct = () => {
 
     try {
       console.log("Deleting product with ID:", id);
-      await axios.delete(
-        `deploytttn-production.up.railway.app/api/products/${id}`
-      );
+      await axios.delete(`deploytttn-production.up.railway.app/products/${id}`);
       setProducts(products.filter((product) => product._id !== id));
     } catch (error) {
       console.error("Lỗi khi xóa sản phẩm:", error);

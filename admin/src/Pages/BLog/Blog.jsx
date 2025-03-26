@@ -22,7 +22,7 @@ const Blog = () => {
   const fetchBlogs = async () => {
     try {
       const response = await fetch(
-        "deploytttn-production.up.railway.app/api/blogs"
+        "deploytttn-production.up.railway.app/blogs"
       );
       const data = await response.json();
       if (data.success) {
@@ -46,7 +46,7 @@ const Blog = () => {
       };
 
       const response = await fetch(
-        "deploytttn-production.up.railway.app/api/blogs",
+        "deploytttn-production.up.railway.app/blogs",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -86,7 +86,7 @@ const Blog = () => {
 
     try {
       const response = await fetch(
-        `deploytttn-production.up.railway.app/api/blogs/${editingBlog._id}`,
+        `deploytttn-production.up.railway.app/blogs/${editingBlog._id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -110,7 +110,7 @@ const Blog = () => {
   const handleDeleteBlog = async (id) => {
     try {
       const response = await fetch(
-        `deploytttn-production.up.railway.app/api/blogs/${id}`,
+        `deploytttn-production.up.railway.app/blogs/${id}`,
         {
           method: "DELETE",
         }

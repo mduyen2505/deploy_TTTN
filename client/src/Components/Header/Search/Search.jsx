@@ -12,7 +12,7 @@ const Search = () => {
 
   // Gọi API lấy danh sách sản phẩm
   useEffect(() => {
-    fetch("deploytttn-production.up.railway.app/api/products")
+    fetch("deploytttn-production.up.railway.app/products")
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));

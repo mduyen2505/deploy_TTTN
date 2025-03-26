@@ -23,7 +23,7 @@ const Ordershipped = () => {
         }
 
         const response = await axios.get(
-          "deploytttn-production.up.railway.app/api/orders",
+          "deploytttn-production.up.railway.app/orders",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -61,7 +61,7 @@ const Ordershipped = () => {
       console.log("🔍 Gửi yêu cầu xác nhận đơn hàng với orderId:", orderId); // Log kiểm tra
 
       const response = await axios.post(
-        "deploytttn-production.up.railway.app/api/orders/deliver",
+        "deploytttn-production.up.railway.app/orders/deliver",
         { orderId: orderId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

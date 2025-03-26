@@ -19,7 +19,7 @@ const BlogDetail = () => {
     const fetchBlogDetail = async () => {
       try {
         const response = await axios.get(
-          `deploytttn-production.up.railway.app/api/blogs/${id}`
+          `deploytttn-production.up.railway.app/blogs/${id}`
         );
         const blogData = response.data.data;
         setBlog(blogData);
@@ -36,9 +36,7 @@ const BlogDetail = () => {
 
   const handleLike = async () => {
     try {
-      await axios.put(
-        `deploytttn-production.up.railway.app/api/blogs/${id}/like`
-      );
+      await axios.put(`deploytttn-production.up.railway.app/blogs/${id}/like`);
       setLikes(likes + 1);
     } catch (error) {
       console.error("Lỗi khi thích bài viết:", error);
@@ -48,7 +46,7 @@ const BlogDetail = () => {
   const handleDislike = async () => {
     try {
       await axios.put(
-        `deploytttn-production.up.railway.app/api/blogs/${id}/dislike`
+        `deploytttn-production.up.railway.app/blogs/${id}/dislike`
       );
       setDislikes(dislikes + 1);
     } catch (error) {

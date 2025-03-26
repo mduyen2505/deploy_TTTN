@@ -225,7 +225,7 @@ const LoginPage = () => {
 
   const handleGoogleLogin = () => {
     window.location.href =
-      "deploytttn-production.up.railway.app/api/users/auth/google";
+      "deploytttn-production.up.railway.app/users/auth/google";
   };
 
   return (
