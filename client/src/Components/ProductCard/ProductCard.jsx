@@ -19,12 +19,6 @@ import {
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
 
-  // Tính toán số sao dựa trên averageRating
-  const fullStars = Math.floor(product.averageRating || 0);
-
-  // Tạo mảng stars với các icon tương ứng
-  // const stars = [...Array(fullStars).fill(faStar), ...(hasHalfStar ? [faStarHalfAlt] : []), ...Array(emptyStars).fill(farStar)];
-
   const isLoggedIn = !!localStorage.getItem("token");
   const [isFavorite, setIsFavorite] = useState(false);
 
