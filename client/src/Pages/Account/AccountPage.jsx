@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./AccountPage.css";
-import { Link } from "react-router-dom";
-import Header from "../../Components/Header/Header"; 
+// import { Link } from "react-router-dom";
+import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import AddressSelector from "../../Components/Address/Address";
 import { GET_USER_INFO, UPDATE_USER_INFO } from "../../config/ApiConfig";
@@ -95,7 +95,10 @@ const AccountPage = () => {
 
       if (response.status === 200) {
         alert("Cập nhật địa chỉ thành công!");
-        localStorage.setItem("user", JSON.stringify({ ...user, address: user.address }));
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ ...user, address: user.address })
+        );
       }
     } catch (error) {
       console.error("Lỗi khi cập nhật địa chỉ:", error);
@@ -107,9 +110,7 @@ const AccountPage = () => {
     <>
       <Header />
       <div className="account-container">
-        
-          <AccountSidebar />
-         
+        <AccountSidebar />
 
         <div className="content">
           <h2 className="content-title">Contact Information</h2>
@@ -123,23 +124,47 @@ const AccountPage = () => {
               <div className="form-row">
                 <div className="form-group">
                   <label>Name</label>
-                  <input type="text" name="username" value={user.username} onChange={handleChange} className="input-field" />
+                  <input
+                    type="text"
+                    name="username"
+                    value={user.username}
+                    onChange={handleChange}
+                    className="input-field"
+                  />
                 </div>
                 <div className="form-group">
                   <label>Phone Number</label>
-                  <input type="text" name="phoneNumber" value={user.phoneNumber} onChange={handleChange} className="input-field" />
+                  <input
+                    type="text"
+                    name="phoneNumber"
+                    value={user.phoneNumber}
+                    onChange={handleChange}
+                    className="input-field"
+                  />
                 </div>
               </div>
 
               <div className="form-group">
                 <label>Mail</label>
-                <input type="email" name="email" value={user.email} disabled className="input-field" />
+                <input
+                  type="email"
+                  name="email"
+                  value={user.email}
+                  disabled
+                  className="input-field"
+                />
               </div>
 
               <div className="form-group">
-              <AddressSelector onSelectAddress={handleAddressSelect} />
+                <AddressSelector onSelectAddress={handleAddressSelect} />
                 <label>Address</label>
-                <input type="text" name="address" value={user.address} onChange={handleChange} className="input-field" />
+                <input
+                  type="text"
+                  name="address"
+                  value={user.address}
+                  onChange={handleChange}
+                  className="input-field"
+                />
               </div>
 
               <button className="save-button" onClick={handleSave}>

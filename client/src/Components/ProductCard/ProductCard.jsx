@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Style.css";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Đảm bảo imports đúng
-import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
-import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
+// import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
+// import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -18,18 +18,12 @@ import {
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
-  
+
   // Tính toán số sao dựa trên averageRating
   const fullStars = Math.floor(product.averageRating || 0);
-  const hasHalfStar = (product.averageRating || 0) - fullStars >= 0.5;
-  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
 
   // Tạo mảng stars với các icon tương ứng
-  const stars = [
-    ...Array(fullStars).fill(faStar),
-    ...(hasHalfStar ? [faStarHalfAlt] : []),
-    ...Array(emptyStars).fill(farStar)
-  ];
+  // const stars = [...Array(fullStars).fill(faStar), ...(hasHalfStar ? [faStarHalfAlt] : []), ...Array(emptyStars).fill(farStar)];
 
   const isLoggedIn = !!localStorage.getItem("token");
   const [isFavorite, setIsFavorite] = useState(false);
@@ -73,11 +67,11 @@ const ProductCard = ({ product }) => {
       className="product-card"
       onClick={() => navigate(`/product/${product._id}`)}
     >
-  {product.discount !== undefined && product.discount !== null && product.discount > 0 && (
-    <span className="discount-tag">-{product.discount}%</span>
-)}
-
-      
+      {product.discount !== undefined &&
+        product.discount !== null &&
+        product.discount > 0 && (
+          <span className="discount-tag">-{product.discount}%</span>
+        )}
 
       {/* Icon yêu thích */}
       <div
@@ -105,32 +99,38 @@ const ProductCard = ({ product }) => {
       <div className="product-info">
         <h5 className="product-name">{product.name}</h5>
         <div className="rating">
-  {product.averageRating ? (
-    <>
-      {"★".repeat(Math.round(product.averageRating))}
-      {"☆".repeat(5 - Math.round(product.averageRating))}
-    </>
-  ) : "☆☆☆☆☆"}
-  <span className="rating-count">({product.totalReviews || 0})</span>
-</div>
-
-
-
+          {product.averageRating ? (
+            <>
+              {"★".repeat(Math.round(product.averageRating))}
+              {"☆".repeat(5 - Math.round(product.averageRating))}
+            </>
+          ) : (
+            "☆☆☆☆☆"
+          )}
+          <span className="rating-count">({product.totalReviews || 0})</span>
+        </div>
 
         {/* Hiển thị giá gốc và giá khuyến mãi */}
         <div className="price-container">
-        {product.discount !== undefined && product.discount !== null && product.discount > 0 ? (
-    <>
-      {product.price > 0 && (
-        <span className="original-price">{product.price?.toLocaleString()}₫</span>
-      )}
-      <span className="discounted-price">{product.promotionPrice?.toLocaleString()}₫</span>
-    </>
-  ) : (
-    <span className="discounted-price">{product.price?.toLocaleString()}₫</span>
-  )}
-</div>
-
+          {product.discount !== undefined &&
+          product.discount !== null &&
+          product.discount > 0 ? (
+            <>
+              {product.price > 0 && (
+                <span className="original-price">
+                  {product.price?.toLocaleString()}₫
+                </span>
+              )}
+              <span className="discounted-price">
+                {product.promotionPrice?.toLocaleString()}₫
+              </span>
+            </>
+          ) : (
+            <span className="discounted-price">
+              {product.price?.toLocaleString()}₫
+            </span>
+          )}
+        </div>
 
         <button className="add-to-bag" onClick={() => addToCart(product._id)}>
           Thêm vào giỏ

@@ -1,21 +1,22 @@
-
-
-
 import React, { useState, useEffect } from "react";
 import "./OrderPage.css"; // Import CSS
 import Modal from "./ModalOrder";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-import { ORDER_API, MOMO_PAYMENT_API, CHECK_COUPON_API, COUPONS_API, UPDATE_PAYMENT_STATUS,GET_CART} from "../../config/ApiConfig";
+import {
+  ORDER_API,
+  MOMO_PAYMENT_API,
+  CHECK_COUPON_API,
+  COUPONS_API,
+  UPDATE_PAYMENT_STATUS,
+} from "../../config/ApiConfig";
 import Logo from "../../assets/images/logo.png"; // Import logo
-
 
 const OrderPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [showAddressModal, setShowAddressModal] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
-  const [products, setProducts] = useState({});
   const [vouchers, setVouchers] = useState([]);
   const [voucherInfo, setVoucherInfo] = useState(null);
   const [showVoucherList, setShowVoucherList] = useState(false);
@@ -40,27 +41,6 @@ const OrderPage = () => {
     voucherCode: orderData.voucherCode,
     productList: location.state.productList.map((product) => product.id), // ✅ Chỉ lấy id
   };
-  useEffect(() => {
-    const fetchProductDetails = async () => {
-      try {
-        const response = await axios.get(GET_CART, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        });
-
-        if (response.data && response.data.products) {
-          const productMap = {};
-          response.data.products.forEach((product) => {
-            productMap[product.productId._id] = product.productId.name;
-          });
-          setProducts(productMap);
-        }
-      } catch (error) {
-        console.error("Lỗi khi lấy thông tin sản phẩm:", error);
-      }
-    };
-
-    fetchProductDetails();
-  }, []);
 
   const fetchVouchers = async () => {
     try {
@@ -79,72 +59,72 @@ const OrderPage = () => {
 
   const checkVoucher = async () => {
     if (!orderData.voucherCode.trim()) {
-        alert("Vui lòng nhập mã giảm giá!");
-        return;
+      alert("Vui lòng nhập mã giảm giá!");
+      return;
     }
 
     try {
-        console.log("📢 Đang kiểm tra mã giảm giá:", orderData.voucherCode);
+      console.log("📢 Đang kiểm tra mã giảm giá:", orderData.voucherCode);
 
-        const response = await axios.post(
-            CHECK_COUPON_API,
-            {
-                name: orderData.voucherCode,
-                orderTotal: orderTotal,
-            }
-        );
+      const response = await axios.post(CHECK_COUPON_API, {
+        name: orderData.voucherCode,
+        orderTotal: orderTotal,
+      });
 
-        console.log("📢 Phản hồi API kiểm tra mã giảm giá:", response.data);
+      console.log("📢 Phản hồi API kiểm tra mã giảm giá:", response.data);
 
-        if (response.data && response.data.discount) {
-            const currentDate = new Date();
-            const expiryDate = new Date(response.data.expiry);
+      if (response.data && response.data.discount) {
+        const currentDate = new Date();
+        const expiryDate = new Date(response.data.expiry);
 
-            // Kiểm tra nếu mã đã hết hạn
-            if (expiryDate < currentDate) {
-                alert("❌ Mã giảm giá đã hết hạn!");
-                setVoucherInfo(null);
-                return;
-            }
-
-            // Tính phí vận chuyển
-            const shippingFee = orderData.totalPrice >= 500000 ? 0 : 30000;
-
-            // Tính VAT 10%
-            const vat = Math.round(orderData.totalPrice * 0.1);
-
-            // Tính giảm giá trên tổng tiền (bao gồm VAT và phí vận chuyển)
-            const discountAmount = Math.round(
-                (orderData.totalPrice + shippingFee + vat) * (response.data.discount / 100)
-            );
-
-            // Tính tổng tiền cuối cùng
-            const newTotal = Math.max(orderData.totalPrice + shippingFee + vat - discountAmount, 0);
-
-            setVoucherInfo({
-                ...response.data,
-                discountAmount,
-                newTotal,
-            });
-
-            alert(`✅ Mã hợp lệ! ${response.data.message}`);
-        } else {
-            setVoucherInfo(null);
-            alert("❌ Mã giảm giá không hợp lệ hoặc đã hết hạn!");
+        // Kiểm tra nếu mã đã hết hạn
+        if (expiryDate < currentDate) {
+          alert("❌ Mã giảm giá đã hết hạn!");
+          setVoucherInfo(null);
+          return;
         }
-    } catch (error) {
-        console.error(
-            "❌ Lỗi khi kiểm tra mã giảm giá:",
-            error.response?.data || error.message
+
+        // Tính phí vận chuyển
+        const shippingFee = orderData.totalPrice >= 500000 ? 0 : 30000;
+
+        // Tính VAT 10%
+        const vat = Math.round(orderData.totalPrice * 0.1);
+
+        // Tính giảm giá trên tổng tiền (bao gồm VAT và phí vận chuyển)
+        const discountAmount = Math.round(
+          (orderData.totalPrice + shippingFee + vat) *
+            (response.data.discount / 100)
         );
-        alert("❌ Không thể kiểm tra mã giảm giá. Vui lòng thử lại!");
+
+        // Tính tổng tiền cuối cùng
+        const newTotal = Math.max(
+          orderData.totalPrice + shippingFee + vat - discountAmount,
+          0
+        );
+
+        setVoucherInfo({
+          ...response.data,
+          discountAmount,
+          newTotal,
+        });
+
+        alert(`✅ Mã hợp lệ! ${response.data.message}`);
+      } else {
+        setVoucherInfo(null);
+        alert("❌ Mã giảm giá không hợp lệ hoặc đã hết hạn!");
+      }
+    } catch (error) {
+      console.error(
+        "❌ Lỗi khi kiểm tra mã giảm giá:",
+        error.response?.data || error.message
+      );
+      alert("❌ Không thể kiểm tra mã giảm giá. Vui lòng thử lại!");
     }
-};
+  };
 
-const shippingFee = orderData.totalPrice >= 500000 ? 0 : 30000;
-const vat = Math.round(orderData.totalPrice * 0.1);
-const orderTotal = orderData.totalPrice + shippingFee + vat;
-
+  const shippingFee = orderData.totalPrice >= 500000 ? 0 : 30000;
+  const vat = Math.round(orderData.totalPrice * 0.1);
+  const orderTotal = orderData.totalPrice + shippingFee + vat;
 
   useEffect(() => {
     console.log("📦 Dữ liệu nhận từ CartPage:", location.state);
@@ -166,11 +146,12 @@ const orderTotal = orderData.totalPrice + shippingFee + vat;
       voucherCode: location.state.voucherCode || "",
     });
   }, [location.state, navigate]);
-  
 
   const handlePayment = async (orderId) => {
     if (!orderId) {
-      console.error("❌ Lỗi: orderId bị undefined, không thể tiếp tục thanh toán!");
+      console.error(
+        "❌ Lỗi: orderId bị undefined, không thể tiếp tục thanh toán!"
+      );
       alert("Lỗi khi thanh toán: Không tìm thấy mã đơn hàng!");
       return;
     }
@@ -183,28 +164,28 @@ const orderTotal = orderData.totalPrice + shippingFee + vat;
         ipnUrl: "https://webhook.site/test",
         paymentMethod: "MoMo",
       };
-      const token = localStorage.getItem("token"); 
-  
-      console.log('Payment Data:', paymentData); 
-      console.log('Token:', token); 
-  
+      const token = localStorage.getItem("token");
+
+      console.log("Payment Data:", paymentData);
+      console.log("Token:", token);
+
       const response = await fetch(MOMO_PAYMENT_API, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}` 
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(paymentData)
+        body: JSON.stringify(paymentData),
       });
-  
+
       const data = await response.json();
-      console.log('MoMo Response:', data); 
-  
+      console.log("MoMo Response:", data);
+
       if (data && data.payUrl) {
-        console.log('Redirecting to:', data.payUrl); 
+        console.log("Redirecting to:", data.payUrl);
         window.location.href = data.payUrl;
       } else {
-        console.error('Error: No payUrl in response'); 
+        console.error("Error: No payUrl in response");
         alert("Lỗi khi tạo yêu cầu thanh toán MoMo.");
       }
       const paymentStatusData = {
@@ -213,13 +194,12 @@ const orderTotal = orderData.totalPrice + shippingFee + vat;
         amount: paymentData.amount,
         message: data.message || "Thành công",
         resultCode: data.resultCode || 0,
-        transId: data.transId || "123456789"
+        transId: data.transId || "123456789",
       };
-  
+
       updatePaymentStatus(paymentStatusData);
-      
     } catch (error) {
-      console.error("Lỗi khi thanh toán MoMo:", error); 
+      console.error("Lỗi khi thanh toán MoMo:", error);
       alert("Lỗi khi thanh toán MoMo. Vui lòng thử lại.");
     }
   };
@@ -227,29 +207,41 @@ const orderTotal = orderData.totalPrice + shippingFee + vat;
     try {
       const token = localStorage.getItem("token");
       if (!token) {
-        console.error("❌ Lỗi: Không tìm thấy token, không thể cập nhật trạng thái thanh toán!");
+        console.error(
+          "❌ Lỗi: Không tìm thấy token, không thể cập nhật trạng thái thanh toán!"
+        );
         return;
       }
-  
-      const response = await axios.post(UPDATE_PAYMENT_STATUS, paymentStatusData, {
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+
+      const response = await axios.post(
+        UPDATE_PAYMENT_STATUS,
+        paymentStatusData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
         }
-    });
-  
-      console.log("✅ Phản hồi từ API cập nhật trạng thái thanh toán:", response.data);
+      );
+
+      console.log(
+        "✅ Phản hồi từ API cập nhật trạng thái thanh toán:",
+        response.data
+      );
     } catch (error) {
-      console.error("❌ Lỗi khi cập nhật trạng thái thanh toán:", error.response?.data || error.message);
+      console.error(
+        "❌ Lỗi khi cập nhật trạng thái thanh toán:",
+        error.response?.data || error.message
+      );
     }
   };
-  
+
   const handlePlaceOrder = async () => {
     if (!orderData.cartId || !orderData.productList.length) {
       alert("Giỏ hàng của bạn trống hoặc có lỗi với đơn hàng!");
       return;
     }
-  
+
     if (
       !orderData.name ||
       !orderData.phone ||
@@ -259,26 +251,30 @@ const orderTotal = orderData.totalPrice + shippingFee + vat;
       alert("Vui lòng nhập đầy đủ thông tin nhận hàng!");
       return;
     }
-  
+
     console.log("📦 Dữ liệu gửi lên API:", JSON.stringify(orderData, null, 2));
-  
+
     try {
       const token = localStorage.getItem("token");
       if (!token) {
         navigate("/login");
         return;
       }
-  
+
       const response = await axios.post(ORDER_API, formattedOrderData, {
         headers: { Authorization: `Bearer ${token}` },
       });
-  
+
       console.log("✅ Phản hồi từ API:", response);
-  
+
       // Log chi tiết phản hồi từ API
       console.log("Response Data:", response.data);
-  
-      if (response.data.status === "OK" && response.data.data && response.data.data.data) {
+
+      if (
+        response.data.status === "OK" &&
+        response.data.data &&
+        response.data.data.data
+      ) {
         const orderId = response.data.data.data._id; // Lấy _id từ phản hồi API
         console.log("✅ Order ID:", orderId);
         handlePayment(orderId);
@@ -286,13 +282,14 @@ const orderTotal = orderData.totalPrice + shippingFee + vat;
         console.error("Error: Invalid response data", response.data);
         alert("Đặt hàng thất bại. Vui lòng thử lại.");
       }
-      
     } catch (error) {
       console.error(
         "❌ Lỗi khi đặt hàng:",
         error.response?.data || error.message
       );
-      alert(`Lỗi đặt hàng: ${error.response?.data?.message || "Không thể đặt hàng"}`);
+      alert(
+        `Lỗi đặt hàng: ${error.response?.data?.message || "Không thể đặt hàng"}`
+      );
     }
   };
   return (
@@ -365,87 +362,96 @@ const orderTotal = orderData.totalPrice + shippingFee + vat;
           </div>
         </div>
 
-       {/* Mã giảm giá */}
-<div className="order-box">
-    <h2 className="order-title">Mã giảm giá</h2>
+        {/* Mã giảm giá */}
+        <div className="order-box">
+          <h2 className="order-title">Mã giảm giá</h2>
 
-    {/* Ô nhập mã + nút áp dụng */}
-    <div className="voucher-input-container">
-        <input
-            type="text"
-            placeholder="Nhập mã giảm giá"
-            value={orderData.voucherCode}
-            onChange={(e) => setOrderData({ ...orderData, voucherCode: e.target.value })}
-            onFocus={() => setShowVoucherList(true)} // Khi nhấp vào input, hiển thị danh sách voucher
-            className="order-input-field"
-        />
-        <button className="apply-voucher-btn" onClick={checkVoucher}>
-            Áp dụng
-        </button>
-    </div>
+          {/* Ô nhập mã + nút áp dụng */}
+          <div className="voucher-input-container">
+            <input
+              type="text"
+              placeholder="Nhập mã giảm giá"
+              value={orderData.voucherCode}
+              onChange={(e) =>
+                setOrderData({ ...orderData, voucherCode: e.target.value })
+              }
+              onFocus={() => setShowVoucherList(true)} // Khi nhấp vào input, hiển thị danh sách voucher
+              className="order-input-field"
+            />
+            <button className="apply-voucher-btn" onClick={checkVoucher}>
+              Áp dụng
+            </button>
+          </div>
 
-    {/* Hiển thị danh sách voucher khi showVoucherList = true */}
-    {showVoucherList && (
-        <div className="voucher-list">
-            {vouchers.length > 0 ? (
+          {/* Hiển thị danh sách voucher khi showVoucherList = true */}
+          {showVoucherList && (
+            <div className="voucher-list">
+              {vouchers.length > 0 ? (
                 <ul className="voucher-list-items">
-                    {vouchers.map((voucher) => (
-                        <li key={voucher._id} className="voucher-item">
-                            <div className="voucher-info">
-                                <span className="voucher-name">{voucher.name}</span>
-                                <span className="voucher-description">{voucher.description}</span>
-                                <span className="voucher-discount">🔖 Giảm {voucher.discount}%</span>
-                            </div>
-                            <button
-                                className="use-voucher-btn"
-                                onClick={() => {
-                                    setOrderData({ ...orderData, voucherCode: voucher.name });
-                                    setShowVoucherList(false); // Ẩn danh sách khi chọn mã
-                                }}
-                            >
-                                Dùng mã
-                            </button>
-                        </li>
-                    ))}
+                  {vouchers.map((voucher) => (
+                    <li key={voucher._id} className="voucher-item">
+                      <div className="voucher-info">
+                        <span className="voucher-name">{voucher.name}</span>
+                        <span className="voucher-description">
+                          {voucher.description}
+                        </span>
+                        <span className="voucher-discount">
+                          🔖 Giảm {voucher.discount}%
+                        </span>
+                      </div>
+                      <button
+                        className="use-voucher-btn"
+                        onClick={() => {
+                          setOrderData({
+                            ...orderData,
+                            voucherCode: voucher.name,
+                          });
+                          setShowVoucherList(false); // Ẩn danh sách khi chọn mã
+                        }}
+                      >
+                        Dùng mã
+                      </button>
+                    </li>
+                  ))}
                 </ul>
-            ) : (
+              ) : (
                 <p className="no-voucher">Không có mã giảm giá nào khả dụng.</p>
-            )}
+              )}
+            </div>
+          )}
         </div>
-    )}
-</div>
-
 
         {/* Thông tin kiện hàng */}
         <div className="order-box order-shipping-info">
-  <h2 className="order-title">Chi tiết đơn hàng</h2>
+          <h2 className="order-title">Chi tiết đơn hàng</h2>
 
-  <table className="order-product-table">
-    <thead>
-      <tr>
-        <th>Sản phẩm</th>
-        <th>Số lượng</th>
-        <th>Giá </th>
-      </tr>
-    </thead>
-    <tbody>
-      {(orderData.productList || []).map((item, index) => (
-        <tr key={index}>
-          <td className="order-product-info">
-            <img src={item.image} alt={item.name} className="order-product-img" />
-            <span>{item.name}</span>
-          </td>
-          <td>{item.quantity}</td>
-          <td>{item.price?.toLocaleString()}₫</td>
-          
-
-          
-        </tr>
-      ))}
-    </tbody>
-  </table>
-</div>
-</div>
+          <table className="order-product-table">
+            <thead>
+              <tr>
+                <th>Sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá </th>
+              </tr>
+            </thead>
+            <tbody>
+              {(orderData.productList || []).map((item, index) => (
+                <tr key={index}>
+                  <td className="order-product-info">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="order-product-img"
+                    />
+                    <span>{item.name}</span>
+                  </td>
+                  <td>{item.quantity}</td>
+                  <td>{item.price?.toLocaleString()}₫</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
 
       {/* Thanh toán ở góc phải */}
       <div className="order-payment-box">
@@ -453,7 +459,8 @@ const orderTotal = orderData.totalPrice + shippingFee + vat;
         <h2 className="order-title">Đơn hàng</h2>
         <div className="order-summary">
           <p>
-            Tạm tính: <span>{orderData?.totalPrice?.toLocaleString("vi-VN")}₫</span>
+            Tạm tính:{" "}
+            <span>{orderData?.totalPrice?.toLocaleString("vi-VN")}₫</span>
           </p>
 
           {/* Hiển thị giảm giá nếu có */}

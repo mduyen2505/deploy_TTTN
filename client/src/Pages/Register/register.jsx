@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faGoogle, faTwitter, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebookF,
+  faGoogle,
+  faTwitter,
+  faLinkedinIn,
+} from "@fortawesome/free-brands-svg-icons";
 import axios from "axios";
 import "./register.css";
 import logo from "../../assets/images/logo.png";
@@ -15,7 +20,7 @@ const SignUpPage = () => {
     username: "",
     email: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
   });
 
   const [error, setError] = useState("");
@@ -49,7 +54,7 @@ const SignUpPage = () => {
         position: "top-end", // Hiển thị ở góc phải trên cùng
         title: "Nhập lại mật khẩu không khớp!",
         showConfirmButton: false,
-        timer: 1000, // 
+        timer: 1000, //
         timerProgressBar: true,
         background: "#f6e6ec", // Màu nền nhẹ nhàng
         color: "#333", // Màu chữ tối
@@ -81,13 +86,13 @@ const SignUpPage = () => {
       } else {
         Swal.fire({
           toast: true,
-          position: "top-end", 
+          position: "top-end",
           title: "Đăng ký không thành công!",
           showConfirmButton: false,
-          timer: 1000, // 
+          timer: 1000, //
           timerProgressBar: true,
-          background: "#f6e6ec", 
-          color: "#333", 
+          background: "#f6e6ec",
+          color: "#333",
           icon: "error",
         });
       }
@@ -98,7 +103,7 @@ const SignUpPage = () => {
         position: "top-end", // Hiển thị ở góc phải trên cùng
         title: "Đăng ký thất bại. Vui lòng thử lại!",
         showConfirmButton: false,
-        timer: 1000, // 
+        timer: 1000, //
         timerProgressBar: true,
         background: "#f6e6ec", // Màu nền nhẹ nhàng
         color: "#333", // Màu chữ tối
@@ -114,9 +119,11 @@ const SignUpPage = () => {
           <img src={logo} alt="Logo" className="register-logo" />
           <h2 className="register-welcome-text">Welcome Back!</h2>
           <p className="register-account-question">Already have an account?</p>
-          <Link to="/login" className="register-btn register-login-btn">Login</Link>
+          <Link to="/login" className="register-btn register-login-btn">
+            Login
+          </Link>
         </div>
-        
+
         <div className="register-forms-container">
           <form className="register-sign-up-form" onSubmit={handleSubmit}>
             <h2 className="register-title">Đăng Ký</h2>
@@ -126,35 +133,59 @@ const SignUpPage = () => {
 
             <div className="register-input-field">
               <i className="fas fa-user"></i>
-              <input type="text" name="username" placeholder="Tên người dùng" onChange={handleChange} required />
+              <input
+                type="text"
+                name="username"
+                placeholder="Tên người dùng"
+                onChange={handleChange}
+                required
+              />
             </div>
             <div className="register-input-field">
               <i className="fas fa-envelope"></i>
-              <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                onChange={handleChange}
+                required
+              />
             </div>
-            
+
             <div className="register-input-field">
               <i className="fas fa-lock"></i>
-              <input type="password" name="password" placeholder="Mật khẩu" onChange={handleChange} required />
+              <input
+                type="password"
+                name="password"
+                placeholder="Mật khẩu"
+                onChange={handleChange}
+                required
+              />
             </div>
             <div className="register-input-field">
               <i className="fas fa-lock"></i>
-              <input type="password" name="confirmPassword" placeholder="Nhập lại mật khẩu" onChange={handleChange} required />
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder="Nhập lại mật khẩu"
+                onChange={handleChange}
+                required
+              />
             </div>
             <input type="submit" className="register-btn" value="Gửi OTP" />
-            
+
             <p className="register-social-text">Hoặc đăng ký bằng</p>
             <div className="register-social-media">
-              <a href="#" className="register-social-icon">
+              <a href="https://facebook.com" className="register-social-icon">
                 <FontAwesomeIcon icon={faFacebookF} />
               </a>
-              <a href="#" className="register-social-icon">
+              <a href="https://google.com" className="register-social-icon">
                 <FontAwesomeIcon icon={faGoogle} />
               </a>
-              <a href="#" className="register-social-icon">
+              <a href="https://twitter.com" className="register-social-icon">
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
-              <a href="#" className="register-social-icon">
+              <a href="https://linkedin.com" className="register-social-icon">
                 <FontAwesomeIcon icon={faLinkedinIn} />
               </a>
             </div>
