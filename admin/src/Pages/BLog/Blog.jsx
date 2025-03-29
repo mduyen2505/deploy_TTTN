@@ -22,7 +22,7 @@ const Blog = () => {
   const fetchBlogs = async () => {
     try {
       const response = await fetch(
-        "deploytttn-production.up.railway.app/api/blogs"
+        "https://deploytttn-production.up.railway.app/api/blogs"
       );
       const data = await response.json();
       if (data.success) {
@@ -46,7 +46,7 @@ const Blog = () => {
       };
 
       const response = await fetch(
-        "deploytttn-production.up.railway.app/api/blogs",
+        "https://deploytttn-production.up.railway.app/api/blogs",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -86,7 +86,7 @@ const Blog = () => {
 
     try {
       const response = await fetch(
-        `deploytttn-production.up.railway.app/api/blogs/${editingBlog._id}`,
+        `https://deploytttn-production.up.railway.app/api/blogs/${editingBlog._id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -110,7 +110,7 @@ const Blog = () => {
   const handleDeleteBlog = async (id) => {
     try {
       const response = await fetch(
-        `deploytttn-production.up.railway.app/api/blogs/${id}`,
+        `https://deploytttn-production.up.railway.app/api/blogs/${id}`,
         {
           method: "DELETE",
         }
@@ -335,7 +335,7 @@ const Blog = () => {
               <h3>Hình ảnh</h3>
               {selectedBlog.images.map((image, index) => (
                 <img
-                  src={`deploytttn-production.up.railway.app/api/images/${selectedBlog.images[0]}`}
+                  src={`https://deploytttn-production.up.railway.app/api/images/${selectedBlog.images[0]}`}
                   alt={selectedBlog.title}
                   className="blog-img"
                 />
@@ -346,7 +346,7 @@ const Blog = () => {
               {selectedBlog.content.map((item, index) => (
                 <div key={index}>
                   <img
-                    src={`deploytttn-production.up.railway.app/api/images/${item.image}`}
+                    src={`https://deploytttn-production.up.railway.app/api/images/${item.image}`}
                     alt={`Hình ảnh ${index + 1}`}
                     className="article-content-image"
                   />

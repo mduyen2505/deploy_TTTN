@@ -11,7 +11,7 @@ function Customers() {
   const itemsPerPage = 5;
 
   useEffect(() => {
-    fetch("deploytttn-production.up.railway.app/api/users/all")
+    fetch("https://deploytttn-production.up.railway.app/api/users/all")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -29,7 +29,7 @@ function Customers() {
   }, []);
 
   const handleDelete = (userId) => {
-    fetch(`deploytttn-production.up.railway.app/api/users/${userId}`, {
+    fetch(`https://deploytttn-production.up.railway.app/api/users/${userId}`, {
       method: "DELETE",
     })
       .then((response) => {

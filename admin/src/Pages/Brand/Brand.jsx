@@ -74,7 +74,7 @@ const BrandAdmin = () => {
       if (editBrandId) {
         console.log("Updating brand:", requestBody);
         await axios.put(
-          `deploytttn-production.up.railway.app/api/brands/${editBrandId}`,
+          `https://deploytttn-production.up.railway.app/api/brands/${editBrandId}`,
           requestBody,
           {
             headers: { "Content-Type": "application/json" },
@@ -84,7 +84,7 @@ const BrandAdmin = () => {
       } else {
         console.log("Adding new brand:", requestBody);
         await axios.post(
-          "deploytttn-production.up.railway.app/api/brands",
+          "https://deploytttn-production.up.railway.app/api/brands",
           requestBody,
           {
             headers: { "Content-Type": "application/json" },
@@ -105,7 +105,7 @@ const BrandAdmin = () => {
     try {
       console.log("Deleting brand with ID:", id);
       await axios.delete(
-        `deploytttn-production.up.railway.app/api/brands/${id}`
+        `https://deploytttn-production.up.railway.app/api/brands/${id}`
       );
       fetchBrands();
     } catch (error) {
@@ -188,7 +188,7 @@ const BrandAdmin = () => {
               <td>
                 {brand.image ? (
                   <img
-                    src={`deploytttn-production.up.railway.app/api/images/${brand.image}`}
+                    src={`https://deploytttn-production.up.railway.app/api/images/${brand.image}`}
                     alt={brand.title}
                     width="100"
                   />

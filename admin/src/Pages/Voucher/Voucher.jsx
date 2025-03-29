@@ -21,7 +21,7 @@ const Voucher = () => {
     try {
       console.log("Fetching vouchers...");
       const response = await fetch(
-        "deploytttn-production.up.railway.app/api/coupons"
+        "https://deploytttn-production.up.railway.app/api/coupons"
       );
       const data = await response.json();
       console.log("Response from server:", data);
@@ -48,7 +48,7 @@ const Voucher = () => {
       console.log("Dữ liệu gửi lên:", requestBody);
 
       const response = await fetch(
-        "deploytttn-production.up.railway.app/api/coupons",
+        "https://deploytttn-production.up.railway.app/api/coupons",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -111,7 +111,7 @@ const Voucher = () => {
 
     try {
       const response = await fetch(
-        `deploytttn-production.up.railway.app/api/coupons/${editingVoucher._id}`,
+        `https://deploytttn-production.up.railway.app/api/coupons/${editingVoucher._id}`,
         {
           method: "PUT",
           headers: headers,
@@ -137,7 +137,7 @@ const Voucher = () => {
   const handleDeleteVoucher = async (id) => {
     try {
       const response = await fetch(
-        `deploytttn-production.up.railway.app/api/coupons/${id}`,
+        `https://deploytttn-production.up.railway.app/api/coupons/${id}`,
         {
           method: "DELETE",
         }
@@ -217,7 +217,7 @@ const Voucher = () => {
         {vouchers.map((voucher) => (
           <div key={voucher._id} className="voucher-item">
             <img
-              src={`deploytttn-production.up.railway.app/api/images/${voucher.image}`}
+              src={`https://deploytttn-production.up.railway.app/api/images/${voucher.image}`}
               alt={voucher.name}
               className="voucher-logo"
             />

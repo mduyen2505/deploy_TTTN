@@ -23,7 +23,7 @@ const Ordershipped = () => {
         }
 
         const response = await axios.get(
-          "deploytttn-production.up.railway.app/api/orders",
+          "https://deploytttn-production.up.railway.app/api/orders",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -61,7 +61,7 @@ const Ordershipped = () => {
       console.log("🔍 Gửi yêu cầu xác nhận đơn hàng với orderId:", orderId); // Log kiểm tra
 
       const response = await axios.post(
-        "deploytttn-production.up.railway.app/api/orders/deliver",
+        "https://deploytttn-production.up.railway.app/api/orders/deliver",
         { orderId: orderId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -134,7 +134,7 @@ const Ordershipped = () => {
                       src={
                         item.productId.image.startsWith("http")
                           ? item.productId.image
-                          : `deploytttn-production.up.railway.app/api/images/${item.productId.image}`
+                          : `https://deploytttn-production.up.railway.app/api/images/${item.productId.image}`
                       }
                       alt={item.productId.name}
                       className="orderaccount-item-image"

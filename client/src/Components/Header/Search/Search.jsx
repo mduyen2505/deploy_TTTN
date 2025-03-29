@@ -12,7 +12,7 @@ const Search = () => {
 
   // Gọi API lấy danh sách sản phẩm
   useEffect(() => {
-    fetch("deploytttn-production.up.railway.app/api/products")
+    fetch("https://deploytttn-production.up.railway.app/api/products")
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));
@@ -70,7 +70,7 @@ const Search = () => {
               onClick={() => handleProductClick(product._id)}
             >
               <img
-                src={`deploytttn-production.up.railway.app/api/images/${product.image}`}
+                src={`https://deploytttn-production.up.railway.app/api/images/${product.image}`}
                 alt={product.name}
               />
               <div>

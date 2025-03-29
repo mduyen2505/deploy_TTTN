@@ -219,7 +219,9 @@ const facebookAuth = async (req, res) => {
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
-    res.redirect(`deploytttn-production.up.railway.app/api?token=${token}`);
+    res.redirect(
+      `https://deploytttn-production.up.railway.app/api?token=${token}`
+    );
   } catch (err) {
     res
       .status(500)

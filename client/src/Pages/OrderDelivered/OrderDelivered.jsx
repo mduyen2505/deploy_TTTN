@@ -23,7 +23,7 @@ const OrderDelivered = () => {
         }
 
         const response = await axios.get(
-          "deploytttn-production.up.railway.app/api/orders",
+          "https://deploytttn-production.up.railway.app/api/orders",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -110,7 +110,7 @@ const OrderDelivered = () => {
                       src={
                         item.productId.image.startsWith("http")
                           ? item.productId.image
-                          : `deploytttn-production.up.railway.app/api/images/${item.productId.image}`
+                          : `https://deploytttn-production.up.railway.app/api/images/${item.productId.image}`
                       }
                       alt={item.productId.name}
                       className="orderaccount-item-image"
