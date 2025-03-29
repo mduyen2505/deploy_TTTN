@@ -70,7 +70,7 @@ const Search = () => {
               onClick={() => handleProductClick(product._id)}
             >
               <img
-                src={`https://deploytttn-production.up.railway.app/api/images/${product.image}`}
+                src={`https://deploytttn-production.up.railway.app/images/${product.image}`}
                 alt={product.name}
               />
               <div>

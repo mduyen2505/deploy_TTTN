@@ -544,7 +544,7 @@ const AllProduct = () => {
                   src={
                     product.image && product.image.startsWith("http")
                       ? product.image
-                      : `https://deploytttn-production.up.railway.app/api/images/${product.image}`
+                      : `https://deploytttn-production.up.railway.app/images/${product.image}`
                   }
                   alt={product.name}
                   style={{
