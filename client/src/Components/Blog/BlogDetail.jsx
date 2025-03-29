@@ -106,7 +106,7 @@ const BlogDetail = () => {
                   {remainingText}
                 </p>
                 <img
-                  src={`https://deploytttn-production.up.railway.app/api/images/${item.image}`}
+                  src={`https://deploytttn-production.up.railway.app/images/${item.image}`}
                   alt={`Hình ảnh ${index + 1}`}
                   className="article-content-image"
                 />

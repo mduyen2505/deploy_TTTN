@@ -335,7 +335,7 @@ const Blog = () => {
               <h3>Hình ảnh</h3>
               {selectedBlog.images.map((image, index) => (
                 <img
-                  src={`https://deploytttn-production.up.railway.app/api/images/${selectedBlog.images[0]}`}
+                  src={`https://deploytttn-production.up.railway.app/images/${selectedBlog.images[0]}`}
                   alt={selectedBlog.title}
                   className="blog-img"
                 />
@@ -346,7 +346,7 @@ const Blog = () => {
               {selectedBlog.content.map((item, index) => (
                 <div key={index}>
                   <img
-                    src={`https://deploytttn-production.up.railway.app/api/images/${item.image}`}
+                    src={`https://deploytttn-production.up.railway.app/images/${item.image}`}
                     alt={`Hình ảnh ${index + 1}`}
                     className="article-content-image"
                   />

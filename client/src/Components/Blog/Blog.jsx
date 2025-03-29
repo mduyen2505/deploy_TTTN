@@ -35,7 +35,7 @@ const Blog = () => {
             <div className="blog-item" key={blog._id}>
               {/* Ảnh chính của bài blog */}
               <img
-                src={`https://deploytttn-production.up.railway.app/api/images/${blog.images[0]}`}
+                src={`https://deploytttn-production.up.railway.app/images/${blog.images[0]}`}
                 alt={blog.title}
                 className="blog-img"
               />

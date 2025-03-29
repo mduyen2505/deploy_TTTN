@@ -188,7 +188,7 @@ const BrandAdmin = () => {
               <td>
                 {brand.image ? (
                   <img
-                    src={`https://deploytttn-production.up.railway.app/api/images/${brand.image}`}
+                    src={`https://deploytttn-production.up.railway.app/images/${brand.image}`}
                     alt={brand.title}
                     width="100"
                   />
