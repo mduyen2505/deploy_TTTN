@@ -11,7 +11,7 @@ passport.use(
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL:
         process.env.CALLBACK_URL ||
-        "deploytttn-production.up.railway.app/users/auth/google/callback",
+        "deploytttn-production.up.railway.app/api/users/auth/google/callback",
       passReqToCallback: true,
     },
     async (req, accessToken, refreshToken, profile, done) => {

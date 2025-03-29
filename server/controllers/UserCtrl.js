@@ -219,7 +219,7 @@ const facebookAuth = async (req, res) => {
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
-    res.redirect(`deploytttn-production.up.railway.app?token=${token}`);
+    res.redirect(`deploytttn-production.up.railway.app/api?token=${token}`);
   } catch (err) {
     res
       .status(500)
@@ -280,12 +280,9 @@ const changePassword = async (req, res) => {
       typeof oldPassword !== "string" ||
       oldPassword.trim().length === 0
     ) {
-      return res
-        .status(400)
-        .json({
-          message:
-            "Current password is required and must be a non-empty string",
-        });
+      return res.status(400).json({
+        message: "Current password is required and must be a non-empty string",
+      });
     }
 
     const isMatch = await bcrypt.compare(oldPassword, user.password);
@@ -754,12 +751,10 @@ const removeFromWishlist = async (req, res) => {
     user.wishlist = user.wishlist.filter((id) => id.toString() !== productId);
     await user.save();
 
-    res
-      .status(200)
-      .json({
-        message: "Product removed from wishlist",
-        wishlist: user.wishlist,
-      });
+    res.status(200).json({
+      message: "Product removed from wishlist",
+      wishlist: user.wishlist,
+    });
   } catch (error) {
     console.error("Error removing from wishlist:", error);
     res.status(500).json({ message: "Server error", error: error.message });

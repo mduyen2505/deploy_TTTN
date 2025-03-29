@@ -373,7 +373,7 @@ const updatePaymentStatus = async (orderId, isSuccess) => {
     return {
       success: true,
       message: "Cập nhật trạng thái thanh toán thành công",
-      returnUrl: "deploytttn-production.up.railway.app/ket-qua-thanh-toan",
+      returnUrl: "deploytttn-production.up.railway.app/api/ket-qua-thanh-toan",
     };
   } catch (e) {
     console.error("Lỗi khi cập nhật trạng thái thanh toán:", e.message);

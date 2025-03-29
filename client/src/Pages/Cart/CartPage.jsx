@@ -50,7 +50,7 @@ const CartPage = () => {
             quantity: product.quantity,
             image: product.productId.image.startsWith("http")
               ? product.productId.image
-              : `deploytttn-production.up.railway.app/images/${product.productId.image}`,
+              : `deploytttn-production.up.railway.app/api/images/${product.productId.image}`,
           }));
 
           setCartItems(formattedCartItems);

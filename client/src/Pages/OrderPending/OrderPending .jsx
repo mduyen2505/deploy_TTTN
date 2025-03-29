@@ -23,7 +23,7 @@ const OrderPending = () => {
         }
 
         const response = await axios.get(
-          "deploytttn-production.up.railway.app/orders",
+          "deploytttn-production.up.railway.app/api/orders",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -60,7 +60,7 @@ const OrderPending = () => {
       console.log("🔍 Gửi yêu cầu hủy đơn hàng với orderId:", orderId); // Log kiểm tra
 
       const response = await axios.put(
-        "deploytttn-production.up.railway.app/orders/cancel",
+        "deploytttn-production.up.railway.app/api/orders/cancel",
         { orderId: orderId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -132,7 +132,7 @@ const OrderPending = () => {
                       src={
                         item.productId.image.startsWith("http")
                           ? item.productId.image
-                          : `deploytttn-production.up.railway.app/images/${item.productId.image}`
+                          : `deploytttn-production.up.railway.app/api/images/${item.productId.image}`
                       }
                       alt={item.productId.name}
                       className="orderaccount-item-image"

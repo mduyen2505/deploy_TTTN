@@ -1,4 +1,4 @@
-const BASE_URL = "deploytttn-production.up.railway.app";
+const BASE_URL = "deploytttn-production.up.railway.app/api";
 
 export const CATEGORIES = `${BASE_URL}/types`; // Định nghĩa đúng
 export const SUBCATEGORIES = `${BASE_URL}/subcategories`; // API danh mục con

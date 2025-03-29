@@ -21,7 +21,7 @@ function Dashboard() {
   const fetchRevenue = async () => {
     try {
       const response = await fetch(
-        "deploytttn-production.up.railway.app/orders/revenue"
+        "deploytttn-production.up.railway.app/api/orders/revenue"
       );
       const data = await response.json();
       setRevenue(data.totalRevenue || 0);
@@ -33,7 +33,7 @@ function Dashboard() {
   const fetchUserGrowth = async () => {
     try {
       const response = await fetch(
-        "deploytttn-production.up.railway.app/users/usergrowth"
+        "deploytttn-production.up.railway.app/api/users/usergrowth"
       );
       const data = await response.json();
       setUserGrowth({
