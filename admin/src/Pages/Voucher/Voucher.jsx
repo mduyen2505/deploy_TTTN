@@ -217,7 +217,7 @@ const Voucher = () => {
         {vouchers.map((voucher) => (
           <div key={voucher._id} className="voucher-item">
             <img
-              src={`https://deploytttn-production.up.railway.app/api/images/${voucher.image}`}
+              src={`https://deploytttn-production.up.railway.app/images/${voucher.image}`}
               alt={voucher.name}
               className="voucher-logo"
             />

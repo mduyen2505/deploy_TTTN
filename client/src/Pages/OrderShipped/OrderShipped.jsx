@@ -134,7 +134,7 @@ const Ordershipped = () => {
                       src={
                         item.productId.image.startsWith("http")
                           ? item.productId.image
-                          : `https://deploytttn-production.up.railway.app/api/images/${item.productId.image}`
+                          : `https://deploytttn-production.up.railway.app/images/${item.productId.image}`
                       }
                       alt={item.productId.name}
                       className="orderaccount-item-image"

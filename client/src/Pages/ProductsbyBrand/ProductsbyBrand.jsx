@@ -54,7 +54,7 @@ const ProductsbyBrand = () => {
               src={
                 brand.image.startsWith("http")
                   ? brand.image
-                  : `https://deploytttn-production.up.railway.app/api/images/${brand.image}`
+                  : `https://deploytttn-production.up.railway.app/images/${brand.image}`
               }
               alt={brand.title}
               className="brand-logo"
